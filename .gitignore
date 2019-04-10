@@ -16,3 +16,6 @@
 ###> symfony/web-server-bundle ###
 /.web-server-pid
 ###< symfony/web-server-bundle ###
+**/.idea
+skeleton/symfony.lock
+symfony.lock
