@@ -3,11 +3,18 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UsersRepository")
+ * @UniqueEntity(
+ *     fields={"email"},
+ *     message="L'email entrez est déjà utilisé"
+ * )
  */
-class Users
+class Users implements UserInterface
 {
     /**
      * @ORM\Id()
@@ -33,6 +40,7 @@ class Users
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Email()
      */
     private $email;
 
@@ -68,8 +76,14 @@ class Users
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(min="8", minMessage="Votre mot de passe doit faire minimum 8 caractères")
      */
     private $password;
+
+    /**
+     * @Assert\EqualTo(propertyPath="password", message="Le mot de passe entrez ne correspond pas à celui d'au desssus")
+     */
+    public $confirm_password;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -240,5 +254,24 @@ class Users
         $this->active = $active;
 
         return $this;
+    }
+
+    public function eraseCredentials()
+    {
+    }
+
+    public function getRoles()
+    {
+        if ($this->rank == "ROLE_USER") {
+            return ["ROLE_USER"];
+        } elseif ($this->rank == "ROLE_ADMIN") {
+            return ["ROLE_ADMIN"];
+        } else {
+            return [];
+        }
+    }
+
+    public function getSalt()
+    {
     }
 }

@@ -1,0 +1,131 @@
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+#main {
+    margin: auto;
+    width: 80%;
+    padding: 10px;
+    background-color: green;
+}
+
+header {
+    width: 100%;
+}
+
+#menu-gauche {
+    width: 20%;
+    float: left;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#hamburger-menu > a {
+    display: inline-block;
+    background: #313131;
+    width: auto;
+    padding: 10px;
+    border-radius: 25px;
+    margin-right: 15px;
+    color: white;
+    font-weight: bold;
+    border: 2px solid black;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#hamburger-menu > span {
+    background: white;
+    border-radius: 1em;
+    padding: 10px;
+    /*padding-bottom: 10px;*/
+    font-weight: bold;
+    font-size: 3vw;
+    color: black;
+    display: none;
+    text-align: center;
+    line-height: 5px;
+    padding-bottom: 20px;
+}
+
+footer {
+    width: 100%;
+    clear: both;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+input[type=text], input[type=password] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid gray;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button:hover {
+    background-color: black;
+}
+
+button {
+    background-color: darkgreen;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 20px;
+    text-align: center;
+}
+
+Form {
+    text-align: center;
+}
+
+textarea {
+    width: 40vw;
+    height: 10vw;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+@media (max-width: 812px) {
+    #main {
+        width: 100%;
+    }
+
+    #hamburger-menu > a {
+        display: none;
+    }
+
+    #hamburger-menu > span {
+        display: inline-block;
+    }
+
+    #hamburger-menu:hover > a {
+        width: 80%;
+        display: block;
+        margin: 10px auto;
+
+    }
+
+    #hamburger-menu:hover > span {
+        transform: rotate(90deg);
+        transition-property: transform;
+        transition-duration: 0.5s;
+    }
+}
