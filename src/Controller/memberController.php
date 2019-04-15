@@ -30,7 +30,7 @@ class memberController extends AbstractController
         return $this->render("home.html.twig", [
             "title" => "Home",
             "users" => $users,
-            "articles" => $articlesRepository->findAll()
+            "articles" => $articlesRepository->findBy(['active' => 1])
         ]);
     }
 
