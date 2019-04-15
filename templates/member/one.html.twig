@@ -1,19 +1,20 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-
     <h1>L'article</h1>
     {% for article in articles %}
-        <p>{{ article.name }}</p>
-        <img src="{{ article.picture }}" alt="Photo">
-        <p>{{ article.description }}</p>
-        <p>{{ article.namelatin }}</p>
-        <p>{{ article.toxicite }}</p>
-        <p>{{ article.environnement }}</p>
-        <p>{{ article.urlBuy }}</p>
-        <p>{{ article.date }}</p>
+        <div class="BlockA">
+            <p class="NameA">{{ article.name }}</p>
+            <img class="PhotoA" src="{{ article.picture }}" alt="Photo">
+            <p class="DesA">Description</p>
+            <p class="DescriptionA">{{ article.description }}</p>
+            <p class="LatinA">{{ article.namelatin }}</p>
+            <p class="ToxiciteA">{{ article.toxicite }}</p>
+            <p class="EnvironnementA">{{ article.environnement }}</p>
+            <p class="AchatA">{{ article.urlBuy }}</p>
+            <p class="DateA">{{ article.date }}</p>
+        </div>
     {% endfor %}
-
     {{ form_start(form) }}
     {{ form_row(form.content, {
         'label': " ",
@@ -23,9 +24,9 @@
     }) }}
     {{ form_row(form.Send) }}
     {{ form_end(form) }}
-
     {% for comment in comments %}
-        {{ comment.users }}
-        {{ comment.content }}
+        <p class="NameC"><span class="UserC">Username</span> {{ comment.users }}</p>
+        <p class="DescriptionC"><span class="DesC">Description</span> {{ comment.content }}</p>
+        <p class="DateC">{{ comment.date }}</p>
     {% endfor %}
 {% endblock %}

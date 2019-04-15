@@ -3,30 +3,39 @@
     {% if not app.user %}
         <h1> Page d'accueil </h1>
         {% for article in articles %}
-            <p>{{ article.name }}</p>
-            <img src="{{ article.picture }}" alt="Photo">
-            <p>{{ article.description }}</p>
-            <p>{{ article.date }}</p>
-            <p>Pour voir plus d'informations veuillez vous connectez</p>
+            <div class="BlockA">
+                <p class="NameA">{{ article.name }}</p>
+                <img class="PhotoA" src="{{ article.picture }}" alt="Photo">
+                <p class="DesA">Description</p>
+                <p class="DescriptionA"> {{ article.description }}</p>
+                <p class="DateA">{{ article.date }}</p>
+                <a href="{{ path('login') }}">Pour voir plus d'informations veuillez vous connectez</a>
+            </div>
         {% endfor %}
     {% else %}
         {% if is_granted('ROLE_USER') %}
             <h1> Page d'accueil </h1>
             {% for article in articles %}
-                <p>{{ article.name }}</p>
-                <img src="{{ article.picture }}" alt="Photo">
-                <p>{{ article.description }}</p>
-                <p>{{ article.date }}</p>
-                <a href="{{ path('one_member', {'id': article.id}) }}"> Voir plus </a>
+                <div class="BlockA">
+                    <p class="NameA">{{ article.name }}</p>
+                    <img class="PhotoA" src="{{ article.picture }}" alt="Photo">
+                    <p class="DesA">Description</p>
+                    <p class="DescriptionA">{{ article.description }}</p>
+                    <p class="DateA">{{ article.date }}</p>
+                    <a href="{{ path('one_member', {'id': article.id}) }}"> Voir plus </a>
+                </div>
             {% endfor %}
         {% endif %}
         {% if is_granted('ROLE_ADMIN') %}
             {% for article in articles %}
-                <p>{{ article.name }}</p>
-                <img src="{{ article.picture }}" alt="Photo">
-                <p>{{ article.description }}</p>
-                <p>{{ article.date }}</p>
-                <a href="{{ path('one_admin', {'id': article.id}) }}"> Voir plus </a>
+                <div class="BlockA">
+                    <p class="NameA">{{ article.name }}</p>
+                    <img class="PhotoA" src="{{ article.picture }}" alt="Photo">
+                    <p class="DesA">Description</p>
+                    <p class="DescriptionA">{{ article.description }}</p>
+                    <p class="DateA">{{ article.date }}</p>
+                    <a href="{{ path('one_admin', {'id': article.id}) }}"> Voir plus </a>
+                </div>
             {% endfor %}
         {% endif %}
     {% endif %}

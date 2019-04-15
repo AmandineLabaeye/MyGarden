@@ -2,4 +2,24 @@
 
 {% block body %}
     <h1>Admin</h1>
+    <div class="Lien">
+        <p class="Sous-Lien">
+            <a href="{{ path('users') }}">Voir tous les utilisateurs enregistrées</a>
+        </p>
+        <p class="Sous-Lien">
+            <a href="{{ path('users_active') }}">Voir tout les utilisateurs à activé</a>
+        </p>
+        <p class="Sous-Lien">
+            <a href="{{ path('articles') }}">Voir tout les articles enregistrées</a>
+        </p>
+        <p class="Sous-Lien">
+            <a href="{{ path('articles_active') }}">Voir tout les articles à activé</a>
+        </p>
+        <p class="Sous-Lien">
+            <a href="{{ path('comments') }}">Voir tout les commentaires enregistrées</a>
+        </p>
+        <p class="Sous-Lien">
+            <a href="{{ path('comments_active') }}">Voir tout les commentaires à activé</a>
+        </p>
+    </div>
 {% endblock %}

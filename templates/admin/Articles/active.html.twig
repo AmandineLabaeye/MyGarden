@@ -1,0 +1,24 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {% for article in articles %}
+        <div class="CarteArticle">
+            <p><span class="Categorie">Nom</span> {{ article.name }}</p>
+            <p><span class="Categorie">Photo</span> {{ article.picture }}</p>
+            <p><span class="Categorie">Description</span> {{ article.description }}</p>
+            <p><span class="Categorie">Nom Latin</span> {{ article.namelatin }}</p>
+            <p><span class="Categorie">Toxicité</span> {{ article.toxicite }}</p>
+            <p><span class="Categorie">Environnement</span> {{ article.environnement }}</p>
+            <p><span class="Categorie">Lien D'achat</span> {{ article.urlBuy }}</p>
+            <p><span class="Categorie">Activé</span> {{ article.active ? 'Yes' : 'No' }}</p>
+            <p><span class="Categorie">Actions</span>
+                <a href="{{ path('articles_show', {'id': article.id}) }}">Show</a>
+                <a href="{{ path('articles_edit', {'id': article.id}) }}">Edit</a>
+            </p>
+        </div>
+    {% else %}
+        <p>No records found</p>
+    {% endfor %}
+
+    <a href="{{ path('create_article_admin') }}">Création d'un nouveau</a>
+{% endblock %}

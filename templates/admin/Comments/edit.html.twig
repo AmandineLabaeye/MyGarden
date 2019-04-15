@@ -1,0 +1,9 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {{ form(form) }}
+
+    {{ include('admin/Comments/delete.html.twig') }}
+
+    <a href="{{ path('comments') }}">Back to list</a>
+{% endblock %}

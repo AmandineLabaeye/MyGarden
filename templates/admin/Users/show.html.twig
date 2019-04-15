@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {% for user in user %}
+        <div class="CarteUser">
+            <p><span class="Categorie">Nom</span> {{ user.name }}</p>
+            <p><span class="Categorie">Prenom</span> {{ user.surname }}</p>
+            <p><span class="Categorie">Adresse Email</span> {{ user.email }}</p>
+            <p><span class="Categorie">Age</span> {{ user.age }}</p>
+            <p><span class="Categorie">Region</span> {{ user.region }}</p>
+            <p><span class="Categorie">Ville</span> {{ user.ville }}</p>
+            <p><span class="Categorie">Pseudo</span> {{ user.username }}</p>
+            <p><span class="Categorie">A propos</span> {{ user.apropos }}</p>
+            <p><span class="Categorie">Métier</span> {{ user.work }}</p>
+            <p><span class="Categorie">Mot de passe</span> {{ user.password }}</p>
+            <p><span class="Categorie">Niveau d'utilisateur</span> {{ user.rank }}</p>
+            <p><span class="Categorie">Activé</span> {{ user.active ? 'Yes' : 'No' }}</p>
+            <p><span class="Categorie">Actions</span>
+                <a href="{{ path('users_show', {'id': user.id}) }}">Show</a>
+                <a href="{{ path('users_edit', {'id': user.id}) }}">Edit</a>
+            </p>
+        </div>
+    {% else %}
+        <p>No records found</p>
+    {% endfor %}
+
+    <a href="{{ path('registration') }}">Création d'un nouveau</a>
+    <a href="{{ path('users') }}">Back to list</a>
+{% endblock %}

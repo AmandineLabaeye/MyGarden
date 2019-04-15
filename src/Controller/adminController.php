@@ -34,6 +34,50 @@ class adminController extends AbstractController
     }
 
     /**
+     * @Route("/newArticle", name="create_article_admin")
+     */
+    public function new(ObjectManager $manager, Request $request)
+    {
+        $articles = new Articles();
+
+        $users = $this->getUser();
+
+        $date = date("d-m-Y H:i:s");
+
+        $form = $this->createFormBuilder($articles)
+            ->add('name', TextType::class)
+            ->add('picture', TextType::class)
+            ->add('description', TextType::class)
+            ->add('namelatin', TextType::class)
+            ->add('toxicite', TextType::class)
+            ->add('environnement', TextType::class)
+            ->add('urlBuy', TextType::class)
+            ->add('categories', EntityType::class, [
+                'class' => Category::class,
+                'choice_label' => 'name'])
+            ->add('Send', SubmitType::class)
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $articles->setActive(0);
+            $articles->setDate($date);
+            $articles->setUsers($users);
+
+            $manager->persist($articles);
+            $manager->flush();
+
+            return $this->redirectToRoute('homepage');
+        }
+        return $this->render('member/new.html.twig', [
+            "title" => "Admin Home",
+            "users" => $users,
+            "form" => $form->createView()
+        ]);
+    }
+
+    /**
      * @Route("/", name="homepage_admin")
      */
     public function index(ArticlesRepository $articlesRepository)
@@ -82,50 +126,6 @@ class adminController extends AbstractController
             "articles" => $articlesRepository->findBy(['id' => $id]),
             'form' => $form->createView(),
             'comments' => $commentsRepository->findBy(['articles' => $id, 'active' => 1])
-        ]);
-    }
-
-    /**
-     * @Route("/newArticle", name="create_article_admin")
-     */
-    public function new(ObjectManager $manager, Request $request)
-    {
-        $articles = new Articles();
-
-        $users = $this->getUser();
-
-        $date = date("d-m-Y H:i:s");
-
-        $form = $this->createFormBuilder($articles)
-            ->add('name', TextType::class)
-            ->add('picture', TextType::class)
-            ->add('description', TextType::class)
-            ->add('namelatin', TextType::class)
-            ->add('toxicite', TextType::class)
-            ->add('environnement', TextType::class)
-            ->add('urlBuy', TextType::class)
-            ->add('categories', EntityType::class, [
-                'class' => Category::class,
-                'choice_label' => 'name'])
-            ->add('Send', SubmitType::class)
-            ->getForm();
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $articles->setActive(0);
-            $articles->setDate($date);
-            $articles->setUsers($users);
-
-            $manager->persist($articles);
-            $manager->flush();
-
-            return $this->redirectToRoute('homepage');
-        }
-        return $this->render('member/new.html.twig', [
-            "title" => "Admin Home",
-            "users" => $users,
-            "form" => $form->createView()
         ]);
     }
 }

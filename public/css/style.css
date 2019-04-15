@@ -109,6 +109,81 @@ img {
     height: 150px;
 }
 
+.BlockA {
+    text-align: center;
+}
+
+.NameA {
+    font-size: 25px;
+    font-weight: bolder;
+    color: darkred;
+    text-decoration: underline;
+}
+
+.DesA {
+    text-decoration: underline;
+    color: darkblue;
+    font-size: 20px;
+}
+
+.DescriptionA {
+    color: darkseagreen;
+}
+
+.DateA, .DateC {
+    font-weight: bolder;
+}
+
+.UserC {
+    text-decoration: underline;
+    color: darkred;
+}
+
+.NameC {
+    font-size: 20px;
+    color: #a71511;
+    font-weight: bold;
+}
+
+.DesC {
+    font-size: 17px;
+    text-decoration: underline;
+    color: darkblue;
+}
+
+.DescriptionC {
+    text-align: center;
+    color: darkseagreen;
+}
+
+.DateC {
+    float: right;
+}
+
+.Lien {
+    text-align: center;
+}
+
+.Sous-Lien {
+    background-color: #a71511;
+    padding: 10px;
+    border: #871511 solid;
+    border-radius: 20px;
+}
+
+.CarteUser, .CarteArticle, .CarteComment {
+    text-align: center;
+    border: darkred dotted;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.Categorie {
+    text-decoration: underline;
+    font-size: 17px;
+    color: darkblue;
+}
+
 @media (max-width: 812px) {
     #main {
         width: 100%;
