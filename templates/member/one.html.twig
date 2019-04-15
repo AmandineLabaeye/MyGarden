@@ -25,6 +25,7 @@
     {{ form_end(form) }}
 
     {% for comment in comments %}
+        {{ comment.users }}
         {{ comment.content }}
     {% endfor %}
 {% endblock %}
