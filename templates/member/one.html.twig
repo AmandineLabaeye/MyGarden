@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+    <h1>L'article</h1>
+    {% for article in articles %}
+        <p>{{ article.name }}</p>
+        <img src="{{ article.picture }}" alt="Photo">
+        <p>{{ article.description }}</p>
+        <p>{{ article.namelatin }}</p>
+        <p>{{ article.toxicite }}</p>
+        <p>{{ article.environnement }}</p>
+        <p>{{ article.urlBuy }}</p>
+        <p>{{ article.date }}</p>
+    {% endfor %}
+
+    {{ form_start(form) }}
+    {{ form_row(form.content, {
+        'label': " ",
+        'attr': {
+            'placeholder': "Commentaires de l'articles"
+        }
+    }) }}
+    {{ form_row(form.Send) }}
+    {{ form_end(form) }}
+
+    {% for comment in comments %}
+        {{ comment.content }}
+    {% endfor %}
+{% endblock %}

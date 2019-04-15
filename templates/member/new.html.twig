@@ -1,0 +1,55 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+    <h1> Crée une nouvelle plante ou fleur </h1>
+
+    {{ form_start(form) }}
+    {{ form_row(form.name, {
+        'label': " ",
+        'attr': {
+            'placeholder': "Nom Français"
+        }
+    }) }}
+    {{ form_row(form.picture, {
+        'label': " ",
+        'attr': {
+            'placeholder': "Photo"
+        }
+    }) }}
+    {{ form_row(form.description, {
+        'label': " ",
+        'attr': {
+            'placeholder': "Description"
+        }
+    }) }}
+    {{ form_row(form.namelatin, {
+        'label': " ",
+        'attr': {
+            'placeholder': "Nom latin"
+        }
+    }) }}
+    {{ form_row(form.toxicite, {
+        'label': " ",
+        'attr': {
+            "placeholder": "La toxicité"
+        }
+    }) }}
+    {{ form_row(form.environnement, {
+        'label': " ",
+        'attr': {
+            "placeholder": "Son environnement"
+        }
+    }) }}
+    {{ form_row(form.urlBuy, {
+        'label': " ",
+        'attr': {
+            'placeholder': "Endroit ou l'on peut l'acheter (Magasin ou Adresse)"
+        }
+    }) }}
+    {{ form_row(form.categories, {
+        'label': "Choisi la catégorie correspand à l'article"
+    }) }}
+    {{ form_end(form) }}
+
+{% endblock %}

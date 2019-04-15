@@ -52,6 +52,7 @@ header {
 footer {
     width: 100%;
     clear: both;
+    text-align: center;
 }
 
 h1 {
@@ -101,6 +102,11 @@ textarea {
 
 h2 {
     text-align: center;
+}
+
+img {
+    width: 150px;
+    height: 150px;
 }
 
 @media (max-width: 812px) {

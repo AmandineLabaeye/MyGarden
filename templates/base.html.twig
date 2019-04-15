@@ -18,14 +18,16 @@
                 <a href="{{ path('login') }}"> Login</a>
             {% else %}
                 {% if is_granted('ROLE_USER') %}
-                    <a href="{{ path('homepage') }}">Home</a>
+                    <a href="{{ path('homepage_member') }}">Home</a>
+                    <a href="{{ path('create_article_member') }}"> Ajouter un article </a>
                     <a href="{{ path('logout') }}"> Logout </a>
                     <a href="">{{ users.username }}</a>
                 {% endif %}
                 {% if is_granted('ROLE_ADMIN') %}
-                    <a href="{{ path('homepage') }}">Home</a>
+                    <a href="{{ path('homepage_admin') }}">Home</a>
+                    <a href="{{ path('create_article_admin') }}"> Ajouter un article </a>
                     <a href="{{ path('logout') }}"> Logout </a>
-                    <a href="">Panel Admin</a>
+                    <a href="{{ path('panel_admin') }}">Panel Admin</a>
                     <a href="">{{ users.username }}</a>
                 {% endif %}
             {% endif %}
@@ -34,7 +36,7 @@
 </header>
 {% block body %}{% endblock %}
 <footer>
-    <p> Réalisé par Amandine Labaeye </p>
+    <p> Site réalisé par Amandine Labaeye </p>
 </footer>
 {% block javascripts %}
     <script src="{{ asset('js/javascript.js') }}"></script>

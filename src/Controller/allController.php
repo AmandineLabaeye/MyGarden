@@ -5,6 +5,7 @@ namespace App\Controller;
 
 
 use App\Entity\Users;
+use App\Repository\ArticlesRepository;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -21,12 +22,13 @@ class allController extends AbstractController
     /**
      * @Route("/", name="homepage")
      */
-    public function index()
+    public function index(ArticlesRepository $articlesRepository)
     {
         $users = $this->getUser();
         return $this->render("home.html.twig", [
             "title" => "Home",
-            "users" => $users
+            "users" => $users,
+            "articles" => $articlesRepository->findAll()
         ]);
     }
 
@@ -90,5 +92,7 @@ class allController extends AbstractController
     /**
      * @Route("/logout", name="logout")
      */
-    public function logout(){}
+    public function logout()
+    {
+    }
 }
