@@ -9,6 +9,7 @@ use App\Repository\ArticlesRepository;
 use App\Repository\CategoryRepository;
 use App\Repository\CommentsRepository;
 use Doctrine\Common\Persistence\ObjectManager;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -81,13 +82,18 @@ class adminController extends AbstractController
     /**
      * @Route("/", name="homepage_admin")
      */
-    public function index(ArticlesRepository $articlesRepository, CategoryRepository $categoryRepository)
+    public function index(ArticlesRepository $articlesRepository, CategoryRepository $categoryRepository, PaginatorInterface $paginator, Request $request)
     {
+        $pagin = $paginator->paginate(
+            $articlesRepository->findBy(["active" => 1]),
+            $request->query->getInt('page', 1),
+            2
+        );
         $users = $this->getUser();
         return $this->render("home.html.twig", [
             "title" => "Home",
             "users" => $users,
-            "articles" => $articlesRepository->findBy(["active" => 1]),
+            "articles" => $pagin,
             "categories" => $categoryRepository->findBy(['active' => 1])
         ]);
     }
@@ -95,7 +101,7 @@ class adminController extends AbstractController
     /**
      * @Route("/{id}", name="one_admin")
      */
-    public function one(ArticlesRepository $articlesRepository, CommentsRepository $commentsRepository, Request $request, ObjectManager $manager, $id)
+    public function one(ArticlesRepository $articlesRepository, CommentsRepository $commentsRepository, Request $request, ObjectManager $manager, PaginatorInterface $paginator, $id)
     {
 
         $comments = new Comments();
@@ -122,12 +128,18 @@ class adminController extends AbstractController
             $manager->flush();
         }
 
+        $pagin = $paginator->paginate(
+            $commentsRepository->findBy(['articles' => $id, 'active' => 1]),
+            $request->query->getInt('page', 1),
+            7
+        );
+
         return $this->render('member/one.html.twig', [
             "title" => "One",
             "users" => $users,
             "articles" => $articlesRepository->findBy(['id' => $id]),
             'form' => $form->createView(),
-            'comments' => $commentsRepository->findBy(['articles' => $id, 'active' => 1])
+            'comments' => $pagin
         ]);
     }
 }

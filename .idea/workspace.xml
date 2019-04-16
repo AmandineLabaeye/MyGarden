@@ -2,21 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="478f7838-3daa-4edf-941f-6621d0b23ee6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/adminControllerCategorie.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/Categories/active.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/Categories/delete.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/Categories/edit.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/Categories/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/Categories/new.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/Categories/show.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/allMember/petf.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/knp_paginator.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/translations/KnpPaginatorBundle.fr.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/adminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/adminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/adminControllerArticles.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/adminControllerArticles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/adminControllerCategorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/adminControllerCategorie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/adminControllerComments.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/adminControllerComments.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/adminControllerUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/adminControllerUsers.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/allController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/allController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/memberController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/memberController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/Articles/active.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/Articles/active.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/Articles/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/Articles/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/Categories/active.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/Categories/active.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/Categories/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/Categories/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/Comments/active.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/Comments/active.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/Comments/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/Comments/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/Users/active.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/Users/active.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/Users/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/Users/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/member/one.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/member/one.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,10 +40,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/adminControllerArticles.php">
+        <entry file="file://$PROJECT_DIR$/src/Controller/adminControllerComments.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+            <state relative-caret-position="114">
+              <caret line="99" column="10" lean-forward="true" selection-start-line="99" selection-start-column="10" selection-end-line="99" selection-end-column="10" />
               <folding>
                 <element signature="e#34#58#0#PHP" expanded="true" />
               </folding>
@@ -44,10 +54,31 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller/adminControllerCategorie.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1005">
-              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="54">
+              <caret line="128" column="120" selection-start-line="128" selection-start-column="120" selection-end-line="128" selection-end-column="120" />
               <folding>
                 <element signature="e#34#58#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/admin/Categories/active.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="474">
+              <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/admin/Categories/index.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="474">
+              <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+              <folding>
+                <element signature="e#12#26#0#Twig" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -79,7 +110,6 @@
         <option value="$PROJECT_DIR$/templates/member/new.html.twig" />
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/src/Entity/Users.php" />
-        <option value="$PROJECT_DIR$/templates/member/one.html.twig" />
         <option value="$PROJECT_DIR$/templates/Visitor/inscription.html.twig" />
         <option value="$PROJECT_DIR$/templates/Visitor/connexion.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/Users/show.html.twig" />
@@ -87,32 +117,39 @@
         <option value="$PROJECT_DIR$/templates/admin/Users/edit.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/UsersActive/edit.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/UsersActive/index.html.twig" />
-        <option value="$PROJECT_DIR$/templates/admin/Users/index.html.twig" />
-        <option value="$PROJECT_DIR$/templates/admin/Articles/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/Articles/show.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/Articles/delete.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/Articles/edit.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/adminControllerArticles.php" />
-        <option value="$PROJECT_DIR$/src/Controller/adminControllerUsers.php" />
-        <option value="$PROJECT_DIR$/templates/admin/Comments/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/Comments/show.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/Comments/edit.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/Comments/delete.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/adminControllerComments.php" />
         <option value="$PROJECT_DIR$/templates/allMember/plantes.html.twig" />
         <option value="$PROJECT_DIR$/templates/allMember/fleurs.html.twig" />
-        <option value="$PROJECT_DIR$/public/css/style.css" />
         <option value="$PROJECT_DIR$/templates/admin/index.html.twig" />
-        <option value="$PROJECT_DIR$/templates/admin/Categories/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/Categories/show.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/Categories/edit.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/Categories/delete.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/adminControllerCategorie.php" />
         <option value="$PROJECT_DIR$/templates/admin/Categories/new.html.twig" />
         <option value="$PROJECT_DIR$/templates/home.html.twig" />
+        <option value="$PROJECT_DIR$/translations/KnpPaginatorBundle.fr.yml" />
+        <option value="$PROJECT_DIR$/config/packages/knp_paginator.yml" />
+        <option value="$PROJECT_DIR$/public/css/style.css" />
         <option value="$PROJECT_DIR$/src/Controller/allController.php" />
+        <option value="$PROJECT_DIR$/templates/member/one.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/adminController.php" />
         <option value="$PROJECT_DIR$/src/Controller/memberController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/adminControllerUsers.php" />
+        <option value="$PROJECT_DIR$/templates/admin/Users/index.html.twig" />
+        <option value="$PROJECT_DIR$/templates/admin/Users/active.html.twig" />
+        <option value="$PROJECT_DIR$/templates/admin/Articles/index.html.twig" />
+        <option value="$PROJECT_DIR$/templates/admin/Articles/active.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/adminControllerArticles.php" />
+        <option value="$PROJECT_DIR$/src/Controller/adminControllerComments.php" />
+        <option value="$PROJECT_DIR$/templates/admin/Comments/index.html.twig" />
+        <option value="$PROJECT_DIR$/templates/admin/Comments/active.html.twig" />
+        <option value="$PROJECT_DIR$/templates/admin/Categories/index.html.twig" />
+        <option value="$PROJECT_DIR$/templates/admin/Categories/active.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/adminControllerCategorie.php" />
       </list>
     </option>
   </component>
@@ -219,13 +256,14 @@
       <path value="$PROJECT_DIR$/vendor/symfony/config" />
       <path value="$PROJECT_DIR$/vendor/symfony/monolog-bridge" />
       <path value="$PROJECT_DIR$/vendor/symfony/asset" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="6" />
-    <option name="y" value="-24" />
-    <option name="width" value="1386" />
-    <option name="height" value="788" />
+    <option name="x" value="676" />
+    <option name="width" value="697" />
+    <option name="height" value="775" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -239,11 +277,6 @@
             <path>
               <item name="MyGarden" type="b2602c69:ProjectViewProjectNode" />
               <item name="MyGarden" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MyGarden" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MyGarden" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MyGarden" type="b2602c69:ProjectViewProjectNode" />
@@ -275,8 +308,7 @@
             <path>
               <item name="MyGarden" type="b2602c69:ProjectViewProjectNode" />
               <item name="MyGarden" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="translations" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -332,7 +364,7 @@
       <workItem from="1554968985592" duration="13421000" />
       <workItem from="1555313914706" duration="17720000" />
       <workItem from="1555399692955" duration="1936000" />
-      <workItem from="1555402500421" duration="5441000" />
+      <workItem from="1555402500421" duration="9864000" />
     </task>
     <task id="LOCAL-00001" summary="Premier Commit, installation du website-skeleton, de la barre profiler et du packages security-bundles.">
       <created>1554886583853</created>
@@ -397,17 +429,24 @@
       <option name="project" value="LOCAL" />
       <updated>1555339895021</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Gestion des catégories côté admin et côté membres et visiteurs (fini et css aussi).&#10;Prochain commit: Permettre au utilisateurs de modifier c'est propre articles et commentaires, faire la pagination de toutes les pages (Commentaire, Article [Côté visiteurs et membre], Commentaire, Article, Utilisateurs, Categories [Panel Admin] avec Knp-Paginator.">
+      <created>1555409231843</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1555409231843</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50504000" />
+    <option name="totallyTimeSpent" value="54927000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24281392" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16717096" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -462,7 +501,8 @@
     <MESSAGE value="Affichage des commentaires (Fini) (Faire CSS)" />
     <MESSAGE value="CSS Fait, Page index admin (Terminé CSS Fait), gestion des commments users et articles coté admin fini (css fait), création de controller pour chaque.&#10;Prochain commit: Gestion des catégories côté admin et côté membres et visiteurs." />
     <MESSAGE value="Modification affichage page d'accueil, affiché par articles activé &#10;Prochain commit: Gestion des catégories côté admin et côté membres et visiteurs." />
-    <option name="LAST_COMMIT_MESSAGE" value="Modification affichage page d'accueil, affiché par articles activé &#10;Prochain commit: Gestion des catégories côté admin et côté membres et visiteurs." />
+    <MESSAGE value="Gestion des catégories côté admin et côté membres et visiteurs (fini et css aussi).&#10;Prochain commit: Permettre au utilisateurs de modifier c'est propre articles et commentaires, faire la pagination de toutes les pages (Commentaire, Article [Côté visiteurs et membre], Commentaire, Article, Utilisateurs, Categories [Panel Admin] avec Knp-Paginator." />
+    <option name="LAST_COMMIT_MESSAGE" value="Gestion des catégories côté admin et côté membres et visiteurs (fini et css aussi).&#10;Prochain commit: Permettre au utilisateurs de modifier c'est propre articles et commentaires, faire la pagination de toutes les pages (Commentaire, Article [Côté visiteurs et membre], Commentaire, Article, Utilisateurs, Categories [Panel Admin] avec Knp-Paginator." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.env">
@@ -517,13 +557,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/member/one.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/Visitor/inscription.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
@@ -539,20 +572,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/admin/UsersActive/edit.html.twig" />
-    <entry file="file://$PROJECT_DIR$/templates/admin/Users/active.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="20" column="16" lean-forward="true" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/Users/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/admin/Users/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="303">
@@ -588,9 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/Articles/active.html.twig">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/admin/Articles/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -612,40 +628,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/Comments/active.html.twig">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/admin/Comments/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/Comments/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="6" column="63" selection-start-line="6" selection-start-column="63" selection-end-line="6" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/adminControllerComments.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="95" column="34" selection-start-line="95" selection-start-column="34" selection-end-line="95" selection-end-column="34" />
-          <folding>
-            <element signature="e#34#58#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/adminControllerUsers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="30" column="11" lean-forward="true" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
-          <folding>
-            <element signature="e#34#55#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -670,13 +656,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/Articles/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="30" lean-forward="true" selection-start-column="30" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/admin/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="358">
@@ -688,9 +667,6 @@
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/Categories/active.html.twig">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/admin/Categories/delete.html.twig">
       <provider selected="true" editor-type-id="text-editor">
@@ -732,18 +708,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/Categories/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="12" selection-start-column="12" selection-end-column="12" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-            <element signature="e#378#393#0#Twig" expanded="true" />
-            <element signature="e#463#478#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/allMember/petf.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1230">
@@ -751,59 +715,159 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/adminController.php">
+    <entry file="file://$PROJECT_DIR$/config/bundles.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="90" column="70" selection-start-line="90" selection-start-column="70" selection-end-line="90" selection-end-column="70" />
-          <folding>
-            <element signature="e#34#58#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="-90" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/translations/KnpPaginatorBundle.fr.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/memberController.php">
+    <entry file="file://$PROJECT_DIR$/config/packages/knp_paginator.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="34" column="70" selection-start-line="34" selection-start-column="70" selection-end-line="34" selection-end-column="70" />
-          <folding>
-            <element signature="e#34#58#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="300">
+          <caret line="10" column="74" selection-start-line="10" selection-start-column="74" selection-end-line="10" selection-end-column="74" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="173" column="57" selection-start-line="173" selection-start-column="57" selection-end-line="173" selection-end-column="57" />
+        <state relative-caret-position="90">
+          <caret line="195" column="19" selection-start-line="195" selection-start-column="19" selection-end-line="195" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/member/one.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/memberController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1280">
+          <caret line="77" column="13" selection-start-line="77" selection-start-column="13" selection-end-line="77" selection-end-column="13" />
+          <folding>
+            <element signature="e#34#58#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/allController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="32" column="70" selection-start-line="32" selection-start-column="70" selection-end-line="32" selection-end-column="70" />
+        <state relative-caret-position="165">
+          <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
           <folding>
             <element signature="e#36#57#0#PHP" expanded="true" />
-            <element signature="e#1439#1465#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/adminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="134" column="10" lean-forward="true" selection-start-line="134" selection-start-column="10" selection-end-line="134" selection-end-column="10" />
+          <folding>
+            <element signature="e#34#58#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/home.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+        <state relative-caret-position="144">
+          <caret line="41" column="6" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/Users/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/Users/active.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/Articles/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/adminControllerUsers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="113" column="10" lean-forward="true" selection-start-line="113" selection-start-column="10" selection-end-line="113" selection-end-column="10" />
           <folding>
-            <element signature="e#172#185#0#Twig" expanded="true" />
-            <element signature="e#728#733#0#Twig" expanded="true" />
+            <element signature="e#34#55#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/adminControllerArticles.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+        <state relative-caret-position="114">
+          <caret line="105" column="9" selection-start-line="105" selection-start-column="9" selection-end-line="105" selection-end-column="9" />
+          <folding>
+            <element signature="e#34#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/Articles/active.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/Comments/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/Comments/active.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/Categories/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/Categories/active.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/adminControllerComments.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="99" column="10" lean-forward="true" selection-start-line="99" selection-start-column="10" selection-end-line="99" selection-end-column="10" />
           <folding>
             <element signature="e#34#58#0#PHP" expanded="true" />
           </folding>
@@ -812,8 +876,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/adminControllerCategorie.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1005">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="54">
+          <caret line="128" column="120" selection-start-line="128" selection-start-column="120" selection-end-line="128" selection-end-column="120" />
           <folding>
             <element signature="e#34#58#0#PHP" expanded="true" />
           </folding>

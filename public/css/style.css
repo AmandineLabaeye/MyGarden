@@ -189,6 +189,13 @@ img {
     margin-bottom: 50px;
 }
 
+.navigation {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+
 @media (max-width: 812px) {
     #main {
         width: 100%;

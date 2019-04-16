@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Comments;
 use App\Repository\CommentsRepository;
 use Doctrine\Common\Persistence\ObjectManager;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -21,13 +22,18 @@ class adminControllerComments extends AbstractController
     /**
      * @Route("/comments", name="comments")
      */
-    public function index(CommentsRepository $commentsRepository)
+    public function index(CommentsRepository $commentsRepository, PaginatorInterface $paginator, Request $request)
     {
+        $pagin = $paginator->paginate(
+            $commentsRepository->findAll(),
+            $request->query->getInt('page', 1),
+            5
+        );
         $users = $this->getUser();
         return $this->render('admin/Comments/index.html.twig', [
             'title' => "Index Comment",
             "users" => $users,
-            "comments" => $commentsRepository->findAll()
+            "comments" => $pagin
         ]);
     }
 
@@ -91,13 +97,18 @@ class adminControllerComments extends AbstractController
     /**
      * @Route("/comments/active", name="comments_active")
      */
-    public function index_active(CommentsRepository $commentsRepository)
+    public function index_active(CommentsRepository $commentsRepository, PaginatorInterface $paginator, Request $request)
     {
+        $pagin = $paginator->paginate(
+            $commentsRepository->findBy(['active' => 0]),
+            $request->query->getInt('page', 1),
+            2
+        );
         $users = $this->getUser();
         return $this->render('admin/Comments/active.html.twig', [
             "users" => $users,
             "title" => "Active Comments",
-            "comments" => $commentsRepository->findBy(["active" => 0])
+            "comments" => $pagin
         ]);
     }
 }

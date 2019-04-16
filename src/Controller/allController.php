@@ -8,6 +8,7 @@ use App\Entity\Users;
 use App\Repository\ArticlesRepository;
 use App\Repository\CategoryRepository;
 use Doctrine\Common\Persistence\ObjectManager;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
@@ -23,13 +24,18 @@ class allController extends AbstractController
     /**
      * @Route("/", name="homepage")
      */
-    public function index(ArticlesRepository $articlesRepository, CategoryRepository $categoryRepository)
+    public function index(ArticlesRepository $articlesRepository, CategoryRepository $categoryRepository, Request $request, PaginatorInterface $paginator)
     {
+        $pagin = $paginator->paginate(
+            $articlesRepository->findBy(["active" => 1]),
+            $request->query->getInt('page', 1),
+            2
+        );
         $users = $this->getUser();
         return $this->render("home.html.twig", [
             "title" => "Home",
             "users" => $users,
-            "articles" => $articlesRepository->findBy(['active' => 1]),
+            "articles" => $pagin,
             "categories" => $categoryRepository->findBy(["active" => 1])
         ]);
     }
@@ -37,13 +43,18 @@ class allController extends AbstractController
     /**
      * @Route("/petf/{id}", name="categories_pf")
      */
-    public function plantesfleurs(ArticlesRepository $articlesRepository, $id)
+    public function plantesfleurs(ArticlesRepository $articlesRepository, Request $request, PaginatorInterface $paginator, $id)
     {
+        $pagin = $paginator->paginate(
+            $articlesRepository->findBy(['categories' => $id]),
+            $request->query->getInt('page', 1),
+            2
+        );
         $users = $this->getUser();
         return $this->render('allMember/petf.html.twig', [
             'title' => "Plantes",
             "users" => $users,
-            "articles" => $articlesRepository->findBy(['categories' => $id])
+            "articles" => $pagin
         ]);
     }
 

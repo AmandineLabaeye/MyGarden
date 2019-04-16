@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Category;
 use App\Repository\CategoryRepository;
 use Doctrine\Common\Persistence\ObjectManager;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -50,13 +51,18 @@ class adminControllerCategorie extends AbstractController
     /**
      * @Route("/categories", name="categories")
      */
-    public function index(CategoryRepository $categoryRepository)
+    public function index(CategoryRepository $categoryRepository, PaginatorInterface $paginator, Request $request)
     {
+        $pagin = $paginator->paginate(
+            $categoryRepository->findAll(),
+            $request->query->getInt('page', 1),
+            2
+        );
         $users = $this->getUser();
         return $this->render('admin/Categories/index.html.twig', [
             'title' => "Categories",
             "users" => $users,
-            "categories" => $categoryRepository->findAll()
+            "categories" => $pagin
         ]);
     }
 
@@ -120,13 +126,18 @@ class adminControllerCategorie extends AbstractController
     /**
      * @Route("/categories/active", name="categories_active")
      */
-    public function index_active(CategoryRepository $categoryRepository)
+    public function index_active(CategoryRepository $categoryRepository, PaginatorInterface $paginator, Request $request)
     {
+        $pagin = $paginator->paginate(
+            $categoryRepository->findBy(['active' => 0]),
+            $request->query->getInt('page', 1),
+            2
+        );
         $users = $this->getUser();
         return $this->render('admin/Categories/active.html.twig', [
             'title' => "Active Category",
             "users" => $users,
-            "categories" => $categoryRepository->findBy(['active' => 0])
+            "categories" => $pagin
         ]);
     }
 

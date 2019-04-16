@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Users;
 use App\Repository\UsersRepository;
 use Doctrine\Common\Persistence\ObjectManager;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -21,13 +22,18 @@ class adminControllerUsers extends AbstractController
     /**
      * @Route("/users", name="users")
      */
-    public function index(UsersRepository $usersRepository)
+    public function index(UsersRepository $usersRepository, Request $request, PaginatorInterface $paginator)
     {
+        $pagin = $paginator->paginate(
+            $usersRepository->findAll(),
+            $request->query->getInt('page', 1),
+            5
+        );
         $users = $this->getUser();
         return $this->render('admin/Users/active.html.twig', [
             'title' => 'Tout les users',
             'users' => $users,
-            "user" => $usersRepository->findAll()
+            "user" => $pagin
         ]);
     }
 
@@ -99,13 +105,18 @@ class adminControllerUsers extends AbstractController
     /**
      * @Route("/users/active", name="users_active")
      */
-    public function index_active(UsersRepository $usersRepository)
+    public function index_active(UsersRepository $usersRepository, PaginatorInterface $paginator, Request $request)
     {
+        $pagin = $paginator->paginate(
+            $usersRepository->findBy(['active' => 0]),
+            $request->query->getInt('page', 1),
+            2
+        );
         $users = $this->getUser();
         return $this->render('admin/Users/active.html.twig', [
             'title' => 'Active',
             "users" => $users,
-            "user" => $usersRepository->findBy(['active' => 0])
+            "user" => $pagin
         ]);
     }
 }

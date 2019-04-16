@@ -29,4 +29,7 @@
         <p class="DescriptionC"><span class="DesC">Description</span> {{ comment.content }}</p>
         <p class="DateC">{{ comment.date }}</p>
     {% endfor %}
+    <div class="navigation">
+        {{ knp_pagination_render(comments) }}
+    </div>
 {% endblock %}

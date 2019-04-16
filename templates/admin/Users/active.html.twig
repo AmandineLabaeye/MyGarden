@@ -23,7 +23,9 @@
     {% else %}
         <p>No records found</p>
     {% endfor %}
-
+    <div class="navigation">
+        {{ knp_pagination_render(user) }}
+    </div>
     <a href="{{ path('registration') }}">Création d'un nouveau</a>
     <a href="{{ path('users') }}">Back to list</a>
 {% endblock %}
