@@ -6,6 +6,7 @@ use App\Entity\Articles;
 use App\Entity\Category;
 use App\Entity\Comments;
 use App\Repository\ArticlesRepository;
+use App\Repository\CategoryRepository;
 use App\Repository\CommentsRepository;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -24,13 +25,14 @@ class memberController extends AbstractController
     /**
      * @Route("/", name="homepage_member")
      */
-    public function index(ArticlesRepository $articlesRepository)
+    public function index(ArticlesRepository $articlesRepository, CategoryRepository $categoryRepository)
     {
         $users = $this->getUser();
         return $this->render("home.html.twig", [
             "title" => "Home",
             "users" => $users,
-            "articles" => $articlesRepository->findBy(['active' => 1])
+            "articles" => $articlesRepository->findBy(['active' => 1]),
+            "categories" => $categoryRepository->findBy(["active" => 1])
         ]);
     }
 

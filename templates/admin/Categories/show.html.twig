@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {% for categorie in categories %}
+        <div class="CarteCategorie">
+            <p><span class="Categorie">Nom</span> {{ categorie.name }}</p>
+            <p><span class="Categorie">Activé</span> {{ categorie.active ? 'Yes' : 'No' }}</p>
+            <p><span class="Categorie">Actions</span>
+                <a href="{{ path('categories_show', {'id': categorie.id}) }}">Show</a>
+                <a href="{{ path('categories_edit', {'id': categorie.id}) }}">Edit</a>
+            </p>
+        </div>
+    {% else %}
+        <p>No records found</p>
+    {% endfor %}
+    <a href="{{ path('categories') }}">Back to list</a>
+{% endblock %}

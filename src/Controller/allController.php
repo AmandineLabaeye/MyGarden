@@ -6,6 +6,7 @@ namespace App\Controller;
 
 use App\Entity\Users;
 use App\Repository\ArticlesRepository;
+use App\Repository\CategoryRepository;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -22,13 +23,27 @@ class allController extends AbstractController
     /**
      * @Route("/", name="homepage")
      */
-    public function index(ArticlesRepository $articlesRepository)
+    public function index(ArticlesRepository $articlesRepository, CategoryRepository $categoryRepository)
     {
         $users = $this->getUser();
         return $this->render("home.html.twig", [
             "title" => "Home",
             "users" => $users,
-            "articles" => $articlesRepository->findBy(['active' => 1])
+            "articles" => $articlesRepository->findBy(['active' => 1]),
+            "categories" => $categoryRepository->findBy(["active" => 1])
+        ]);
+    }
+
+    /**
+     * @Route("/petf/{id}", name="categories_pf")
+     */
+    public function plantesfleurs(ArticlesRepository $articlesRepository, $id)
+    {
+        $users = $this->getUser();
+        return $this->render('allMember/petf.html.twig', [
+            'title' => "Plantes",
+            "users" => $users,
+            "articles" => $articlesRepository->findBy(['categories' => $id])
         ]);
     }
 

@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {{ form_start(form) }}
+    {{ form_row(form.name, {
+        'label': " ",
+        'attr': {
+            'placeholder': "Nom de la categorie"
+        }
+    }) }}
+    {{ form_end(form) }}
+{% endblock %}
