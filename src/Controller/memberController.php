@@ -12,6 +12,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -40,6 +41,52 @@ class memberController extends AbstractController
             "articles" => $pagin,
             "categories" => $categoryRepository->findBy(["active" => 1])
         ]);
+    }
+
+    /**
+     * @Route("/{id}/edit", name="articles_edit_member")
+     */
+    public function edit(Articles $articles, Request $request, ObjectManager $manager, $id)
+    {
+        $form = $this->createFormBuilder($articles)
+            ->add('name', TextType::class)
+            ->add('picture', TextType::class)
+            ->add('description', TextareaType::class)
+            ->add('namelatin', TextType::class)
+            ->add('toxicite', TextType::class)
+            ->add('environnement', TextType::class)
+            ->add('urlBuy', TextType::class)
+            ->add('active', NumberType::class)
+            ->add('Save', SubmitType::class)
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $manager->flush();
+
+            return $this->redirectToRoute('homepage_member');
+        }
+        $users = $this->getUser();
+        return $this->render('admin/Articles/edit.html.twig', [
+            'title' => "Edit Articles",
+            "users" => $users,
+            "article" => $articles,
+            "form" => $form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/delete/{id}", name="articles_delete_member", methods={"DELETE"})
+     */
+    public function delete(Request $request, Articles $articles)
+    {
+        if ($this->isCsrfTokenValid('delete' . $articles->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($articles);
+            $entityManager->flush();
+        }
+        return $this->redirectToRoute("homepage_member");
     }
 
     /**
@@ -85,6 +132,48 @@ class memberController extends AbstractController
             'form' => $form->createView(),
             'comments' => $pagin
         ]);
+    }
+
+    /**
+     * @Route("/comments/{id}/edit", name="comments_edit_member")
+     */
+    public function editC(Request $request, Comments $comments, ObjectManager $manager, $id)
+    {
+        $form = $this->createFormBuilder($comments)
+            ->add('content', TextareaType::class)
+            ->add('active', NumberType::class)
+            ->add('Save', SubmitType::class)
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $manager->flush();
+
+            return $this->redirectToRoute('homepage_member');
+        }
+
+        $users = $this->getUser();
+
+        return $this->render("admin/Comments/edit.html.twig", [
+            'title' => 'Edit Comment',
+            "users" => $users,
+            "form" => $form->createView(),
+            "comment" => $comments
+        ]);
+    }
+
+    /**
+     * @Route("/comments/delete/{id}", name="comments_delete_member", methods={"DELETE"})
+     */
+    public function deleteC(Comments $comments, Request $request)
+    {
+        if ($this->isCsrfTokenValid('delete' . $comments->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($comments);
+            $entityManager->flush();
+        }
+        return $this->redirectToRoute("homepage_member");
     }
 
     /**

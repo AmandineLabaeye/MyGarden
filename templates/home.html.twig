@@ -27,7 +27,14 @@
                     <p class="DesA">Description</p>
                     <p class="DescriptionA">{{ article.description }}</p>
                     <p class="DateA">{{ article.date }}</p>
-                    <a href="{{ path('one_member', {'id': article.id}) }}"> Voir plus </a>
+                    <p>
+                        <a href="{{ path('one_member', {'id': article.id}) }}"> Voir plus </a>
+                    </p>
+                    <p>
+                        {% if app.user == article.users %}
+                            <a href="{{ path('articles_edit_member', {'id': article.id}) }}"> Edit </a>
+                        {% endif %}
+                    </p>
                 </div>
             {% endfor %}
         {% endif %}
@@ -39,7 +46,14 @@
                     <p class="DesA">Description</p>
                     <p class="DescriptionA">{{ article.description }}</p>
                     <p class="DateA">{{ article.date }}</p>
-                    <a href="{{ path('one_admin', {'id': article.id}) }}"> Voir plus </a>
+                    <p>
+                        <a href="{{ path('one_admin', {'id': article.id}) }}"> Voir plus </a>
+                    </p>
+                    <p>
+                        {% if app.user == article.users %}
+                            <a href="{{ path('articles_edit', {'id': article.id}) }}"> Edit </a>
+                        {% endif %}
+                    </p>
                 </div>
             {% endfor %}
         {% endif %}

@@ -1,9 +1,18 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
+    {% if app.user == comment.users %}
+        {% if is_granted('ROLE_USER') %}
+            {{ form(form) }}
+            {{ include('admin/Comments/deleteM.html.twig') }}
+            <a href="{{ path('homepage_member') }}">Back to list</a>
+        {% endif %}
+    {% else %}
+        <h1> Tu n'as pas accès à cette page </h1>
+    {% endif %}
+    {% if is_granted('ROLE_ADMIN') %}
     {{ form(form) }}
-
     {{ include('admin/Comments/delete.html.twig') }}
-
     <a href="{{ path('comments') }}">Back to list</a>
+    {% endif %}
 {% endblock %}

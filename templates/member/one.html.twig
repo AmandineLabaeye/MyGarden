@@ -25,9 +25,17 @@
     {{ form_row(form.Send) }}
     {{ form_end(form) }}
     {% for comment in comments %}
-        <p class="NameC"><span class="UserC">Username</span> {{ comment.users }}</p>
+        <p class="NameC"><span class="UserC">Username</span> {{ comment.users.username }}</p>
         <p class="DescriptionC"><span class="DesC">Description</span> {{ comment.content }}</p>
         <p class="DateC">{{ comment.date }}</p>
+        {% if app.user == comment.users %}
+            {% if is_granted('ROLE_USER') %}
+                <a href="{{ path('comments_edit_member', {"id": comment.id }) }}">Edit</a>
+            {% endif %}
+            {% if is_granted('ROLE_ADMIN') %}
+                <a href="{{ path('comments_edit', {"id": comment.id }) }}">Edit</a>
+            {% endif %}
+        {% endif %}
     {% endfor %}
     <div class="navigation">
         {{ knp_pagination_render(comments) }}
