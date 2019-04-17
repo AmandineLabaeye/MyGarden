@@ -196,6 +196,22 @@ img {
     font-size: 25px;
 }
 
+#Previous, #Next {
+    width: 40px;
+    height: 40px;
+}
+
+.Carousel {
+    height: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
 @media (max-width: 812px) {
     #main {
         width: 100%;
