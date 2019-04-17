@@ -107,10 +107,22 @@ class Users implements UserInterface
      */
     private $comments;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\PublicationsProfil", mappedBy="users", orphanRemoval=true)
+     */
+    private $publicationsProfils;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\CommentsPublication", mappedBy="users", orphanRemoval=true)
+     */
+    private $commentsPublications;
+
     public function __construct()
     {
         $this->articles = new ArrayCollection();
         $this->comments = new ArrayCollection();
+        $this->publicationsProfils = new ArrayCollection();
+        $this->commentsPublications = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -349,6 +361,68 @@ class Users implements UserInterface
             // set the owning side to null (unless already changed)
             if ($comment->getUsers() === $this) {
                 $comment->setUsers(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|PublicationsProfil[]
+     */
+    public function getPublicationsProfils(): Collection
+    {
+        return $this->publicationsProfils;
+    }
+
+    public function addPublicationsProfil(PublicationsProfil $publicationsProfil): self
+    {
+        if (!$this->publicationsProfils->contains($publicationsProfil)) {
+            $this->publicationsProfils[] = $publicationsProfil;
+            $publicationsProfil->setUsers($this);
+        }
+
+        return $this;
+    }
+
+    public function removePublicationsProfil(PublicationsProfil $publicationsProfil): self
+    {
+        if ($this->publicationsProfils->contains($publicationsProfil)) {
+            $this->publicationsProfils->removeElement($publicationsProfil);
+            // set the owning side to null (unless already changed)
+            if ($publicationsProfil->getUsers() === $this) {
+                $publicationsProfil->setUsers(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|CommentsPublication[]
+     */
+    public function getCommentsPublications(): Collection
+    {
+        return $this->commentsPublications;
+    }
+
+    public function addCommentsPublication(CommentsPublication $commentsPublication): self
+    {
+        if (!$this->commentsPublications->contains($commentsPublication)) {
+            $this->commentsPublications[] = $commentsPublication;
+            $commentsPublication->setUsers($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommentsPublication(CommentsPublication $commentsPublication): self
+    {
+        if ($this->commentsPublications->contains($commentsPublication)) {
+            $this->commentsPublications->removeElement($commentsPublication);
+            // set the owning side to null (unless already changed)
+            if ($commentsPublication->getUsers() === $this) {
+                $commentsPublication->setUsers(null);
             }
         }
 

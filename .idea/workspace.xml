@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="478f7838-3daa-4edf-941f-6621d0b23ee6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/admin/Articles/deleteM.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/Comments/deleteM.html.twig" afterDir="false" />
+    <list default="true" id="478f7838-3daa-4edf-941f-6621d0b23ee6" name="Default Changelist" comment="Permettre au utilisateurs de modifier c'est propre articles et commentaires et pas ceux des autres (FINI), fonction &quot;To String&quot; enlever&#10;Prochain commit: Système de recherche (Sur les articles et Utilisateurs), système de mot de passe oublié à la connexion, faire pages de profil pour chaque utilisateurs quand il clique sur son nom dans la barre de navigation avec un système de gestion de ses paramètres et uniquement des siens">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/memberController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/memberController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/Articles/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/Articles/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/Comments/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/Comments/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/member/one.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/member/one.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Users.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Users.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,55 +15,22 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Controller/memberController.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="234">
-                  <caret line="175" column="54" selection-start-line="175" selection-start-column="54" selection-end-line="175" selection-end-column="54" />
-                  <folding>
-                    <element signature="e#34#58#0#PHP" expanded="true" />
-                    <element signature="e#5109#5126#1#PHP" expanded="true" />
-                    <element signature="e#5886#5903#1#PHP" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/templates/admin/Comments/edit.html.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="480">
-                  <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-                  <folding>
-                    <element signature="e#252#267#0#Twig" expanded="true" />
-                    <element signature="e#544#552#0#Twig" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/templates/admin/Articles/edit.html.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="420">
-                  <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-                  <folding>
-                    <element signature="e#12#26#0#Twig" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Controller/memberController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-140">
+              <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
+              <folding>
+                <element signature="e#34#58#0#PHP" expanded="true" />
+                <element signature="e#5109#5126#1#PHP" expanded="true" />
+                <element signature="e#5886#5903#1#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -91,7 +52,6 @@
         <option value="$PROJECT_DIR$/config/packages/security.yaml" />
         <option value="$PROJECT_DIR$/templates/Member/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/member/new.html.twig" />
-        <option value="$PROJECT_DIR$/src/Entity/Users.php" />
         <option value="$PROJECT_DIR$/templates/Visitor/inscription.html.twig" />
         <option value="$PROJECT_DIR$/templates/Visitor/connexion.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/Users/show.html.twig" />
@@ -134,8 +94,9 @@
         <option value="$PROJECT_DIR$/templates/admin/Articles/edit.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/Comments/deleteM.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/memberController.php" />
-        <option value="$PROJECT_DIR$/templates/member/one.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/Comments/edit.html.twig" />
+        <option value="$PROJECT_DIR$/src/Entity/Users.php" />
+        <option value="$PROJECT_DIR$/templates/member/one.html.twig" />
       </list>
     </option>
   </component>
@@ -268,6 +229,17 @@
             <path>
               <item name="MyGarden" type="b2602c69:ProjectViewProjectNode" />
               <item name="MyGarden" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyGarden" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyGarden" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyGarden" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyGarden" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -279,6 +251,12 @@
             <path>
               <item name="MyGarden" type="b2602c69:ProjectViewProjectNode" />
               <item name="MyGarden" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyGarden" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyGarden" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -286,20 +264,6 @@
               <item name="MyGarden" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MyGarden" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MyGarden" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="Articles" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MyGarden" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MyGarden" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="Comments" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MyGarden" type="b2602c69:ProjectViewProjectNode" />
@@ -368,7 +332,7 @@
       <workItem from="1555313914706" duration="17720000" />
       <workItem from="1555399692955" duration="1936000" />
       <workItem from="1555402500421" duration="11951000" />
-      <workItem from="1555485495775" duration="7446000" />
+      <workItem from="1555485495775" duration="10606000" />
     </task>
     <task id="LOCAL-00001" summary="Premier Commit, installation du website-skeleton, de la barre profiler et du packages security-bundles.">
       <created>1554886583853</created>
@@ -454,11 +418,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555492591137</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Permettre au utilisateurs de modifier c'est propre articles et commentaires et pas ceux des autres (FINI), fonction &quot;To String&quot; enlever&#10;Prochain commit: Système de recherche (Sur les articles et Utilisateurs), système de mot de passe oublié à la connexion, faire pages de profil pour chaque utilisateurs quand il clique sur son nom dans la barre de navigation avec un système de gestion de ses paramètres et uniquement des siens">
+      <created>1555500299069</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1555500299069</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64460000" />
+    <option name="totallyTimeSpent" value="67620000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -522,7 +493,8 @@
     <MESSAGE value="Gestion des catégories côté admin et côté membres et visiteurs (fini et css aussi).&#10;Prochain commit: Permettre au utilisateurs de modifier c'est propre articles et commentaires, faire la pagination de toutes les pages (Commentaire, Article [Côté visiteurs et membre], Commentaire, Article, Utilisateurs, Categories [Panel Admin] avec Knp-Paginator." />
     <MESSAGE value="Faire la pagination de toutes les pages (Commentaire, Article [Côté visiteurs et membre], Commentaire, Article, Utilisateurs, Categories [Panel Admin] avec Knp-Paginator. (FINI + CSS)&#10;Prochain commit: Permettre au utilisateurs de modifier c'est propre articles et commentaires, systrème de rechercher (Sur les articles)" />
     <MESSAGE value="Caroussel des plantes (Fini)&#10;Prochain commit: Permettre au utilisateurs de modifier c'est propre articles et commentaires, système de recherche (Sur les articles et Utilisateurs), système de mot de passe oublié à la connexion, faire pages de profil pour chaque utilisateurs quand il clique sur son nom dans la barre de navigation avec un système de gestion de ses paramètres et uniquement des siens" />
-    <option name="LAST_COMMIT_MESSAGE" value="Caroussel des plantes (Fini)&#10;Prochain commit: Permettre au utilisateurs de modifier c'est propre articles et commentaires, système de recherche (Sur les articles et Utilisateurs), système de mot de passe oublié à la connexion, faire pages de profil pour chaque utilisateurs quand il clique sur son nom dans la barre de navigation avec un système de gestion de ses paramètres et uniquement des siens" />
+    <MESSAGE value="Permettre au utilisateurs de modifier c'est propre articles et commentaires et pas ceux des autres (FINI), fonction &quot;To String&quot; enlever&#10;Prochain commit: Système de recherche (Sur les articles et Utilisateurs), système de mot de passe oublié à la connexion, faire pages de profil pour chaque utilisateurs quand il clique sur son nom dans la barre de navigation avec un système de gestion de ses paramètres et uniquement des siens" />
+    <option name="LAST_COMMIT_MESSAGE" value="Permettre au utilisateurs de modifier c'est propre articles et commentaires et pas ceux des autres (FINI), fonction &quot;To String&quot; enlever&#10;Prochain commit: Système de recherche (Sur les articles et Utilisateurs), système de mot de passe oublié à la connexion, faire pages de profil pour chaque utilisateurs quand il clique sur son nom dans la barre de navigation avec un système de gestion de ses paramètres et uniquement des siens" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Entity/Articles.php">
@@ -536,20 +508,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-75">
           <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/member/new.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="50" column="60" selection-start-line="50" selection-start-column="60" selection-end-line="50" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Users.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="355" column="5" selection-start-line="355" selection-start-column="5" selection-end-line="355" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -670,13 +628,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/translations/KnpPaginatorBundle.fr.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/adminController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -759,28 +710,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/knp_paginator.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="10" column="74" selection-start-line="10" selection-start-column="74" selection-end-line="10" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/bundles.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/public/Bouton/Next.png.url">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/allController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="32" column="10" lean-forward="true" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
-          <folding>
-            <element signature="e#36#57#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
@@ -870,18 +804,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/memberController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="175" column="54" selection-start-line="175" selection-start-column="54" selection-end-line="175" selection-end-column="54" />
-          <folding>
-            <element signature="e#34#58#0#PHP" expanded="true" />
-            <element signature="e#5109#5126#1#PHP" expanded="true" />
-            <element signature="e#5886#5903#1#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/admin/Articles/edit.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -892,9 +814,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/Comments/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+          <folding>
+            <element signature="e#252#267#0#Twig" expanded="true" />
+            <element signature="e#544#552#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/member/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1500">
+          <caret line="50" column="60" selection-start-line="50" selection-start-column="60" selection-end-line="50" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Users.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="355" column="5" selection-start-line="355" selection-start-column="5" selection-end-line="355" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/member/one.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="29" column="47" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
+          <folding>
+            <element signature="e#1473#1486#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/home.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
+        <state relative-caret-position="84">
           <caret line="53" column="46" lean-forward="true" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="46" />
           <folding>
             <element signature="e#1631#1651#0#Twig" expanded="true" />
@@ -903,24 +860,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/member/one.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Controller/allController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="35" column="47" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="47" />
+        <state relative-caret-position="135">
+          <caret line="34" column="30" lean-forward="true" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
           <folding>
-            <element signature="e#1263#1283#0#Twig" expanded="true" />
-            <element signature="e#1473#1486#0#Twig" expanded="true" />
+            <element signature="e#36#57#0#PHP" expanded="true" />
+            <element signature="e#1255#1271#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/Comments/edit.html.twig">
+    <entry file="file://$PROJECT_DIR$/translations/KnpPaginatorBundle.fr.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+        <state relative-caret-position="30">
+          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/knp_paginator.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="10" column="74" selection-start-line="10" selection-start-column="74" selection-end-line="10" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/memberController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-140">
+          <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
           <folding>
-            <element signature="e#252#267#0#Twig" expanded="true" />
-            <element signature="e#544#552#0#Twig" expanded="true" />
+            <element signature="e#34#58#0#PHP" expanded="true" />
+            <element signature="e#5109#5126#1#PHP" expanded="true" />
+            <element signature="e#5886#5903#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
