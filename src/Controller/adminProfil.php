@@ -10,6 +10,7 @@ use App\Repository\CommentsPublicationRepository;
 use App\Repository\PublicationsProfilRepository;
 use App\Repository\UsersRepository;
 use Doctrine\Common\Persistence\ObjectManager;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -25,8 +26,13 @@ class adminProfil extends AbstractController
     /**
      * @Route("/{id}", name="profile_users_admin")
      */
-    public function profile(UsersRepository $usersRepository, PublicationsProfilRepository $profilRepository, Request $request, ObjectManager $manager, $id)
+    public function profile(UsersRepository $usersRepository, PublicationsProfilRepository $profilRepository, Request $request, ObjectManager $manager, PaginatorInterface $paginator, $id)
     {
+        $pagin = $paginator->paginate(
+            $profilRepository->findBy(["page" => $id]),
+            $request->query->getInt('page', 1),
+            10
+        );
         $users = $this->getUser();
         $publication = new PublicationsProfil();
         $date = date("d-m-Y H:i:s");
@@ -51,15 +57,20 @@ class adminProfil extends AbstractController
             "users" => $users,
             "user" => $usersRepository->findBy(['id' => $id]),
             'form' => $form->createView(),
-            "publications" => $profilRepository->findBy(["page" => $id])
+            "publications" => $pagin
         ]);
     }
 
     /**
      * @Route("/publications/{id}", name="comments_publication_admin")
      */
-    public function onePublication(PublicationsProfilRepository $profilRepository, CommentsPublicationRepository $commentsPublicationRepository, ObjectManager $manager, Request $request, $id)
+    public function onePublication(PublicationsProfilRepository $profilRepository, CommentsPublicationRepository $commentsPublicationRepository, ObjectManager $manager, Request $request, PaginatorInterface $paginator, $id)
     {
+        $pagin = $paginator->paginate(
+            $commentsPublicationRepository->findBy(['publication' => $id]),
+            $request->query->getInt('page', 1),
+            5
+        );
         $idP = $profilRepository->find($id);
         $users = $this->getUser();
         $date = date("d-m-Y H:i:s");
@@ -86,7 +97,7 @@ class adminProfil extends AbstractController
             "users" => $users,
             "publications" => $profilRepository->findBy(["id" => $id]),
             'form' => $form->createView(),
-            "comments" => $commentsPublicationRepository->findBy(['publication' => $id])
+            "comments" => $pagin
         ]);
     }
 
