@@ -5,6 +5,8 @@ namespace App\Controller;
 use App\Entity\Articles;
 use App\Entity\Category;
 use App\Entity\Comments;
+use App\Entity\CommentsPublication;
+use App\Entity\PublicationsProfil;
 use App\Repository\ArticlesRepository;
 use App\Repository\CategoryRepository;
 use App\Repository\CommentsRepository;
@@ -237,5 +239,83 @@ class memberController extends AbstractController
             "users" => $users,
             "form" => $form->createView()
         ]);
+    }
+
+    /**
+     * @Route("/commentsP/{id}/edit", name="commentsP_edit_member")
+     */
+    public function editCP(CommentsPublication $commentsPublication, Request $request, ObjectManager $manager, $id)
+    {
+        $form = $this->createFormBuilder($commentsPublication)
+            ->add('content', TextareaType::class)
+            ->add('Update', SubmitType::class)
+            ->getForm();
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $manager->flush();
+
+            return $this->redirectToRoute('commentsP_show', [
+                'id' => $id
+            ]);
+        }
+        $users = $this->getUser();
+        return $this->render('admin/CommentsP/edit.html.twig', [
+            'title' => "Edit Comments",
+            "users" => $users,
+            "comment" => $commentsPublication,
+            "form" => $form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/commentsP/delete/{id}", name="commentsP_delete_member", methods={"DELETE"})
+     */
+    public function deleteCP(Request $request, CommentsPublication $commentsPublication)
+    {
+        if ($this->isCsrfTokenValid('delete' . $commentsPublication->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($commentsPublication);
+            $entityManager->flush();
+        }
+        return $this->redirectToRoute("commentsP");
+    }
+
+    /**
+     * @Route("/publications/{id}/edit", name="publications_edit_member")
+     */
+    public function editP(PublicationsProfil $profil, Request $request, ObjectManager $manager, $id)
+    {
+        $form = $this->createFormBuilder($profil)
+            ->add('publication', TextareaType::class)
+            ->add('picture', TextType::class)
+            ->add('Update', SubmitType::class)
+            ->getForm();
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $manager->flush();
+            return $this->redirectToRoute('publications_show', [
+                'id' => $id
+            ]);
+        }
+        $users = $this->getUser();
+        return $this->render('admin/Publications/edit.html.twig', [
+            "title" => "Edit Publication",
+            "users" => $users,
+            "publication" => $profil,
+            'form' => $form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/publications/delete/{id}", name="publications_delete_member", methods={"DELETE"})
+     */
+    public function deleteP(Request $request, PublicationsProfil $profil)
+    {
+        if ($this->isCsrfTokenValid('delete' . $profil->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($profil);
+            $entityManager->flush();
+        }
+        return $this->redirectToRoute("publications");
     }
 }

@@ -1,11 +1,18 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-
-    {{ form(form) }}
-
-    {{ include('admin/Publications/delete.html.twig') }}
-
-    <a href="{{ path('publications') }}">Back to list</a>
-
+    {% if app.user == publication.users %}
+        {% if is_granted('ROLE_USER') %}
+            {{ form(form) }}
+            {{ include('admin/Publications/deleteM.html.twig') }}
+            <a href="{{ path('profile_users', {"id": publication.users.id}) }}">Back to list</a>
+        {% endif %}
+    {% else %}
+        <h1>Tu n'as pas accès à cette page</h1>
+    {% endif %}
+    {% if is_granted('ROLE_ADMIN') %}
+        {{ form(form) }}
+        {{ include('admin/Publications/delete.html.twig') }}
+        <a href="{{ path('publications') }}">Back to list</a>
+    {% endif %}
 {% endblock %}

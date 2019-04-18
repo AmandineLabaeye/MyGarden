@@ -36,6 +36,18 @@
             <span>| {{ comment.users.work }}</span>
             <p>{{ comment.content }}</p>
             <p>{{ comment.date }}</p>
+            {% if app.user == comment.users %}
+                {% if is_granted('ROLE_ADMIN') %}
+                    <p>
+                        <a href="{{ path('commentsP_edit', {'id': comment.id }) }}">Edit</a>
+                    </p>
+                {% endif %}
+                {% if is_granted('ROLE_USER') %}
+                    <p>
+                        <a href="{{ path('commentsP_edit_member', {"id": comment.id}) }}">Edit</a>
+                    </p>
+                {% endif %}
+            {% endif %}
         </div>
     {% endfor %}
     <div class="navigation">

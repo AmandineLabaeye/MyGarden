@@ -49,8 +49,21 @@
                     {% if is_granted('ROLE_USER') %}
                         <a href="{{ path('comments_publication', {"id": publication.id}) }}">Clique pour commenter</a>
                     {% endif %}
-                    {% if is_granted('ROLE_ADMIN') %} <a
-                            href="{{ path('comments_publication_admin', {"id": publication.id}) }}">Clique pour commenter</a>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <a href="{{ path('comments_publication_admin', {"id": publication.id}) }}">Clique pour
+                            commenter</a>
+                    {% endif %}
+                    {% if app.user == publication.users %}
+                        {% if is_granted('ROLE_USER') %}
+                            <p>
+                                <a href="{{ path('publications_edit_member', {"id": publication.id}) }}">Edit</a>
+                            </p>
+                        {% endif %}
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <p>
+                                <a href="{{ path('publications_edit', {"id": publication.id}) }}">Edit</a>
+                            </p>
+                        {% endif %}
                     {% endif %}
                 </div>
             {% endfor %}
