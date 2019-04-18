@@ -171,7 +171,7 @@ img {
     border-radius: 20px;
 }
 
-.CarteUser, .CarteArticle, .CarteComment, .CarteCategorie {
+.CarteUser, .CarteArticle, .CarteComment, .CarteCategorie, .CartePublication {
     text-align: center;
     border: darkred dotted;
     border-radius: 20px;

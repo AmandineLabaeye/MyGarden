@@ -1,0 +1,11 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+    {{ form(form) }}
+
+    {{ include('admin/Publications/delete.html.twig') }}
+
+    <a href="{{ path('publications') }}">Back to list</a>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {% for publication in publications %}
+        <div class="CartePublication">
+            <p><span class="Categorie">Publication</span> {{ publication.publication }}</p>
+            <p><span class="Categorie">Picture</span> {{ publication.picture }}</p>
+            <p><span class="Categorie">Date</span> {{ publication.date }}</p>
+            <p><span class="Categorie">Actions</span>
+                <a href="{{ path('publications_show', {'id': publication.id}) }}">Show</a>
+                <a href="{{ path('publications_edit', {'id': publication.id}) }}">Edit</a>
+            </p>
+        </div>
+    {% else %}
+        <p>No records found</p>
+    {% endfor %}
+
+    <a href="{{ path('publications') }}">Back to list</a>
+{% endblock %}
