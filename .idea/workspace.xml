@@ -21,81 +21,49 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Controller/memberController.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="160">
-                  <caret line="283" column="71" selection-start-line="283" selection-start-column="71" selection-end-line="283" selection-end-column="71" />
-                  <folding>
-                    <element signature="e#34#58#0#PHP" expanded="true" />
-                    <element signature="e#1314#1343#0#PHP" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/templates/member/profile.html.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="474">
-                  <caret line="61" column="35" lean-forward="true" selection-start-line="61" selection-start-column="35" selection-end-line="61" selection-end-column="35" />
-                  <folding>
-                    <element signature="e#3222#3239#0#Twig" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/member/publication.html.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="324">
-                  <caret line="43" column="79" selection-start-line="43" selection-start-column="79" selection-end-line="43" selection-end-column="79" />
-                  <folding>
-                    <element signature="e#204#217#0#Twig" expanded="true" />
-                    <element signature="e#408#427#0#Twig" expanded="true" />
-                    <element signature="e#1744#1758#0#Twig" expanded="true" />
-                    <element signature="e#1911#1932#0#Twig" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/admin/CommentsP/edit.html.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="540">
-                  <caret line="18" selection-start-line="18" selection-end-line="18" />
-                  <folding>
-                    <element signature="e#236#249#0#Twig" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/templates/admin/Publications/edit.html.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="120">
-                  <caret line="7" column="73" selection-start-line="7" selection-start-column="73" selection-end-line="7" selection-end-column="73" />
-                  <folding>
-                    <element signature="e#258#271#0#Twig" expanded="true" />
-                    <element signature="e#546#558#0#Twig" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/memberController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="283" column="71" selection-start-line="283" selection-start-column="71" selection-end-line="283" selection-end-column="71" />
+              <folding>
+                <element signature="e#34#58#0#PHP" expanded="true" />
+                <element signature="e#1314#1343#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/member/profile.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="490">
+              <caret line="65" column="24" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
+              <folding>
+                <element signature="e#3018#3042#0#Twig" expanded="true" />
+                <element signature="e#3222#3239#0#Twig" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/member/publication.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="444">
+              <caret line="47" column="24" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
+              <folding>
+                <element signature="e#204#217#0#Twig" expanded="true" />
+                <element signature="e#408#427#0#Twig" expanded="true" />
+                <element signature="e#1744#1758#0#Twig" expanded="true" />
+                <element signature="e#1911#1932#0#Twig" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -161,12 +129,12 @@
         <option value="$PROJECT_DIR$/src/Controller/memberProfile.php" />
         <option value="$PROJECT_DIR$/src/Controller/adminProfil.php" />
         <option value="$PROJECT_DIR$/templates/admin/CommentsP/deleteM.html.twig" />
-        <option value="$PROJECT_DIR$/templates/member/publication.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/CommentsP/edit.html.twig" />
-        <option value="$PROJECT_DIR$/templates/member/profile.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/memberController.php" />
         <option value="$PROJECT_DIR$/templates/admin/Publications/deleteM.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/Publications/edit.html.twig" />
+        <option value="$PROJECT_DIR$/templates/member/profile.html.twig" />
+        <option value="$PROJECT_DIR$/templates/member/publication.html.twig" />
       </list>
     </option>
   </component>
@@ -321,20 +289,6 @@
             <path>
               <item name="MyGarden" type="b2602c69:ProjectViewProjectNode" />
               <item name="MyGarden" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="CommentsP" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MyGarden" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MyGarden" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="Publications" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MyGarden" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MyGarden" type="462c0819:PsiDirectoryNode" />
               <item name="translations" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -397,7 +351,7 @@
       <workItem from="1555402500421" duration="11951000" />
       <workItem from="1555485495775" duration="15305000" />
       <workItem from="1555572012571" duration="3358000" />
-      <workItem from="1555575554055" duration="9632000" />
+      <workItem from="1555575554055" duration="9903000" />
     </task>
     <task id="LOCAL-00001" summary="Premier Commit, installation du website-skeleton, de la barre profiler et du packages security-bundles.">
       <created>1554886583853</created>
@@ -529,7 +483,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85309000" />
+    <option name="totallyTimeSpent" value="85580000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -599,7 +553,8 @@
     <MESSAGE value="Faire une page avec tout les utilisateurs inscrit pour permettre au autre utilisateurs de consulter les pages (FINI)&#10;Prochain commit: Système de recherche (Sur les articles et Utilisateurs), système de mot de passe oublié à la connexion, faire pages de profil pour chaque utilisateurs avec un système de gestion de ses paramètres et uniquement des siens, gérer ses propres articles des pages de profils, et gérer et faire le panel admin des publications et et commentaires page de profil. Ajax pour les images du carroussel, Ajax sur les publications et commentaires page de profil. Liste d'amis. Formulaire de contact. Notification a la personne qui recoit un commentaire" />
     <MESSAGE value="Faire le panel admin des publications et et commentaires page de profil (FINI)&#10;Prochain commit: Système de recherche (Sur les articles et Utilisateurs), système de mot de passe oublié à la connexion, faire pages de profil pour chaque utilisateurs avec un système de gestion de ses paramètres et uniquement des siens, gérer ses propres articles des pages de profils, et gérer. Ajax pour les images du carroussel, Ajax sur les publications et commentaires page de profil. Liste d'amis. Formulaire de contact. Notification a la personne qui recoit un commentaire" />
     <MESSAGE value="Pagination des pages commentaires et publications pour les pages de profil(FINI)&#10;Prochain commit: Système de recherche (Sur les articles et Utilisateurs), système de mot de passe oublié à la connexion, sur chaque pages de profil pour chaque utilisateurs avec un système de gestion de ses paramètres et uniquement des siens, gérer ses propres articles des pages de profils, et gérer. Ajax pour les images du carroussel, Ajax sur les publications et commentaires page de profil. Liste d'amis. Formulaire de contact. Notification a la personne qui recoit un commentaire" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pagination des pages commentaires et publications pour les pages de profil(FINI)&#10;Prochain commit: Système de recherche (Sur les articles et Utilisateurs), système de mot de passe oublié à la connexion, sur chaque pages de profil pour chaque utilisateurs avec un système de gestion de ses paramètres et uniquement des siens, gérer ses propres articles des pages de profils, et gérer. Ajax pour les images du carroussel, Ajax sur les publications et commentaires page de profil. Liste d'amis. Formulaire de contact. Notification a la personne qui recoit un commentaire" />
+    <MESSAGE value=" Gérer ses propres articles des pages de profils, et gérer ses commentaires (modifier supprimer) 'Fini'.&#10;Prochain commit: Système de recherche (Sur les articles et Utilisateurs), système de mot de passe oublié à la connexion, sur chaque pages de profil pour chaque utilisateurs un système de gestion de ses paramètres et uniquement des siens. Ajax pour les images du carroussel, Ajax sur les publications et commentaires page de profil. Liste d'amis. Formulaire de contact. Notification a la personne qui recoit un commentaire" />
+    <option name="LAST_COMMIT_MESSAGE" value=" Gérer ses propres articles des pages de profils, et gérer ses commentaires (modifier supprimer) 'Fini'.&#10;Prochain commit: Système de recherche (Sur les articles et Utilisateurs), système de mot de passe oublié à la connexion, sur chaque pages de profil pour chaque utilisateurs un système de gestion de ses paramètres et uniquement des siens. Ajax pour les images du carroussel, Ajax sur les publications et commentaires page de profil. Liste d'amis. Formulaire de contact. Notification a la personne qui recoit un commentaire" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Controller/adminControllerCategorie.php">
@@ -1041,25 +996,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/member/profile.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="65" column="24" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
+          <folding>
+            <element signature="e#3018#3042#0#Twig" expanded="true" />
+            <element signature="e#3222#3239#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/member/publication.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="43" column="79" selection-start-line="43" selection-start-column="79" selection-end-line="43" selection-end-column="79" />
+        <state relative-caret-position="444">
+          <caret line="47" column="24" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
           <folding>
             <element signature="e#204#217#0#Twig" expanded="true" />
             <element signature="e#408#427#0#Twig" expanded="true" />
             <element signature="e#1744#1758#0#Twig" expanded="true" />
             <element signature="e#1911#1932#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/member/profile.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="61" column="35" lean-forward="true" selection-start-line="61" selection-start-column="35" selection-end-line="61" selection-end-column="35" />
-          <folding>
-            <element signature="e#3222#3239#0#Twig" expanded="true" />
           </folding>
         </state>
       </provider>

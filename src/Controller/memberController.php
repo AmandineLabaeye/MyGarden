@@ -254,9 +254,7 @@ class memberController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $manager->flush();
 
-            return $this->redirectToRoute('commentsP_show', [
-                'id' => $id
-            ]);
+            return $this->redirectToRoute('users_register_member');
         }
         $users = $this->getUser();
         return $this->render('admin/CommentsP/edit.html.twig', [
@@ -277,7 +275,7 @@ class memberController extends AbstractController
             $entityManager->remove($commentsPublication);
             $entityManager->flush();
         }
-        return $this->redirectToRoute("commentsP");
+        return $this->redirectToRoute("users_register_member");
     }
 
     /**
@@ -293,9 +291,7 @@ class memberController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $manager->flush();
-            return $this->redirectToRoute('publications_show', [
-                'id' => $id
-            ]);
+            return $this->redirectToRoute('users_register_member');
         }
         $users = $this->getUser();
         return $this->render('admin/Publications/edit.html.twig', [
@@ -316,6 +312,6 @@ class memberController extends AbstractController
             $entityManager->remove($profil);
             $entityManager->flush();
         }
-        return $this->redirectToRoute("publications");
+        return $this->redirectToRoute("users_register_member");
     }
 }
