@@ -44,6 +44,11 @@ class PublicationsProfil
      */
     private $commentsPublications;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $page;
+
     public function __construct()
     {
         $this->commentsPublications = new ArrayCollection();
@@ -129,6 +134,18 @@ class PublicationsProfil
                 $commentsPublication->setPublication(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getPage(): ?string
+    {
+        return $this->page;
+    }
+
+    public function setPage(string $page): self
+    {
+        $this->page = $page;
 
         return $this;
     }

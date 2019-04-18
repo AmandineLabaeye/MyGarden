@@ -21,14 +21,14 @@
                     <a href="{{ path('homepage_member') }}">Home</a>
                     <a href="{{ path('create_article_member') }}"> Ajouter un article </a>
                     <a href="{{ path('logout') }}"> Logout </a>
-                    <a href="">{{ users.username }}</a>
+                    <a href="{{ path('profile_users', {"id": users.id}) }}">{{ users.username }}</a>
                 {% endif %}
                 {% if is_granted('ROLE_ADMIN') %}
                     <a href="{{ path('homepage_admin') }}">Home</a>
                     <a href="{{ path('create_article_admin') }}"> Ajouter un article </a>
                     <a href="{{ path('logout') }}"> Logout </a>
                     <a href="{{ path('panel_admin') }}">Panel Admin</a>
-                    <a href="">{{ users.username }}</a>
+                    <a href="{{ path('profile_users_admin', {'id': users.id}) }}">{{ users.username }}</a>
                 {% endif %}
             {% endif %}
         </div>

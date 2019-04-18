@@ -1,0 +1,41 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {% for publication in publications %}
+        <div class="Publication">
+            {% if is_granted('ROLE_USER') %}
+                <a href="{{ path('profile_users', {"id": publication.users.id}) }}"><span>{{ publication.users.username }}</span></a>
+            {% endif %}
+            {% if is_granted('ROLE_ADMIN') %}
+                <a href="{{ path('profile_users_admin', {"id": publication.users.id}) }}"><span>{{ publication.users.username }}</span></a>
+            {% endif %}
+            <span> | {{ publication.users.work }}</span>
+            <p>{{ publication.publication }}</p>
+            <p>{{ publication.date }}</p>
+        </div>
+    {% endfor %}
+
+    <div class="formCommentPu">
+        {{ form_start(form) }}
+        {{ form_row(form.content, {
+            'label': " ",
+            "attr": {
+                "placeholder": "Contenu de votre commentaire sur la publication"
+            }
+        }) }}
+        {{ form_end(form) }}
+    </div>
+    {% for comment in comments %}
+        <div class="CommentsPu">
+            {% if is_granted('ROLE_USER') %}
+                <a href="{{ path('profile_users', {"id": comment.users.id}) }}"><span>{{ comment.users.username }}</span></a>
+            {% endif %}
+            {% if is_granted('ROLE_ADMIN') %}
+                <a href="{{ path('profile_users_admin', {"id": comment.users.id}) }}"><span>{{ comment.users.username }}</span></a>
+            {% endif %}
+            <span>| {{ comment.users.work }}</span>
+            <p>{{ comment.content }}</p>
+            <p>{{ comment.date }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

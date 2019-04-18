@@ -25,7 +25,14 @@
     {{ form_row(form.Send) }}
     {{ form_end(form) }}
     {% for comment in comments %}
-        <p class="NameC"><span class="UserC">Username</span> {{ comment.users.username }}</p>
+        {% if is_granted('ROLE_USER') %}
+            <a href="{{ path('profile_users', {"id": comment.users.id }) }}"><p class="NameC"><span class="UserC">Username</span> {{ comment.users.username }}
+                </p></a>
+        {% endif %}
+        {% if is_granted('ROLE_ADMIN') %}
+            <a href="{{ path('profile_users_admin', {"id": comment.users.id }) }}"><p class="NameC"><span class="UserC">Username</span> {{ comment.users.username }}
+                </p></a>
+        {% endif %}
         <p class="DescriptionC"><span class="DesC">Description</span> {{ comment.content }}</p>
         <p class="DateC">{{ comment.date }}</p>
         {% if app.user == comment.users %}
