@@ -20,6 +20,7 @@
                 {% if is_granted('ROLE_USER') %}
                     <a href="{{ path('homepage_member') }}">Home</a>
                     <a href="{{ path('create_article_member') }}"> Ajouter un article </a>
+                    <a href="{{ path('users_register_member') }}">Consulter les profils</a>
                     <a href="{{ path('logout') }}"> Logout </a>
                     <a href="{{ path('profile_users', {"id": users.id}) }}">{{ users.username }}</a>
                 {% endif %}

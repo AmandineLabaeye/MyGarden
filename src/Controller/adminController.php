@@ -8,6 +8,7 @@ use App\Entity\Comments;
 use App\Repository\ArticlesRepository;
 use App\Repository\CategoryRepository;
 use App\Repository\CommentsRepository;
+use App\Repository\UsersRepository;
 use Doctrine\Common\Persistence\ObjectManager;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -32,6 +33,24 @@ class adminController extends AbstractController
         return $this->render('admin/index.html.twig', [
             "title" => "Admin Home",
             "users" => $users
+        ]);
+    }
+
+    /**
+     * @Route("/membreinscris", name="users_register_admin")
+     */
+    public function usersRegister(UsersRepository $usersRepository, PaginatorInterface $paginator, Request $request)
+    {
+        $pagin = $paginator->paginate(
+            $usersRepository->findBy(['active' => 1]),
+            $request->query->getInt('page', 1),
+            10
+        );
+        $users = $this->getUser();
+        return $this->render('member/listeUsers.html.twig', [
+            "title" => "Users Liste",
+            "users" => $users,
+            "user" => $pagin
         ]);
     }
 

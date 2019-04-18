@@ -5,19 +5,14 @@ namespace App\Controller;
 use App\Entity\Articles;
 use App\Entity\Category;
 use App\Entity\Comments;
-use App\Entity\CommentsPublication;
-use App\Entity\PublicationsProfil;
 use App\Repository\ArticlesRepository;
 use App\Repository\CategoryRepository;
-use App\Repository\CommentsPublicationRepository;
 use App\Repository\CommentsRepository;
-use App\Repository\PublicationsProfilRepository;
 use App\Repository\UsersRepository;
 use Doctrine\Common\Persistence\ObjectManager;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\ExpressionLanguage\Tests\Node\Obj;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -30,6 +25,24 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class memberController extends AbstractController
 {
+    /**
+     * @Route("/membreinscris", name="users_register_member")
+     */
+    public function usersRegister(UsersRepository $usersRepository, PaginatorInterface $paginator, Request $request)
+    {
+        $pagin = $paginator->paginate(
+            $usersRepository->findBy(['active' => 1]),
+            $request->query->getInt('page', 1),
+            10
+        );
+        $users = $this->getUser();
+        return $this->render('member/listeUsers.html.twig', [
+            "title" => "Users Liste",
+            "users" => $users,
+            "user" => $pagin
+        ]);
+    }
+
     /**
      * @Route("/", name="homepage_member")
      */
