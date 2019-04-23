@@ -1,0 +1,93 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    {% for user in user %}
+        {% if app.user == user %}
+            <h1> Page de modification de vos informations personnelles </h1>
+            <h4>Vous devez retaper votre mot de passe à chaque modification. Vous pouvez le changer il n'est pas
+                obligatoire qu'il soit identique à l'ancien</h4>
+            {{ form_start(form) }}
+            {{ form_row(form.avatar, {
+                'label': " ",
+                "value": user.avatar,
+                "attr": {
+                    'placeholder': "Modifier votre avatar"
+                }
+            }) }}
+            {{ form_row(form.name, {
+                'label': " ",
+                "value": user.name,
+                "attr": {
+                    "placeholder": "Modifier votre nom de famille"
+                }
+            }) }}
+            {{ form_row(form.surname, {
+                'label': " ",
+                "value": user.surname,
+                'attr': {
+                    'placeholder': "Modifier votre prénom"
+                }
+            }) }}
+            {{ form_row(form.age, {
+                'label': " ",
+                "value": user.age,
+                "attr": {
+                    'placeholder': "Modifier votre âge"
+                }
+            }) }}
+            {{ form_row(form.region, {
+                'label': ' ',
+                "value": user.region,
+                'attr': {
+                    'placeholder': "Modifier votre région actuel"
+                }
+            }) }}
+            {{ form_row(form.ville, {
+                'label': " ",
+                "value": user.ville,
+                "attr": {
+                    "placeholder": "Modifier votre ville actuel"
+                }
+            }) }}
+            {{ form_row(form.username, {
+                'label': " ",
+                "value": user.username,
+                'attr':{
+                    'placeholder': "Modifier votre pseudo"
+                }
+            }) }}
+            {{ form_row(form.apropos, {
+                'label': " ",
+                "value": user.apropos,
+                "attr": {
+                    'placeholder': "Modifier votre à propos"
+                }
+            }) }}
+            {{ form_row(form.work, {
+                'label': " ",
+                "value": user.work,
+                "attr": {
+                    "placeholder": "Modifier votre métier actuel"
+                }
+            }) }}
+            {{ form_row(form.password, {
+                'label': " ",
+                "attr": {
+                    "placeholder": "Modifier votre mot de passe"
+                }
+            }) }}
+            {{ form_row(form.confirm_password, {
+                'label': " ",
+                'attr': {
+                    "placeholder": "Confirmation du nouveau mot de passe"
+                }
+            }) }}
+            {{ form_row(form.Update) }}
+            {{ form_end(form) }}
+            {% if is_granted('ROLE_USER') %}
+                {{ include('member/delete.html.twig') }}
+            {% endif %}
+        {% else %}
+            <h1> Vous n'avez pas accès à cette page</h1>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

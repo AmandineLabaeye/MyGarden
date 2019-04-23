@@ -8,6 +8,14 @@
                     <span>{{ user.name }}</span>
                     <span>{{ user.surname }}</span>
                     <span>{{ user.age }} ans</span>
+                    {% if app.user == user %}
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <span><a href="{{ path('parametre_users_admin', {"id": user.id}) }}">Paramètre</a></span>
+                        {% endif %}
+                        {% if is_granted('ROLE_USER') %}
+                            <span><a href="{{ path('parametre_users_member', {"id": user.id}) }}">Paramètre</a></span>
+                        {% endif %}
+                    {% endif %}
                 </p>
                 <h4 style="text-decoration: underline"> A propos : </h4>
                 <p><span style="font-weight: bold;">Pseudo:</span> {{ user.username }}</p>

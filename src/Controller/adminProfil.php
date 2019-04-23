@@ -6,17 +6,22 @@ namespace App\Controller;
 
 use App\Entity\CommentsPublication;
 use App\Entity\PublicationsProfil;
+use App\Entity\Users;
 use App\Repository\CommentsPublicationRepository;
 use App\Repository\PublicationsProfilRepository;
 use App\Repository\UsersRepository;
 use Doctrine\Common\Persistence\ObjectManager;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Encoder\PasswordEncoderInterface;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 /**
  * @Route("/admin/profile")
@@ -58,6 +63,44 @@ class adminProfil extends AbstractController
             "user" => $usersRepository->findBy(['id' => $id]),
             'form' => $form->createView(),
             "publications" => $pagin
+        ]);
+    }
+
+    /**
+     * @Route("/{id}/parameter", name="parametre_users_admin")
+     */
+    public function parametre(Request $request, ObjectManager $manager, UserPasswordEncoderInterface $encoder, UsersRepository $usersRepository, $id)
+    {
+        $user = $this->getUser();
+        $form = $this->createFormBuilder($user)
+            ->add('avatar', TextType::class)
+            ->add('name', TextType::class)
+            ->add('surname', TextType::class)
+            ->add('age', NumberType::class)
+            ->add('region', TextType::class)
+            ->add('ville', TextType::class)
+            ->add('username', TextType::class)
+            ->add('apropos', TextType::class)
+            ->add('work', TextType::class)
+            ->add('password', PasswordType::class)
+            ->add('confirm_password', PasswordType::class)
+            ->add('Update', SubmitType::class)
+            ->getForm();
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $hash = $encoder->encodePassword($user, $user->getPassword());
+            $user->setPassword($hash);
+            $manager->persist($user);
+            $manager->flush();
+            return $this->redirectToRoute('profile_users_admin', [
+                'id' => $id
+            ]);
+        }
+        return $this->render('member/parametre.html.twig', [
+            'title' => "Parametre Users",
+            "users" => $user,
+            "user" => $usersRepository->findBy(['id' => $id]),
+            'form' => $form->createView()
         ]);
     }
 

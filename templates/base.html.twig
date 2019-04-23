@@ -27,6 +27,7 @@
                 {% if is_granted('ROLE_ADMIN') %}
                     <a href="{{ path('homepage_admin') }}">Home</a>
                     <a href="{{ path('create_article_admin') }}"> Ajouter un article </a>
+                    <a href="{{ path('users_register_admin') }}">Consulter les profils</a>
                     <a href="{{ path('logout') }}"> Logout </a>
                     <a href="{{ path('panel_admin') }}">Panel Admin</a>
                     <a href="{{ path('profile_users_admin', {'id': users.id}) }}">{{ users.username }}</a>
