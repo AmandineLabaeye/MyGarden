@@ -83,6 +83,9 @@
             }) }}
             {{ form_row(form.Update) }}
             {{ form_end(form) }}
+            {% if is_granted('ROLE_ADMIN') %}
+                {{ include('member/deleteA.html.twig') }}
+            {% endif %}
             {% if is_granted('ROLE_USER') %}
                 {{ include('member/delete.html.twig') }}
             {% endif %}

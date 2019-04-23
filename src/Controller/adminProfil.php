@@ -19,6 +19,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\PasswordEncoderInterface;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
@@ -102,6 +103,26 @@ class adminProfil extends AbstractController
             "user" => $usersRepository->findBy(['id' => $id]),
             'form' => $form->createView()
         ]);
+    }
+
+    /**
+     * @Route("/delete/{id}", name="users_delete_admin")
+     */
+    public function delete(ObjectManager $manager, UsersRepository $usersRepository, $id)
+    {
+        $users = $usersRepository->find($id);
+        $currentUserId = $this->getUser()->getId();
+        if ($currentUserId == $id)
+        {
+            $manager->remove($users);
+            $session = $this->get('session');
+            $session = new Session();
+            $session->invalidate();
+            $manager->flush();
+            return $this->redirectToRoute("login");
+        } else {
+            return $this->redirectToRoute('homepage');
+        }
     }
 
     /**
