@@ -59,12 +59,20 @@ class adminControllerUsers extends AbstractController
             ->add("name", TextType::class)
             ->add("surname", TextType::class)
             ->add("email", TextType::class)
-            ->add("age", NumberType::class)
-            ->add("region", TextType::class)
-            ->add("ville", TextType::class)
+            ->add("age", NumberType::class, [
+                'required' => false
+            ])
+            ->add("region", TextType::class, [
+                'required' => false
+            ])
+            ->add("ville", TextType::class, [
+                'required' => false
+            ])
             ->add("username", TextType::class)
             ->add("apropos", TextareaType::class)
-            ->add("work", TextType::class)
+            ->add("work", TextType::class, [
+                'required' => false
+            ])
             ->add("rank", TextType::class)
             ->add("active", NumberType::class)
             ->add("Save", SubmitType::class)

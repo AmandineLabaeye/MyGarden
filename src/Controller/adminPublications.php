@@ -57,7 +57,9 @@ class adminPublications extends AbstractController
     {
         $form = $this->createFormBuilder($profil)
             ->add('publication', TextareaType::class)
-            ->add('picture', TextType::class)
+            ->add('picture', TextType::class, [
+                'required' => false
+            ])
             ->add('Update', SubmitType::class)
             ->getForm();
         $form->handleRequest($request);

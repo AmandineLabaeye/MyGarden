@@ -71,12 +71,22 @@ class memberController extends AbstractController
     {
         $form = $this->createFormBuilder($articles)
             ->add('name', TextType::class)
-            ->add('picture', TextType::class)
+            ->add('picture', TextType::class, [
+                'required' => false
+            ])
             ->add('description', TextareaType::class)
-            ->add('namelatin', TextType::class)
-            ->add('toxicite', TextType::class)
-            ->add('environnement', TextType::class)
-            ->add('urlBuy', TextType::class)
+            ->add('namelatin', TextType::class, [
+                'required' => false
+            ])
+            ->add('toxicite', TextType::class, [
+                'required' => false
+            ])
+            ->add('environnement', TextType::class, [
+                'required' => false
+            ])
+            ->add('urlBuy', TextType::class, [
+                'required' => false
+            ])
             ->add('active', NumberType::class)
             ->add('Save', SubmitType::class)
             ->getForm();
@@ -210,12 +220,22 @@ class memberController extends AbstractController
 
         $form = $this->createFormBuilder($articles)
             ->add('name', TextType::class)
-            ->add('picture', TextType::class)
+            ->add('picture', TextType::class, [
+                'required' => false
+            ])
             ->add('description', TextType::class)
-            ->add('namelatin', TextType::class)
-            ->add('toxicite', TextType::class)
-            ->add('environnement', TextType::class)
-            ->add('urlBuy', TextType::class)
+            ->add('namelatin', TextType::class, [
+                'required' => false
+            ])
+            ->add('toxicite', TextType::class, [
+                'required' => false
+            ])
+            ->add('environnement', TextType::class, [
+                'required' => false
+            ])
+            ->add('urlBuy', TextType::class, [
+                'required' => false
+            ])
             ->add('categories', EntityType::class, [
                 'class' => Category::class,
                 'choice_label' => 'name'])
@@ -285,7 +305,9 @@ class memberController extends AbstractController
     {
         $form = $this->createFormBuilder($profil)
             ->add('publication', TextareaType::class)
-            ->add('picture', TextType::class)
+            ->add('picture', TextType::class, [
+                'required' => false
+            ])
             ->add('Update', SubmitType::class)
             ->getForm();
         $form->handleRequest($request);

@@ -5,7 +5,6 @@ namespace App\Controller;
 
 
 use App\Entity\CommentsPublication;
-use App\Entity\PublicationsProfil;
 use App\Repository\CommentsPublicationRepository;
 use Doctrine\Common\Persistence\ObjectManager;
 use Knp\Component\Pager\PaginatorInterface;

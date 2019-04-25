@@ -68,15 +68,25 @@ class allController extends AbstractController
         $user = $this->getUser();
 
         $form = $this->createFormBuilder($users)
-            ->add('avatar', TextType::class)
+            ->add('avatar', TextType::class, [
+                'required' => false
+            ])
             ->add('name', TextType::class)
             ->add('surname', TextType::class)
             ->add('email', TextType::class)
-            ->add('age', NumberType::class)
-            ->add('region', TextType::class)
-            ->add('ville', TextType::class)
+            ->add('age', NumberType::class, [
+                'required' => false
+            ])
+            ->add('region', TextType::class, [
+                'required' => false
+            ])
+            ->add('ville', TextType::class, [
+                'required' => false
+            ])
             ->add('username', TextType::class)
-            ->add('work', TextType::class)
+            ->add('work', TextType::class, [
+                'required' => false
+            ])
             ->add('password', PasswordType::class)
             ->add('confirm_password', PasswordType::class)
             ->add('apropos', TextareaType::class)
@@ -120,5 +130,17 @@ class allController extends AbstractController
      */
     public function logout()
     {
+    }
+
+    /**
+     * @Route("/contact", name="contact_form")
+     */
+    public function contact()
+    {
+        $users = $this->getUser();
+        return $this->render('allMember/contact.html.twig', [
+            'title' => "Contact",
+            "users" => $users
+        ]);
     }
 }

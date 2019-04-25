@@ -44,8 +44,9 @@ class adminProfil extends AbstractController
         $date = date("d-m-Y H:i:s");
         $form = $this->createFormBuilder($publication)
             ->add('publication', TextareaType::class)
-            ->add('picture', TextType::class)
-            ->add('Poster', SubmitType::class)
+            ->add('picture', TextType::class,[
+                'required' => false
+            ])
             ->getForm();
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -83,8 +84,12 @@ class adminProfil extends AbstractController
             ->add('username', TextType::class)
             ->add('apropos', TextType::class)
             ->add('work', TextType::class)
-            ->add('password', PasswordType::class)
-            ->add('confirm_password', PasswordType::class)
+            ->add('password', PasswordType::class, [
+                'required' => false
+            ])
+            ->add('confirm_password', PasswordType::class, [
+                'required' => false
+            ])
             ->add('Update', SubmitType::class)
             ->getForm();
         $form->handleRequest($request);

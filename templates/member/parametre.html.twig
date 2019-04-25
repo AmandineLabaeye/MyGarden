@@ -3,8 +3,6 @@
     {% for user in user %}
         {% if app.user == user %}
             <h1> Page de modification de vos informations personnelles </h1>
-            <h4>Vous devez retaper votre mot de passe à chaque modification. Vous pouvez le changer il n'est pas
-                obligatoire qu'il soit identique à l'ancien</h4>
             {{ form_start(form) }}
             {{ form_row(form.avatar, {
                 'label': " ",

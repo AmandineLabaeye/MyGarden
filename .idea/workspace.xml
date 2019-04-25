@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="478f7838-3daa-4edf-941f-6621d0b23ee6" name="Default Changelist" comment="Suppression ancien code javascript&#10;&#10;Prochain commit: &#10;Prioritaire:&#10;Ajax pour les images du carroussel,&#10;Ajax sur les publications et commentaires page de profil,&#10;Système de recherche (Sur les articles),&#10;Système de filtre sur la page 'Consulter les profils pour trouver plus facilement un utilisateur',&#10;Formulaire de contact,&#10;Faire tout le CSS et les translations en même temps,&#10;Ajouter des commentaires au code&#10;&#10;Secondaire:&#10;Afficher leur propres publications / articles publié par eux sur leur profiles.&#10;Système de mot de passe oublié à la connexion,&#10;Système de Liste d'amis,&#10;Notification a la personne qui recoit un commentaire">
-      <change afterPath="$PROJECT_DIR$/src/Controller/ajaxController.php" afterDir="false" />
+    <list default="true" id="478f7838-3daa-4edf-941f-6621d0b23ee6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/allMember/contact.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/javascript.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/javascript.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/adminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/adminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/adminProfil.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/adminProfil.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/allController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/allController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/memberController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/memberController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/memberProfile.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/memberProfile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/member/profile.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/member/profile.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/member/parametre.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/member/parametre.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,49 +23,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/memberProfile.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="61" column="27" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
-              <folding>
-                <element signature="e#36#71#0#PHP" expanded="true" />
-                <element signature="e#2319#2334#1#PHP" expanded="true" />
-                <element signature="e#2226#2252#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Controller/ajaxController.php">
+        <entry file="file://$PROJECT_DIR$/src/Controller/allController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="91" column="22" selection-start-line="91" selection-start-column="22" selection-end-line="91" selection-end-column="22" />
+            <state relative-caret-position="144">
+              <caret line="72" column="13" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
               <folding>
-                <element signature="e#35#69#0#PHP" expanded="true" />
+                <element signature="e#36#57#0#PHP" expanded="true" />
+                <element signature="e#1255#1271#0#PHP" expanded="true" />
+                <element signature="e#4129#4158#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+        <entry file="file://$PROJECT_DIR$/src/Controller/memberController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="59" column="76" selection-start-line="59" selection-start-column="76" selection-end-line="59" selection-end-column="76" />
+            <state relative-caret-position="-2960">
+              <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/adminController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-410">
+              <caret line="84" column="13" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
               <folding>
-                <element signature="e#1059#1072#0#Twig" expanded="true" />
+                <element signature="e#34#58#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/member/profile.html.twig">
+        <entry file="file://$PROJECT_DIR$/templates/allMember/contact.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1040">
-              <caret line="133" column="61" selection-start-line="133" selection-start-column="61" selection-end-line="133" selection-end-column="61" />
+            <state relative-caret-position="180">
+              <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+              <folding>
+                <element signature="e#11#25#0#Twig" expanded="true" />
+                <element signature="e#100#126#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -91,8 +92,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Controller/allController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/adminControllerUsers.php" />
         <option value="$PROJECT_DIR$/templates/admin/Users/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/Users/active.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/Articles/index.html.twig" />
@@ -113,7 +112,6 @@
         <option value="$PROJECT_DIR$/src/Entity/Users.php" />
         <option value="$PROJECT_DIR$/src/Entity/PublicationsProfil.php" />
         <option value="$PROJECT_DIR$/templates/member/one.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/adminController.php" />
         <option value="$PROJECT_DIR$/templates/member/listeUsers.html.twig" />
         <option value="$PROJECT_DIR$/public/css/style.css" />
         <option value="$PROJECT_DIR$/templates/admin/Publications/index.html.twig" />
@@ -130,18 +128,21 @@
         <option value="$PROJECT_DIR$/templates/admin/Publications/deleteM.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/Publications/edit.html.twig" />
         <option value="$PROJECT_DIR$/templates/member/publication.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/memberController.php" />
         <option value="$PROJECT_DIR$/templates/member/delete.html.twig" />
         <option value="$PROJECT_DIR$/templates/member/deleteA.html.twig" />
-        <option value="$PROJECT_DIR$/templates/member/parametre.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/adminProfil.php" />
         <option value="$PROJECT_DIR$/src/Controller/ajaxControllerAdmin.php" />
         <option value="$PROJECT_DIR$/src/Controller/ajaxControllerMember.php" />
-        <option value="$PROJECT_DIR$/src/Controller/memberProfile.php" />
         <option value="$PROJECT_DIR$/templates/member/profile.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/ajaxController.php" />
         <option value="$PROJECT_DIR$/public/js/javascript.js" />
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/ajaxController.php" />
+        <option value="$PROJECT_DIR$/templates/allMember/contact.html.twig" />
+        <option value="$PROJECT_DIR$/templates/member/parametre.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/adminProfil.php" />
+        <option value="$PROJECT_DIR$/src/Controller/memberProfile.php" />
+        <option value="$PROJECT_DIR$/src/Controller/memberController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/adminController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/allController.php" />
       </list>
     </option>
   </component>
@@ -295,6 +296,12 @@
               <item name="MyGarden" type="b2602c69:ProjectViewProjectNode" />
               <item name="MyGarden" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="allMember" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyGarden" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyGarden" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="member" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -318,19 +325,19 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Sakur\OneDrive\Documents\GitHub\MyGarden\templates\member" />
-      <recent name="C:\Users\Sakur\OneDrive\Documents\GitHub\MyGarden\public" />
-      <recent name="C:\Users\Sakur\OneDrive\Documents\GitHub\MyGarden\templates\admin\Publications" />
-      <recent name="C:\Users\Sakur\OneDrive\Documents\GitHub\MyGarden\templates\admin\CommentsP" />
-      <recent name="C:\Users\Sakur\OneDrive\Documents\GitHub\MyGarden\templates\admin\Comments" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Sakur\OneDrive\Documents\GitHub\MyGarden\public\Bouton" />
       <recent name="C:\Users\Sakur\OneDrive\Documents\GitHub\MyGarden\public\photo" />
       <recent name="C:\Users\Sakur\OneDrive\Documents\GitHub\MyGarden\templates\admin\Articles" />
       <recent name="C:\Users\Sakur\OneDrive\Documents\GitHub\MyGarden\templates\admin\Users" />
       <recent name="C:\Users\Sakur\OneDrive\Documents\GitHub\MyGarden\templates\allMember" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Sakur\OneDrive\Documents\GitHub\MyGarden\templates\member" />
+      <recent name="C:\Users\Sakur\OneDrive\Documents\GitHub\MyGarden\public" />
+      <recent name="C:\Users\Sakur\OneDrive\Documents\GitHub\MyGarden\templates\admin\Publications" />
+      <recent name="C:\Users\Sakur\OneDrive\Documents\GitHub\MyGarden\templates\admin\CommentsP" />
+      <recent name="C:\Users\Sakur\OneDrive\Documents\GitHub\MyGarden\templates\admin\Comments" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -368,7 +375,7 @@
       <workItem from="1556004411602" duration="18667000" />
       <workItem from="1556091765344" duration="55000" />
       <workItem from="1556091852547" duration="15160000" />
-      <workItem from="1556177977692" duration="5403000" />
+      <workItem from="1556177977692" duration="7427000" />
     </task>
     <task id="LOCAL-00001" summary="Premier Commit, installation du website-skeleton, de la barre profiler et du packages security-bundles.">
       <created>1554886583853</created>
@@ -531,11 +538,18 @@
       <option name="project" value="LOCAL" />
       <updated>1556029413121</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Tentative d'Ajax Echoué tout commenté&#10;&#10;Prochain commit: &#10;Prioritaire:&#10;Ajax pour les images du carroussel,&#10;Ajax sur les publications et commentaires page de profil,&#10;Système de recherche (Sur les articles),&#10;Système de filtre sur la page 'Consulter les profils pour trouver plus facilement un utilisateur',&#10;Formulaire de contact,&#10;Faire tout le CSS et les translations en même temps,&#10;Ajouter des commentaires au code&#10;&#10;Secondaire:&#10;Afficher leur propres publications / articles publié par eux sur leur profiles.&#10;Système de mot de passe oublié à la connexion,&#10;Système de Liste d'amis,&#10;Notification a la personne qui recoit un commentaire">
+      <created>1556183702437</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1556183702437</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139415000" />
+    <option name="totallyTimeSpent" value="141439000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -610,26 +624,10 @@
     <MESSAGE value="Sur chaque pages de profil pour chaque utilisateurs un système de gestion de ses paramètres et uniquement des siens.&#10;Permettre au utilisateur de supprimer leur compte.&#10;Fait la page contenant la liste  des utilisateurs pour visiter leur profils.&#10;&#10;Prochain commit: &#10;Prioritaire:&#10;Ajax pour les images du carroussel,&#10;Ajax sur les publications et commentaires page de profil,&#10;Système de recherche (Sur les articles),&#10;Système de filtre sur la page 'Consulter les profils pour trouver plus facilement un utilisateur',&#10;Formulaire de contact,&#10;Faire tout le CSS et les translations en même temps,&#10;&#10;Secondaire:&#10;Afficher leur propres publications / articles publié par eux sur leur profiles.&#10;Système de mot de passe oublié à la connexion,&#10;Système de Liste d'amis,&#10;Notification a la personne qui recoit un commentaire" />
     <MESSAGE value="Ajout de Jquery implémentation, refonte du code natif javascript en Jquery&#10;Ajout de possibilité de supprimer son propre compte côté admin &#10;&#10;Prochain commit: &#10;Prioritaire:&#10;Ajax pour les images du carroussel,&#10;Ajax sur les publications et commentaires page de profil,&#10;Système de recherche (Sur les articles),&#10;Système de filtre sur la page 'Consulter les profils pour trouver plus facilement un utilisateur',&#10;Formulaire de contact,&#10;Faire tout le CSS et les translations en même temps,&#10;&#10;Secondaire:&#10;Afficher leur propres publications / articles publié par eux sur leur profiles.&#10;Système de mot de passe oublié à la connexion,&#10;Système de Liste d'amis,&#10;Notification a la personne qui recoit un commentaire" />
     <MESSAGE value="Suppression ancien code javascript&#10;&#10;Prochain commit: &#10;Prioritaire:&#10;Ajax pour les images du carroussel,&#10;Ajax sur les publications et commentaires page de profil,&#10;Système de recherche (Sur les articles),&#10;Système de filtre sur la page 'Consulter les profils pour trouver plus facilement un utilisateur',&#10;Formulaire de contact,&#10;Faire tout le CSS et les translations en même temps,&#10;Ajouter des commentaires au code&#10;&#10;Secondaire:&#10;Afficher leur propres publications / articles publié par eux sur leur profiles.&#10;Système de mot de passe oublié à la connexion,&#10;Système de Liste d'amis,&#10;Notification a la personne qui recoit un commentaire" />
-    <option name="LAST_COMMIT_MESSAGE" value="Suppression ancien code javascript&#10;&#10;Prochain commit: &#10;Prioritaire:&#10;Ajax pour les images du carroussel,&#10;Ajax sur les publications et commentaires page de profil,&#10;Système de recherche (Sur les articles),&#10;Système de filtre sur la page 'Consulter les profils pour trouver plus facilement un utilisateur',&#10;Formulaire de contact,&#10;Faire tout le CSS et les translations en même temps,&#10;Ajouter des commentaires au code&#10;&#10;Secondaire:&#10;Afficher leur propres publications / articles publié par eux sur leur profiles.&#10;Système de mot de passe oublié à la connexion,&#10;Système de Liste d'amis,&#10;Notification a la personne qui recoit un commentaire" />
+    <MESSAGE value="Tentative d'Ajax Echoué tout commenté&#10;&#10;Prochain commit: &#10;Prioritaire:&#10;Ajax pour les images du carroussel,&#10;Ajax sur les publications et commentaires page de profil,&#10;Système de recherche (Sur les articles),&#10;Système de filtre sur la page 'Consulter les profils pour trouver plus facilement un utilisateur',&#10;Formulaire de contact,&#10;Faire tout le CSS et les translations en même temps,&#10;Ajouter des commentaires au code&#10;&#10;Secondaire:&#10;Afficher leur propres publications / articles publié par eux sur leur profiles.&#10;Système de mot de passe oublié à la connexion,&#10;Système de Liste d'amis,&#10;Notification a la personne qui recoit un commentaire" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tentative d'Ajax Echoué tout commenté&#10;&#10;Prochain commit: &#10;Prioritaire:&#10;Ajax pour les images du carroussel,&#10;Ajax sur les publications et commentaires page de profil,&#10;Système de recherche (Sur les articles),&#10;Système de filtre sur la page 'Consulter les profils pour trouver plus facilement un utilisateur',&#10;Formulaire de contact,&#10;Faire tout le CSS et les translations en même temps,&#10;Ajouter des commentaires au code&#10;&#10;Secondaire:&#10;Afficher leur propres publications / articles publié par eux sur leur profiles.&#10;Système de mot de passe oublié à la connexion,&#10;Système de Liste d'amis,&#10;Notification a la personne qui recoit un commentaire" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/admin/Articles/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/member/new.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1500">
-          <caret line="50" column="60" selection-start-line="50" selection-start-column="60" selection-end-line="50" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/translations/KnpPaginatorBundle.fr.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -768,16 +766,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/adminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
-          <folding>
-            <element signature="e#34#58#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/home.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
@@ -883,27 +871,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/adminControllerArticles.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-60">
-          <caret line="85" column="5" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
-          <folding>
-            <element signature="e#34#58#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/allController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-960">
-          <caret line="67" column="33" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
-          <folding>
-            <element signature="e#36#57#0#PHP" expanded="true" />
-            <element signature="e#1255#1271#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/admin/Comments/delete.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -927,16 +894,6 @@
           <caret line="7" column="55" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
           <folding>
             <element signature="e#250#265#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/memberController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="208" column="8" selection-start-line="208" selection-start-column="8" selection-end-line="208" selection-end-column="8" />
-          <folding>
-            <element signature="e#34#58#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -995,13 +952,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/member/parametre.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2640">
-          <caret line="88" column="44" lean-forward="true" selection-start-line="88" selection-start-column="44" selection-end-line="88" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/web-forms.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -1016,62 +966,117 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/adminProfil.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="23" column="69" lean-forward="true" selection-start-line="23" selection-end-line="24" />
-          <folding>
-            <element signature="e#2142#2163#0#PHP" expanded="true" />
-            <element signature="e#2250#2276#0#PHP" expanded="true" />
-            <element signature="e#5957#5985#0#PHP" expanded="true" />
-            <element signature="e#6073#6103#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/ajaxControllerAdmin.php" />
-    <entry file="file://$PROJECT_DIR$/src/Controller/memberProfile.php">
+    <entry file="file://$PROJECT_DIR$/src/Controller/ajaxController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="61" column="27" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
-          <folding>
-            <element signature="e#36#71#0#PHP" expanded="true" />
-            <element signature="e#2319#2334#1#PHP" expanded="true" />
-            <element signature="e#2226#2252#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/member/profile.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1040">
-          <caret line="133" column="61" selection-start-line="133" selection-start-column="61" selection-end-line="133" selection-end-column="61" />
+        <state relative-caret-position="60">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/javascript.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/member/profile.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
-          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+        <state relative-caret-position="3990">
+          <caret line="133" column="61" selection-start-line="133" selection-start-column="61" selection-end-line="133" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="59" column="76" selection-start-line="59" selection-start-column="76" selection-end-line="59" selection-end-column="76" />
+        <state relative-caret-position="30">
+          <caret line="19" column="67" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="67" />
           <folding>
+            <element signature="e#667#679#0#Twig" expanded="true" />
+            <element signature="e#1154#1166#0#Twig" expanded="true" />
             <element signature="e#1059#1072#0#Twig" expanded="true" />
+            <element signature="e#1801#1813#0#Twig" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/ajaxController.php">
+    <entry file="file://$PROJECT_DIR$/templates/allMember/contact.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="91" column="22" selection-start-line="91" selection-start-column="22" selection-end-line="91" selection-end-column="22" />
+        <state relative-caret-position="180">
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
           <folding>
-            <element signature="e#35#69#0#PHP" expanded="true" />
+            <element signature="e#11#25#0#Twig" expanded="true" />
+            <element signature="e#100#126#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/member/parametre.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-960">
+          <caret line="4" column="76" selection-start-line="4" selection-start-column="76" selection-end-line="4" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/memberProfile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1650">
+          <caret line="96" column="35" selection-start-line="96" selection-start-column="35" selection-end-line="96" selection-end-column="35" />
+          <folding>
+            <element signature="e#36#71#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/adminProfil.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-915">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+          <folding>
+            <element signature="e#36#71#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/adminControllerArticles.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-510">
+          <caret line="85" column="5" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
+          <folding>
+            <element signature="e#34#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/CategoryRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/memberController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2960">
+          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/adminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-410">
+          <caret line="84" column="13" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
+          <folding>
+            <element signature="e#34#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/allController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="72" column="13" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
+          <folding>
+            <element signature="e#36#57#0#PHP" expanded="true" />
+            <element signature="e#1255#1271#0#PHP" expanded="true" />
+            <element signature="e#4129#4158#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

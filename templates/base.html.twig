@@ -17,12 +17,14 @@
                 <a href="{{ path('homepage') }}">Home</a>
                 <a href="{{ path('registration') }}"> Registration </a>
                 <a href="{{ path('login') }}"> Login</a>
+                <a href="{{ path('contact_form') }}">Contactez-nous</a>
             {% else %}
                 {% if is_granted('ROLE_USER') %}
                     <a href="{{ path('homepage_member') }}">Home</a>
                     <a href="{{ path('create_article_member') }}"> Ajouter un article </a>
                     <a href="{{ path('users_register_member') }}">Consulter les profils</a>
                     <a href="{{ path('logout') }}"> Logout </a>
+                    <a href="{{ path('contact_form') }}">Contactez-nous</a>
                     <a href="{{ path('profile_users', {"id": users.id}) }}">{{ users.username }}</a>
                 {% endif %}
                 {% if is_granted('ROLE_ADMIN') %}
@@ -31,6 +33,7 @@
                     <a href="{{ path('users_register_admin') }}">Consulter les profils</a>
                     <a href="{{ path('logout') }}"> Logout </a>
                     <a href="{{ path('panel_admin') }}">Panel Admin</a>
+                    <a href="{{ path('contact_form') }}">Contactez-nous</a>
                     <a href="{{ path('profile_users_admin', {'id': users.id}) }}">{{ users.username }}</a>
                 {% endif %}
             {% endif %}

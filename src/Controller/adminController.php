@@ -67,12 +67,22 @@ class adminController extends AbstractController
 
         $form = $this->createFormBuilder($articles)
             ->add('name', TextType::class)
-            ->add('picture', TextType::class)
+            ->add('picture', TextType::class, [
+                'required' => false
+            ])
             ->add('description', TextType::class)
-            ->add('namelatin', TextType::class)
-            ->add('toxicite', TextType::class)
-            ->add('environnement', TextType::class)
-            ->add('urlBuy', TextType::class)
+            ->add('namelatin', TextType::class, [
+                'required' => false
+            ])
+            ->add('toxicite', TextType::class, [
+                'required' => false
+            ])
+            ->add('environnement', TextType::class, [
+                'required' => false
+            ])
+            ->add('urlBuy', TextType::class, [
+                'required' => false
+            ])
             ->add('categories', EntityType::class, [
                 'class' => Category::class,
                 'choice_label' => 'name'])

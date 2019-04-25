@@ -90,8 +90,12 @@ class memberProfile extends AbstractController
             ->add('username', TextType::class)
             ->add('apropos', TextareaType::class)
             ->add('work', TextType::class)
-            ->add('password', PasswordType::class)
-            ->add('confirm_password', PasswordType::class)
+            ->add('password', PasswordType::class, [
+                'required' => false
+            ])
+            ->add('confirm_password', PasswordType::class, [
+                'required' => false
+            ])
             ->add('Update', SubmitType::class)
             ->getForm();
         $form->handleRequest($request);
