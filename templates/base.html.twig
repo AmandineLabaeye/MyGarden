@@ -50,6 +50,20 @@
 </footer>
 {% block javascripts %}
     <script src="{{ asset('js/javascript.js') }}"></script>
+    {#
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                axios.get('/ajax/caroussel').then(function (response) {
+                    console.log(response);
+                    $('#Carousel').css({
+                        'background-image': "url(" + response.data.article.photo + ")"
+                    })
+                })
+            });
+        </script>
+        #}
 {% endblock %}
 </body>
 </html>

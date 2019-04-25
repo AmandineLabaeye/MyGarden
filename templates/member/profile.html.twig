@@ -40,6 +40,9 @@
                             'placeholder': "Photo de la publication"
                         }
                     }) }}
+                    <button type="submit" class="Bouton" data-label="Poster">
+                        Poster
+                    </button>
                     {{ form_end(form) }}
                 </div>
             {% endif %}
@@ -52,8 +55,8 @@
                         <a href="{{ path('profile_users_admin', {"id": publication.users.id}) }}"><span>{{ publication.users.username }}</span></a>
                     {% endif %}
                     <span> | {{ publication.users.work }}</span>
-                    <p>{{ publication.publication }}</p>
-                    <p>{{ publication.date }}</p>
+                    <p class="Publication">{{ publication.publication }}</p>
+                    <p class="Date">{{ publication.date }}</p>
                     {% if is_granted('ROLE_USER') %}
                         <a href="{{ path('comments_publication', {"id": publication.id}) }}">Clique pour commenter</a>
                     {% endif %}
@@ -80,4 +83,108 @@
             {{ knp_pagination_render(publications) }}
         </div>
     </div>
+
+    {#
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalTitle"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalTitle">Ajout d'un article</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                </div>
+            </div>
+        </div>
+    </div>
+    #}
 {% endblock %}
+
+{#{% block javascripts %}
+    {{ parent() }}
+    script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js"></script>
+    <script>
+        $(document).on('submit', 'form', function (event) {
+            event.preventDefault();
+
+            $form = $(event.target);
+            modal = $('#exampleModal');
+
+            var publication = $(".Publication").val();
+            var date = $(".Date").val();
+
+            var $submitButton = $form.find(':submit');
+            $submitButton.html('<i class="fas fa-spinner fa-pulse"></i>');
+            $submitButton.prop('disabled', true);
+
+            $form.ajaxSubmit({
+                type: 'post',
+                success: function (data) {
+                    if (data == 'ok') {
+                        $('.Publication').textContent = publication;
+                        $('.Date').textContent = date;
+                        modal.modal('toggle');
+                    } else {
+                        modal.find('.modal-body').html(data);
+                    }
+                },
+                error: function (jqXHR, status, error) {
+                    $submitButton.html(button.data('label'));
+                    $submitButton.prop('disabled', false)
+                }
+            });
+        });
+        $(document).on('submit', "form", function (e) {
+            e.preventDefault();
+            axios.get('/member/ajax/add/{{ public }}/publicationsP').then(function (response) {
+                console.log(response);
+                publication.textContent = response.data.publication.publication;
+                date.textContent = response.data.publication.date;
+                form.textContent = response.data.form;
+            }).catch(function (error) {
+                if (error.response.status === 404) {
+                    window.alert("Une erreur c'est produite, veuillez réessayez plus tard");
+                } else {
+                    window.alert("Une erreur c'est produite, veuillez réessayez plus tard");
+                }
+            });
+            $form = $(e.target);
+            $form.ajaxSubmit({
+                type: 'post',
+                success: function (data) {
+                    if (data == "ok") {
+                        console.log(data);
+                        $('.Publication').textContent = data.publication.publication
+                    } else {
+                        console.log(data);
+                        window.alert('Pas ok');
+                    }
+                },
+            })
+        });
+        $(".Bouton").click(function (event) {
+            event.preventDefault();
+            const publication = $('.Publication');
+            const date = $('.Date');
+            const form = $('.AjoutPublication');
+            axios.get('/member/ajax/add/{{ public }}/publicationsP').then(function (response) {
+                console.log(response);
+                publication.textContent = response.data.publication.publication;
+                date.textContent = response.data.publication.date;
+                form.textContent = response.data.form;
+            }).catch(function (error) {
+                if (error.response.status === 404) {
+                    window.alert("Une erreur c'est produite, veuillez réessayez plus tard");
+                } else {
+                    window.alert("Une erreur c'est produite, veuillez réessayez plus tard");
+                }
+            });
+        });
+    </script>
+{% endblock %}#}

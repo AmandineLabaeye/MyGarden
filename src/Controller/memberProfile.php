@@ -12,6 +12,7 @@ use App\Repository\UsersRepository;
 use Doctrine\Common\Persistence\ObjectManager;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\ButtonType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -43,27 +44,33 @@ class memberProfile extends AbstractController
         $date = date("d-m-Y H:i:s");
         $form = $this->createFormBuilder($publication)
             ->add('publication', TextareaType::class)
-            ->add('picture', TextType::class)
-            ->add('Poster', SubmitType::class)
+            ->add('picture', TextType::class, [
+                'required' => false
+            ])
             ->getForm();
         $form->handleRequest($request);
+
         if ($form->isSubmitted() && $form->isValid()) {
             $publication->setUsers($users);
             $publication->setDate($date);
             $publication->setPage($id);
+
             $manager->persist($publication);
             $manager->flush();
+
             return $this->redirectToRoute('profile_users', [
                 'id' => $id
             ]);
         }
 
+
         return $this->render('member/profile.html.twig', [
             'title' => "Profile",
             "users" => $users,
             "user" => $usersRepository->findBy(['id' => $id]),
-            'form' => $form->createView(),
-            "publications" => $pagin
+            "publications" => $pagin,
+            "public" => $id,
+            'form' => $form->createView()
         ]);
     }
 
@@ -112,8 +119,7 @@ class memberProfile extends AbstractController
     {
         $users = $usersRepository->find($id);
         $currentUserId = $this->getUser()->getId();
-        if ($currentUserId == $id)
-        {
+        if ($currentUserId == $id) {
             $manager->remove($users);
             $session = $this->get('session');
             $session = new Session();
