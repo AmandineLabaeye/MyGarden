@@ -4,6 +4,7 @@
 namespace App\Controller;
 
 
+use App\Actions\email;
 use App\Entity\Users;
 use App\Repository\ArticlesRepository;
 use App\Repository\CategoryRepository;
@@ -138,9 +139,25 @@ class allController extends AbstractController
     public function contact()
     {
         $users = $this->getUser();
+
         return $this->render('allMember/contact.html.twig', [
             'title' => "Contact",
             "users" => $users
         ]);
     }
+
+    /**
+     * @Route("/sendmail" , name="send_mail" , methods="POST")
+     */
+    public function send_mail(Request $request,\Swift_Mailer $mailer, \Twig_Environment $templating)
+    {
+
+        //Methode alternative , récuperation du conteneur twig et injection
+        // $templating = $this->container->get('twig');
+
+        $mail = new email($templating);
+        $mail->sendMail($request, $mailer);
+
+    }
+
 }

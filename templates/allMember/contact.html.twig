@@ -6,7 +6,19 @@
 
     <h3 style="text-align: center">Activation de compte, activation d'articles, des questions un problème etc.. ?</h3>
 
-    <div class="Form">
+    <form class="formulaire Contact" action="{{ path('send_mail') }}" method="post">
+        <div>
+            <input type="text" id="Nom" name="Nom" placeholder="Entrez votre nom et prénom" required>
+            <br>
+            <input type="text" id="Email" name="Email" placeholder="Entrez votre Adresse email" required>
+            <br>
+            <input type="text" id="Objet" name="Objet" placeholder="Entrez l'objet de votre message" required>
+            <br>
+            <textarea name="Message" id="Message" cols="30" rows="10" placeholder="Entrez votre message" required></textarea>
 
-    </div>
+            <div id="BoutonMail">
+                <input type="submit" id="Send" name="Send" value="Envoyer">
+            </div>
+        </div>
+    </form>
 {% endblock %}
