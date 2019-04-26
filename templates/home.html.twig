@@ -1,5 +1,8 @@
 {% extends "base.html.twig" %}
 {% block body %}
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
     <div class="Lien BlockCategorie">
         {% for categorie in categories %}
             <a class="Sous-Lien" href="{{ path('categories_pf', {'id': categorie.id}) }}">{{ categorie.name }}</a>
@@ -7,55 +10,108 @@
     </div>
     {% if not app.user %}
         <h1> Page d'accueil </h1>
-        {% for article in articles %}
-            <div class="BlockA">
-                <p class="NameA">{{ article.name }}</p>
-                <img class="PhotoA" src="{{ article.picture }}" alt="Photo">
-                <p class="DesA">Description</p>
-                <p class="DescriptionA"> {{ article.description }}</p>
-                <p class="DateA">{{ article.date }}</p>
-                <a href="{{ path('login') }}">Pour voir plus d'informations veuillez vous connectez</a>
-            </div>
-        {% endfor %}
-    {% else %}
-        {% if is_granted('ROLE_USER') %}
-            <h1> Page d'accueil </h1>
+        {% if nameArticle is empty %}
             {% for article in articles %}
                 <div class="BlockA">
                     <p class="NameA">{{ article.name }}</p>
                     <img class="PhotoA" src="{{ article.picture }}" alt="Photo">
                     <p class="DesA">Description</p>
-                    <p class="DescriptionA">{{ article.description }}</p>
+                    <p class="DescriptionA"> {{ article.description }}</p>
                     <p class="DateA">{{ article.date }}</p>
-                    <p>
-                        <a href="{{ path('one_member', {'id': article.id}) }}"> Voir plus </a>
-                    </p>
-                    <p>
-                        {% if app.user == article.users %}
-                            <a href="{{ path('articles_edit_member', {'id': article.id}) }}"> Edit </a>
-                        {% endif %}
-                    </p>
+                    <a href="{{ path('login') }}">Pour voir plus d'informations veuillez vous connectez</a>
+                </div>
+            {% endfor %}
+        {% elseif nameArticle is not empty %}
+            {% for article in articles if nameArticle == article.name %}
+                <div class="BlockA">
+                    <p class="NameA">{{ article.name }}</p>
+                    <img class="PhotoA" src="{{ article.picture }}" alt="Photo">
+                    <p class="DesA">Description</p>
+                    <p class="DescriptionA"> {{ article.description }}</p>
+                    <p class="DateA">{{ article.date }}</p>
+                    <a href="{{ path('login') }}">Pour voir plus d'informations veuillez vous connectez</a>
                 </div>
             {% endfor %}
         {% endif %}
+    {% else %}
+        {% if is_granted('ROLE_USER') %}
+            <h1> Page d'accueil </h1>
+            {% if nameArticle is empty %}
+                {% for article in articles %}
+                    <div class="BlockA">
+                        <p class="NameA">{{ article.name }}</p>
+                        <img class="PhotoA" src="{{ article.picture }}" alt="Photo">
+                        <p class="DesA">Description</p>
+                        <p class="DescriptionA">{{ article.description }}</p>
+                        <p class="DateA">{{ article.date }}</p>
+                        <p>
+                            <a href="{{ path('one_member', {'id': article.id}) }}"> Voir plus </a>
+                        </p>
+                        <p>
+                            {% if app.user == article.users %}
+                                <a href="{{ path('articles_edit_member', {'id': article.id}) }}"> Edit </a>
+                            {% endif %}
+                        </p>
+                    </div>
+                {% endfor %}
+            {% elseif nameArticle is not empty %}
+                {% for article in articles if nameArticle == article.name %}
+                    <div class="BlockA">
+                        <p class="NameA">{{ article.name }}</p>
+                        <img class="PhotoA" src="{{ article.picture }}" alt="Photo">
+                        <p class="DesA">Description</p>
+                        <p class="DescriptionA">{{ article.description }}</p>
+                        <p class="DateA">{{ article.date }}</p>
+                        <p>
+                            <a href="{{ path('one_member', {'id': article.id}) }}"> Voir plus </a>
+                        </p>
+                        <p>
+                            {% if app.user == article.users %}
+                                <a href="{{ path('articles_edit_member', {'id': article.id}) }}"> Edit </a>
+                            {% endif %}
+                        </p>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endif %}
         {% if is_granted('ROLE_ADMIN') %}
-            {% for article in articles %}
-                <div class="BlockA">
-                    <p class="NameA">{{ article.name }}</p>
-                    <img class="PhotoA" src="{{ article.picture }}" alt="Photo">
-                    <p class="DesA">Description</p>
-                    <p class="DescriptionA">{{ article.description }}</p>
-                    <p class="DateA">{{ article.date }}</p>
-                    <p>
-                        <a href="{{ path('one_admin', {'id': article.id}) }}"> Voir plus </a>
-                    </p>
-                    <p>
-                        {% if app.user == article.users %}
-                            <a href="{{ path('articles_edit', {'id': article.id}) }}"> Edit </a>
-                        {% endif %}
-                    </p>
-                </div>
-            {% endfor %}
+            {% if nameArticle is empty %}
+                {% for article in articles %}
+                    <div class="BlockA">
+                        <p class="NameA">{{ article.name }}</p>
+                        <img class="PhotoA" src="{{ article.picture }}" alt="Photo">
+                        <p class="DesA">Description</p>
+                        <p class="DescriptionA">{{ article.description }}</p>
+                        <p class="DateA">{{ article.date }}</p>
+                        <p>
+                            <a href="{{ path('one_admin', {'id': article.id}) }}"> Voir plus </a>
+                        </p>
+                        <p>
+                            {% if app.user == article.users %}
+                                <a href="{{ path('articles_edit', {'id': article.id}) }}"> Edit </a>
+                            {% endif %}
+                        </p>
+                    </div>
+                {% endfor %}
+            {% elseif nameArticle is not empty %}
+                {% for article in articles if nameArticle == article.name %}
+                    <div class="BlockA">
+                        <p class="NameA">{{ article.name }}</p>
+                        <img class="PhotoA" src="{{ article.picture }}" alt="Photo">
+                        <p class="DesA">Description</p>
+                        <p class="DescriptionA">{{ article.description }}</p>
+                        <p class="DateA">{{ article.date }}</p>
+                        <p>
+                            <a href="{{ path('one_admin', {'id': article.id}) }}"> Voir plus </a>
+                        </p>
+                        <p>
+                            {% if app.user == article.users %}
+                                <a href="{{ path('articles_edit', {'id': article.id}) }}"> Edit </a>
+                            {% endif %}
+                        </p>
+                    </div>
+                {% endfor %}
+            {% endif %}
         {% endif %}
     {% endif %}
     <div class="navigation">

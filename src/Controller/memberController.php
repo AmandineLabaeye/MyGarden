@@ -336,4 +336,47 @@ class memberController extends AbstractController
         }
         return $this->redirectToRoute("users_register_member");
     }
+
+    /**
+     * @Route("/", name="homepage_member")
+     */
+    public function filter(ArticlesRepository $articlesRepository, CategoryRepository $categoryRepository, PaginatorInterface $paginator, Request $request)
+    {
+        $nameArticle = null;
+
+        $pagin = $paginator->paginate(
+            $articlesRepository->findBy(["active" => 1]),
+            $request->query->getInt('page', 1),
+            2
+        );
+
+        $articles = $articlesRepository->findBy(["active" => 1]);
+
+        $form = $this->createFormBuilder($articles)
+            ->add('name', TextType::class, [
+                'label' => " ",
+                'attr' => [
+                    'placeholder' => "Nom de l'article"
+                ]
+            ])
+            ->add('Search', SubmitType::class)
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $nameArticle = $form['name']->getData();
+        }
+
+        $users = $this->getUser();
+
+        return $this->render('home.html.twig', [
+            "title" => "Home",
+            "users" => $users,
+            "categories" => $categoryRepository->findBy(["active" => 1]),
+            'nameArticle' => $nameArticle,
+            'articles' => $pagin,
+            'form' => $form->createView()
+        ]);
+    }
 }

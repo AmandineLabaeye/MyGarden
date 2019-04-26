@@ -5,6 +5,7 @@ namespace App\Controller;
 
 
 use App\Actions\email;
+use App\Entity\Articles;
 use App\Entity\Users;
 use App\Repository\ArticlesRepository;
 use App\Repository\CategoryRepository;
@@ -149,7 +150,7 @@ class allController extends AbstractController
     /**
      * @Route("/sendmail" , name="send_mail" , methods="POST")
      */
-    public function send_mail(Request $request,\Swift_Mailer $mailer, \Twig_Environment $templating)
+    public function send_mail(Request $request, \Swift_Mailer $mailer, \Twig_Environment $templating)
     {
 
         //Methode alternative , récuperation du conteneur twig et injection
@@ -158,6 +159,49 @@ class allController extends AbstractController
         $mail = new email($templating);
         $mail->sendMail($request, $mailer);
 
+    }
+
+    /**
+     * @Route("/", name="homepage")
+     */
+    public function filter(ArticlesRepository $articlesRepository, CategoryRepository $categoryRepository, PaginatorInterface $paginator, Request $request)
+    {
+        $nameArticle = null;
+
+        $pagin = $paginator->paginate(
+            $articlesRepository->findBy(["active" => 1]),
+            $request->query->getInt('page', 1),
+            2
+        );
+
+        $articles = $articlesRepository->findBy(["active" => 1]);
+
+        $form = $this->createFormBuilder($articles)
+            ->add('name', TextType::class, [
+                'label' => " ",
+                'attr' => [
+                    'placeholder' => "Nom de l'article"
+                ]
+            ])
+            ->add('Search', SubmitType::class)
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $nameArticle = $form['name']->getData();
+        }
+
+        $users = $this->getUser();
+
+        return $this->render('home.html.twig', [
+            "title" => "Home",
+            "users" => $users,
+            "categories" => $categoryRepository->findBy(["active" => 1]),
+            'nameArticle' => $nameArticle,
+            'articles' => $pagin,
+            'form' => $form->createView()
+        ]);
     }
 
 }
