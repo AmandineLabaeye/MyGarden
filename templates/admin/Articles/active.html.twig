@@ -10,14 +10,14 @@
             <p><span class="Categorie">Toxicité</span> {{ article.toxicite }}</p>
             <p><span class="Categorie">Environnement</span> {{ article.environnement }}</p>
             <p><span class="Categorie">Lien D'achat</span> {{ article.urlBuy }}</p>
-            <p><span class="Categorie">Activé</span> {{ article.active ? 'Yes' : 'No' }}</p>
+            <p><span class="Categorie">Activé</span> {{ article.active ? 'Oui' : 'Non' }}</p>
             <p><span class="Categorie">Actions</span>
-                <a href="{{ path('articles_show', {'id': article.id}) }}">Show</a>
-                <a href="{{ path('articles_edit', {'id': article.id}) }}">Edit</a>
+                <a href="{{ path('articles_show', {'id': article.id}) }}">Voir</a>
+                <a href="{{ path('articles_edit', {'id': article.id}) }}">Modifier</a>
             </p>
         </div>
     {% else %}
-        <p>No records found</p>
+        <p>Aucun résultat trouvé</p>
     {% endfor %}
     <div class="navigation">
         {{ knp_pagination_render(articles) }}

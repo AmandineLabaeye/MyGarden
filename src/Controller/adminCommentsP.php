@@ -31,7 +31,7 @@ class adminCommentsP extends AbstractController
         );
         $users = $this->getUser();
         return $this->render('admin/CommentsP/index.html.twig', [
-            "title" => "Comments Publications",
+            "title" => "Commentaires des Publications",
             "users" => $users,
             "commentsP" => $pagin
         ]);
@@ -44,7 +44,7 @@ class adminCommentsP extends AbstractController
     {
         $users = $this->getUser();
         return $this->render('admin/CommentsP/show.html.twig', [
-            'title' => "show",
+            'title' => "Voir",
             "users" => $users,
             "commentsP" => $commentsPublicationRepository->findBy(["id" => $id])
         ]);
@@ -57,7 +57,7 @@ class adminCommentsP extends AbstractController
     {
         $form = $this->createFormBuilder($commentsPublication)
             ->add('content', TextareaType::class)
-            ->add('Update', SubmitType::class)
+            ->add('Modifier', SubmitType::class)
             ->getForm();
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -69,7 +69,7 @@ class adminCommentsP extends AbstractController
         }
         $users = $this->getUser();
         return $this->render('admin/CommentsP/edit.html.twig', [
-            'title' => "Edit Comments",
+            'title' => "Modifier les Commentaires",
             "users" => $users,
             "comment" => $commentsPublication,
             "form" => $form->createView()

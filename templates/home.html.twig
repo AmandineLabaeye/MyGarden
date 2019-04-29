@@ -14,7 +14,9 @@
             {% for article in articles %}
                 <div class="BlockA">
                     <p class="NameA">{{ article.name }}</p>
-                    <img class="PhotoA" src="{{ article.picture }}" alt="Photo">
+                    {% if article.picture != NULL %}
+                        <img class="PhotoA" src="{{ article.picture }}" alt="{{ article.name }}">
+                    {% endif %}
                     <p class="DesA">Description</p>
                     <p class="DescriptionA"> {{ article.description }}</p>
                     <p class="DateA">{{ article.date }}</p>
@@ -25,7 +27,9 @@
             {% for article in articles if nameArticle == article.name %}
                 <div class="BlockA">
                     <p class="NameA">{{ article.name }}</p>
-                    <img class="PhotoA" src="{{ article.picture }}" alt="Photo">
+                    {% if article.picture != NULL %}
+                        <img class="PhotoA" src="{{ article.picture }}" alt="{{ article.name }}">
+                    {% endif %}
                     <p class="DesA">Description</p>
                     <p class="DescriptionA"> {{ article.description }}</p>
                     <p class="DateA">{{ article.date }}</p>
@@ -40,7 +44,9 @@
                 {% for article in articles %}
                     <div class="BlockA">
                         <p class="NameA">{{ article.name }}</p>
-                        <img class="PhotoA" src="{{ article.picture }}" alt="Photo">
+                        {% if article.picture != NULL %}
+                            <img class="PhotoA" src="{{ article.picture }}" alt="{{ article.name }}">
+                        {% endif %}
                         <p class="DesA">Description</p>
                         <p class="DescriptionA">{{ article.description }}</p>
                         <p class="DateA">{{ article.date }}</p>
@@ -49,7 +55,7 @@
                         </p>
                         <p>
                             {% if app.user == article.users %}
-                                <a href="{{ path('articles_edit_member', {'id': article.id}) }}"> Edit </a>
+                                <a href="{{ path('articles_edit_member', {'id': article.id}) }}"> Modifier </a>
                             {% endif %}
                         </p>
                     </div>
@@ -58,7 +64,9 @@
                 {% for article in articles if nameArticle == article.name %}
                     <div class="BlockA">
                         <p class="NameA">{{ article.name }}</p>
-                        <img class="PhotoA" src="{{ article.picture }}" alt="Photo">
+                        {% if article.picture != NULL %}
+                            <img class="PhotoA" src="{{ article.picture }}" alt="{{ article.name }}">
+                        {% endif %}
                         <p class="DesA">Description</p>
                         <p class="DescriptionA">{{ article.description }}</p>
                         <p class="DateA">{{ article.date }}</p>
@@ -67,7 +75,7 @@
                         </p>
                         <p>
                             {% if app.user == article.users %}
-                                <a href="{{ path('articles_edit_member', {'id': article.id}) }}"> Edit </a>
+                                <a href="{{ path('articles_edit_member', {'id': article.id}) }}"> Modifier </a>
                             {% endif %}
                         </p>
                     </div>
@@ -79,7 +87,9 @@
                 {% for article in articles %}
                     <div class="BlockA">
                         <p class="NameA">{{ article.name }}</p>
-                        <img class="PhotoA" src="{{ article.picture }}" alt="Photo">
+                        {% if article.picture != NULL %}
+                            <img class="PhotoA" src="{{ article.picture }}" alt="{{ article.name }}">
+                        {% endif %}
                         <p class="DesA">Description</p>
                         <p class="DescriptionA">{{ article.description }}</p>
                         <p class="DateA">{{ article.date }}</p>
@@ -88,7 +98,7 @@
                         </p>
                         <p>
                             {% if app.user == article.users %}
-                                <a href="{{ path('articles_edit', {'id': article.id}) }}"> Edit </a>
+                                <a href="{{ path('articles_edit', {'id': article.id}) }}"> Modifier </a>
                             {% endif %}
                         </p>
                     </div>
@@ -97,7 +107,9 @@
                 {% for article in articles if nameArticle == article.name %}
                     <div class="BlockA">
                         <p class="NameA">{{ article.name }}</p>
-                        <img class="PhotoA" src="{{ article.picture }}" alt="Photo">
+                        {% if article.picture != NULL %}
+                            <img class="PhotoA" src="{{ article.picture }}" alt="{{ article.name }}">
+                        {% endif %}
                         <p class="DesA">Description</p>
                         <p class="DescriptionA">{{ article.description }}</p>
                         <p class="DateA">{{ article.date }}</p>
@@ -106,7 +118,7 @@
                         </p>
                         <p>
                             {% if app.user == article.users %}
-                                <a href="{{ path('articles_edit', {'id': article.id}) }}"> Edit </a>
+                                <a href="{{ path('articles_edit', {'id': article.id}) }}"> Modifier </a>
                             {% endif %}
                         </p>
                     </div>

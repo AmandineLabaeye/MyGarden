@@ -6,7 +6,7 @@
         {% if is_granted('ROLE_USER') %}
             {{ form(form) }}
             {{ include('admin/CommentsP/deleteM.html.twig') }}
-            <a href="{{ path('profile_users', {"id": comment.users.id}) }}">Back to list</a>
+            <a href="{{ path('profile_users', {"id": comment.users.id}) }}">Retourner sur la liste</a>
         {% endif %}
     {% else %}
         <h1>Tu n'as aps accès à cette page</h1>
@@ -14,7 +14,7 @@
     {% if is_granted('ROLE_ADMIN') %}
         {{ form(form) }}
         {{ include('admin/CommentsP/delete.html.twig') }}
-        <a href="{{ path('commentsP') }}">Back to list</a>
+        <a href="{{ path('commentsP') }}">Retourner sur la liste</a>
     {% endif %}
 
 {% endblock %}

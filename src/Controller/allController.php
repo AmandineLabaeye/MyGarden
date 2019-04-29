@@ -5,7 +5,6 @@ namespace App\Controller;
 
 
 use App\Actions\email;
-use App\Entity\Articles;
 use App\Entity\Users;
 use App\Repository\ArticlesRepository;
 use App\Repository\CategoryRepository;
@@ -35,7 +34,7 @@ class allController extends AbstractController
         );
         $users = $this->getUser();
         return $this->render("home.html.twig", [
-            "title" => "Home",
+            "title" => "Page d'accueil",
             "users" => $users,
             "articles" => $pagin,
             "categories" => $categoryRepository->findBy(["active" => 1])
@@ -48,13 +47,13 @@ class allController extends AbstractController
     public function plantesfleurs(ArticlesRepository $articlesRepository, Request $request, PaginatorInterface $paginator, $id)
     {
         $pagin = $paginator->paginate(
-            $articlesRepository->findBy(['categories' => $id]),
+            $articlesRepository->findBy(['categories' => $id, "active" => 1]),
             $request->query->getInt('page', 1),
             2
         );
         $users = $this->getUser();
         return $this->render('allMember/petf.html.twig', [
-            'title' => "Plantes",
+            'title' => "Plantes Ou Fleurs",
             "users" => $users,
             "articles" => $pagin
         ]);
@@ -109,7 +108,7 @@ class allController extends AbstractController
         }
 
         return $this->render("Visitor/inscription.html.twig", [
-            "title" => "Registration",
+            "title" => "Inscription",
             'form' => $form->createView(),
             "users" => $user
         ]);
@@ -122,7 +121,7 @@ class allController extends AbstractController
     {
         $users = $this->getUser();
         return $this->render('Visitor/connexion.html.twig', [
-            "title" => "Login",
+            "title" => "Connexion",
             "users" => $users
         ]);
     }
@@ -142,7 +141,7 @@ class allController extends AbstractController
         $users = $this->getUser();
 
         return $this->render('allMember/contact.html.twig', [
-            'title' => "Contact",
+            'title' => "Contactez-nous",
             "users" => $users
         ]);
     }
@@ -183,7 +182,7 @@ class allController extends AbstractController
                     'placeholder' => "Nom de l'article"
                 ]
             ])
-            ->add('Search', SubmitType::class)
+            ->add('Rechercher', SubmitType::class)
             ->getForm();
 
         $form->handleRequest($request);
@@ -195,7 +194,7 @@ class allController extends AbstractController
         $users = $this->getUser();
 
         return $this->render('home.html.twig', [
-            "title" => "Home",
+            "title" => "Page d'accueil",
             "users" => $users,
             "categories" => $categoryRepository->findBy(["active" => 1]),
             'nameArticle' => $nameArticle,

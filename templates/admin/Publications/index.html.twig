@@ -4,15 +4,15 @@
     {% for publication in publications %}
         <div class="CartePublication">
             <p><span class="Categorie">Publication</span> {{ publication.publication }}</p>
-            <p><span class="Categorie">Picture</span> {{ publication.picture }}</p>
+            <p><span class="Categorie">Photo</span> {{ publication.picture }}</p>
             <p><span class="Categorie">Date</span> {{ publication.date }}</p>
             <p><span class="Categorie">Actions</span>
-                <a href="{{ path('publications_show', {'id': publication.id}) }}">Show</a>
-                <a href="{{ path('publications_edit', {'id': publication.id}) }}">Edit</a>
+                <a href="{{ path('publications_show', {'id': publication.id}) }}">Voir</a>
+                <a href="{{ path('publications_edit', {'id': publication.id}) }}">Modifier</a>
             </p>
         </div>
     {% else %}
-        <p>No records found</p>
+        <p>Aucun résultat trouvé</p>
     {% endfor %}
     <div class="navigation">
         {{ knp_pagination_render(publications) }}

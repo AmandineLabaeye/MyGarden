@@ -31,7 +31,7 @@ class adminController extends AbstractController
     {
         $users = $this->getUser();
         return $this->render('admin/index.html.twig', [
-            "title" => "Admin Home",
+            "title" => "Page d'accueil administrateur",
             "users" => $users
         ]);
     }
@@ -48,9 +48,51 @@ class adminController extends AbstractController
         );
         $users = $this->getUser();
         return $this->render('member/listeUsers.html.twig', [
-            "title" => "Users Liste",
+            "title" => "Liste Utilisateurs",
             "users" => $users,
             "user" => $pagin
+        ]);
+    }
+
+    /**
+     * @Route("/membreinscris", name="users_register_admin")
+     */
+    public function filterU(UsersRepository $usersRepository, PaginatorInterface $paginator, Request $request)
+    {
+        $surnameUser = null;
+
+        $pagin = $paginator->paginate(
+            $usersRepository->findBy(['active' => 1]),
+            $request->query->getInt('page', 1),
+            10
+        );
+
+        $user = $usersRepository->findBy(['active' => 1]);
+
+        $form = $this->createFormBuilder($user)
+            ->add('surname', TextType::class, [
+                'required' => false,
+                'label' => " ",
+                'attr' => [
+                    'placeholder' => "Prenom Utilisateur"
+                ]
+            ])
+            ->add('Rechercher', SubmitType::class)
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $surnameUser = $form['surname']->getData();
+        }
+
+        $users = $this->getUser();
+        return $this->render('member/listeUsers.html.twig', [
+            "title" => "Liste Utilisateurs",
+            "surnameUser" => $surnameUser,
+            "users" => $users,
+            "user" => $pagin,
+            "form" => $form->createView()
         ]);
     }
 
@@ -86,7 +128,7 @@ class adminController extends AbstractController
             ->add('categories', EntityType::class, [
                 'class' => Category::class,
                 'choice_label' => 'name'])
-            ->add('Send', SubmitType::class)
+            ->add('Créer', SubmitType::class)
             ->getForm();
 
         $form->handleRequest($request);
@@ -102,7 +144,7 @@ class adminController extends AbstractController
             return $this->redirectToRoute('homepage');
         }
         return $this->render('member/new.html.twig', [
-            "title" => "Admin Home",
+            "title" => "Création d'article",
             "users" => $users,
             "form" => $form->createView()
         ]);
@@ -120,7 +162,7 @@ class adminController extends AbstractController
         );
         $users = $this->getUser();
         return $this->render("home.html.twig", [
-            "title" => "Home",
+            "title" => "Page d'accueil",
             "users" => $users,
             "articles" => $pagin,
             "categories" => $categoryRepository->findBy(['active' => 1])
@@ -143,7 +185,7 @@ class adminController extends AbstractController
 
         $form = $this->createFormBuilder($comments)
             ->add('content', TextareaType::class)
-            ->add('Send', SubmitType::class)
+            ->add('Poster', SubmitType::class)
             ->getForm();
 
         $form->handleRequest($request);
@@ -164,7 +206,7 @@ class adminController extends AbstractController
         );
 
         return $this->render('member/one.html.twig', [
-            "title" => "One",
+            "title" => "Un article",
             "users" => $users,
             "articles" => $articlesRepository->findBy(['id' => $id]),
             'form' => $form->createView(),
@@ -194,7 +236,7 @@ class adminController extends AbstractController
                     'placeholder' => "Nom de l'article"
                 ]
             ])
-            ->add('Search', SubmitType::class)
+            ->add('Rechercher', SubmitType::class)
             ->getForm();
 
         $form->handleRequest($request);
@@ -206,7 +248,7 @@ class adminController extends AbstractController
         $users = $this->getUser();
 
         return $this->render('home.html.twig', [
-            "title" => "Home",
+            "title" => "Page d'accueil",
             "users" => $users,
             "categories" => $categoryRepository->findBy(["active" => 1]),
             'nameArticle' => $nameArticle,

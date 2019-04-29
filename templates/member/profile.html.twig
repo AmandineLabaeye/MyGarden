@@ -7,7 +7,9 @@
                 <p style="text-align: center">
                     <span>{{ user.name }}</span>
                     <span>{{ user.surname }}</span>
-                    <span>{{ user.age }} ans</span>
+                    {% if user.age != NULL %}
+                        <span>{{ user.age }} ans</span>
+                    {% endif %}
                     {% if app.user == user %}
                         {% if is_granted('ROLE_ADMIN') %}
                             <span><a href="{{ path('parametre_users_admin', {"id": user.id}) }}">Paramètre</a></span>
@@ -20,9 +22,15 @@
                 <h4 style="text-decoration: underline"> A propos : </h4>
                 <p><span style="font-weight: bold;">Pseudo:</span> {{ user.username }}</p>
                 <p><span style="font-weight: bold;">Adresse Email:</span> {{ user.email }}</p>
-                <p><span style="font-weight: bold;">Region:</span> {{ user.region }}</p>
-                <p><span style="font-weight: bold;">Ville:</span> {{ user.ville }}</p>
-                <p><span style="font-weight: bold;">Travail:</span> {{ user.work }}</p>
+                {% if user.region != NULL %}
+                    <p><span style="font-weight: bold;">Region:</span> {{ user.region }}</p>
+                {% endif %}
+                {% if user.ville != NULL %}
+                    <p><span style="font-weight: bold;">Ville:</span> {{ user.ville }}</p>
+                {% endif %}
+                {% if user.work != NULL %}
+                    <p><span style="font-weight: bold;">Travail:</span> {{ user.work }}</p>
+                {% endif %}
                 <p><span style="font-weight: bold;">Description:</span> {{ user.apropos }}</p>
             </div>
             {% if app.user == user %}
@@ -31,7 +39,7 @@
                     {{ form_row(form.publication, {
                         'label': " ",
                         'attr': {
-                            'placeholder': "Contenu de la publication"
+                            'placeholder': "Contenu de la publication *"
                         }
                     }) }}
                     {{ form_row(form.picture, {
@@ -44,6 +52,7 @@
                         Poster
                     </button>
                     {{ form_end(form) }}
+                    <h4>Les champs contenant une étoile "*" sont les champs obligatoire à remplir</h4>
                 </div>
             {% endif %}
             {% for publication in publications %}
@@ -54,7 +63,9 @@
                     {% if is_granted('ROLE_ADMIN') %}
                         <a href="{{ path('profile_users_admin', {"id": publication.users.id}) }}"><span>{{ publication.users.username }}</span></a>
                     {% endif %}
+                    {% if publication.users.work != NULL %}
                     <span> | {{ publication.users.work }}</span>
+                    {% endif %}
                     <p class="Publication">{{ publication.publication }}</p>
                     <p class="Date">{{ publication.date }}</p>
                     {% if is_granted('ROLE_USER') %}
@@ -67,12 +78,12 @@
                     {% if app.user == publication.users %}
                         {% if is_granted('ROLE_USER') %}
                             <p>
-                                <a href="{{ path('publications_edit_member', {"id": publication.id}) }}">Edit</a>
+                                <a href="{{ path('publications_edit_member', {"id": publication.id}) }}">Modifier</a>
                             </p>
                         {% endif %}
                         {% if is_granted('ROLE_ADMIN') %}
                             <p>
-                                <a href="{{ path('publications_edit', {"id": publication.id}) }}">Edit</a>
+                                <a href="{{ path('publications_edit', {"id": publication.id}) }}">Modifier</a>
                             </p>
                         {% endif %}
                     {% endif %}

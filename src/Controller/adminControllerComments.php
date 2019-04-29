@@ -11,7 +11,6 @@ use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -31,7 +30,7 @@ class adminControllerComments extends AbstractController
         );
         $users = $this->getUser();
         return $this->render('admin/Comments/index.html.twig', [
-            'title' => "Index Comment",
+            'title' => "Index Commentaires",
             "users" => $users,
             "comments" => $pagin
         ]);
@@ -44,7 +43,7 @@ class adminControllerComments extends AbstractController
     {
         $users = $this->getUser();
         return $this->render('admin/Comments/show.html.twig', [
-            'title' => "Show Comment",
+            'title' => "Voir un Commentaire",
             "users" => $users,
             "comments" => $commentsRepository->findBy(['id' => $id])
         ]);
@@ -58,7 +57,7 @@ class adminControllerComments extends AbstractController
         $form = $this->createFormBuilder($comments)
             ->add('content', TextareaType::class)
             ->add('active', NumberType::class)
-            ->add('Save', SubmitType::class)
+            ->add('Modifier', SubmitType::class)
             ->getForm();
 
         $form->handleRequest($request);
@@ -74,7 +73,7 @@ class adminControllerComments extends AbstractController
         $users = $this->getUser();
 
         return $this->render("admin/Comments/edit.html.twig", [
-            'title' => 'Edit Comment',
+            'title' => 'Modifier le Commentaire',
             "users" => $users,
             "form" => $form->createView(),
             "comment" => $comments
@@ -107,7 +106,7 @@ class adminControllerComments extends AbstractController
         $users = $this->getUser();
         return $this->render('admin/Comments/active.html.twig', [
             "users" => $users,
-            "title" => "Active Comments",
+            "title" => "Activation des Commentaires",
             "comments" => $pagin
         ]);
     }

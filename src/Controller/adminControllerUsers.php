@@ -31,7 +31,7 @@ class adminControllerUsers extends AbstractController
         );
         $users = $this->getUser();
         return $this->render('admin/Users/active.html.twig', [
-            'title' => 'Tout les users',
+            'title' => 'Tout les utilisateurs',
             'users' => $users,
             "user" => $pagin
         ]);
@@ -44,7 +44,7 @@ class adminControllerUsers extends AbstractController
     {
         $users = $this->getUser();
         return $this->render('admin/Users/show.html.twig', [
-            'title' => "Show Users",
+            'title' => "Voir l'utilisateur",
             'users' => $users,
             "user" => $usersRepository->findBy(["id" => $id])
         ]);
@@ -75,7 +75,7 @@ class adminControllerUsers extends AbstractController
             ])
             ->add("rank", TextType::class)
             ->add("active", NumberType::class)
-            ->add("Save", SubmitType::class)
+            ->add("Modifier", SubmitType::class)
             ->getForm();
 
         $form->handleRequest($request);
@@ -90,7 +90,7 @@ class adminControllerUsers extends AbstractController
         $user = $this->getUser();
 
         return $this->render('admin/Users/edit.html.twig', [
-            'title' => 'Edit Users',
+            'title' => "Modifier l'utilisateur",
             "users" => $user,
             "user" => $users,
             "form" => $form->createView()
@@ -122,7 +122,7 @@ class adminControllerUsers extends AbstractController
         );
         $users = $this->getUser();
         return $this->render('admin/Users/active.html.twig', [
-            'title' => 'Active',
+            'title' => 'Activation des utilisateurs',
             "users" => $users,
             "user" => $pagin
         ]);

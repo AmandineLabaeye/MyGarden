@@ -39,7 +39,7 @@ class memberController extends AbstractController
         );
         $users = $this->getUser();
         return $this->render('member/listeUsers.html.twig', [
-            "title" => "Users Liste",
+            "title" => "Liste Utilisateurs",
             "users" => $users,
             "user" => $pagin
         ]);
@@ -68,7 +68,7 @@ class memberController extends AbstractController
                     'placeholder' => "Prenom Utilisateur"
                 ]
             ])
-            ->add('Search', SubmitType::class)
+            ->add('Rechercher', SubmitType::class)
             ->getForm();
 
         $form->handleRequest($request);
@@ -79,7 +79,7 @@ class memberController extends AbstractController
 
         $users = $this->getUser();
         return $this->render('member/listeUsers.html.twig', [
-            "title" => "Users Liste",
+            "title" => "Liste Utilisateurs",
             "surnameUser" => $surnameUser,
             "users" => $users,
             "user" => $pagin,
@@ -99,7 +99,7 @@ class memberController extends AbstractController
         );
         $users = $this->getUser();
         return $this->render("home.html.twig", [
-            "title" => "Home",
+            "title" => "Page d'accueil",
             "users" => $users,
             "articles" => $pagin,
             "categories" => $categoryRepository->findBy(["active" => 1])
@@ -130,7 +130,7 @@ class memberController extends AbstractController
                 'required' => false
             ])
             ->add('active', NumberType::class)
-            ->add('Save', SubmitType::class)
+            ->add('Modifier', SubmitType::class)
             ->getForm();
 
         $form->handleRequest($request);
@@ -142,7 +142,7 @@ class memberController extends AbstractController
         }
         $users = $this->getUser();
         return $this->render('admin/Articles/edit.html.twig', [
-            'title' => "Edit Articles",
+            'title' => "Modifier des Articles",
             "users" => $users,
             "article" => $articles,
             "form" => $form->createView()
@@ -178,7 +178,7 @@ class memberController extends AbstractController
 
         $form = $this->createFormBuilder($comments)
             ->add('content', TextareaType::class)
-            ->add('Send', SubmitType::class)
+            ->add('Poster', SubmitType::class)
             ->getForm();
 
         $form->handleRequest($request);
@@ -199,7 +199,7 @@ class memberController extends AbstractController
         );
 
         return $this->render('member/one.html.twig', [
-            "title" => "One",
+            "title" => "L'article",
             "users" => $users,
             "articles" => $articlesRepository->findBy(['id' => $id]),
             'form' => $form->createView(),
@@ -215,7 +215,7 @@ class memberController extends AbstractController
         $form = $this->createFormBuilder($comments)
             ->add('content', TextareaType::class)
             ->add('active', NumberType::class)
-            ->add('Save', SubmitType::class)
+            ->add('Modifier', SubmitType::class)
             ->getForm();
 
         $form->handleRequest($request);
@@ -229,7 +229,7 @@ class memberController extends AbstractController
         $users = $this->getUser();
 
         return $this->render("admin/Comments/edit.html.twig", [
-            'title' => 'Edit Comment',
+            'title' => 'Modifier les Commentaires',
             "users" => $users,
             "form" => $form->createView(),
             "comment" => $comments
@@ -281,7 +281,7 @@ class memberController extends AbstractController
             ->add('categories', EntityType::class, [
                 'class' => Category::class,
                 'choice_label' => 'name'])
-            ->add('Send', SubmitType::class)
+            ->add('Créer', SubmitType::class)
             ->getForm();
 
         $form->handleRequest($request);
@@ -297,7 +297,7 @@ class memberController extends AbstractController
             return $this->redirectToRoute('homepage');
         }
         return $this->render('member/new.html.twig', [
-            "title" => "Admin Home",
+            "title" => "Création d'un article",
             "users" => $users,
             "form" => $form->createView()
         ]);
@@ -310,7 +310,7 @@ class memberController extends AbstractController
     {
         $form = $this->createFormBuilder($commentsPublication)
             ->add('content', TextareaType::class)
-            ->add('Update', SubmitType::class)
+            ->add('Modifier', SubmitType::class)
             ->getForm();
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -320,7 +320,7 @@ class memberController extends AbstractController
         }
         $users = $this->getUser();
         return $this->render('admin/CommentsP/edit.html.twig', [
-            'title' => "Edit Comments",
+            'title' => "Modifier les Commentaires",
             "users" => $users,
             "comment" => $commentsPublication,
             "form" => $form->createView()
@@ -350,7 +350,7 @@ class memberController extends AbstractController
             ->add('picture', TextType::class, [
                 'required' => false
             ])
-            ->add('Update', SubmitType::class)
+            ->add('Modifier', SubmitType::class)
             ->getForm();
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -359,7 +359,7 @@ class memberController extends AbstractController
         }
         $users = $this->getUser();
         return $this->render('admin/Publications/edit.html.twig', [
-            "title" => "Edit Publication",
+            "title" => "Modifier les Publications",
             "users" => $users,
             "publication" => $profil,
             'form' => $form->createView()
@@ -401,7 +401,7 @@ class memberController extends AbstractController
                     'placeholder' => "Nom de l'article"
                 ]
             ])
-            ->add('Search', SubmitType::class)
+            ->add('Rechercher', SubmitType::class)
             ->getForm();
 
         $form->handleRequest($request);
@@ -413,7 +413,7 @@ class memberController extends AbstractController
         $users = $this->getUser();
 
         return $this->render('home.html.twig', [
-            "title" => "Home",
+            "title" => "Page d'accueil",
             "users" => $users,
             "categories" => $categoryRepository->findBy(["active" => 1]),
             'nameArticle' => $nameArticle,

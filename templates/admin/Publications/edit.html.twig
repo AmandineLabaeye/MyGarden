@@ -5,7 +5,7 @@
         {% if is_granted('ROLE_USER') %}
             {{ form(form) }}
             {{ include('admin/Publications/deleteM.html.twig') }}
-            <a href="{{ path('profile_users', {"id": publication.users.id}) }}">Back to list</a>
+            <a href="{{ path('profile_users', {"id": publication.users.id}) }}">Retourner sur la liste</a>
         {% endif %}
     {% else %}
         <h1>Tu n'as pas accès à cette page</h1>
@@ -13,6 +13,6 @@
     {% if is_granted('ROLE_ADMIN') %}
         {{ form(form) }}
         {{ include('admin/Publications/delete.html.twig') }}
-        <a href="{{ path('publications') }}">Back to list</a>
+        <a href="{{ path('publications') }}">Retourner sur la liste</a>
     {% endif %}
 {% endblock %}

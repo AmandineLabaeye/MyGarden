@@ -31,7 +31,7 @@ class adminControllerArticles extends AbstractController
         );
         $users = $this->getUser();
         return $this->render('admin/Articles/index.html.twig', [
-            "title" => "Article",
+            "title" => "Articles",
             "articles" => $pagin,
             "users" => $users
         ]);
@@ -74,7 +74,7 @@ class adminControllerArticles extends AbstractController
                 'required' => false
             ])
             ->add('active', NumberType::class)
-            ->add('Save', SubmitType::class)
+            ->add('Modifier', SubmitType::class)
             ->getForm();
 
         $form->handleRequest($request);
@@ -88,7 +88,7 @@ class adminControllerArticles extends AbstractController
         }
         $users = $this->getUser();
         return $this->render('admin/Articles/edit.html.twig', [
-            'title' => "Edit Articles",
+            'title' => "Modifier les Articles",
             "users" => $users,
             "article" => $articles,
             "form" => $form->createView()
@@ -120,7 +120,7 @@ class adminControllerArticles extends AbstractController
         );
         $users = $this->getUser();
         return $this->render('admin/Articles/active.html.twig', [
-            'title' => "Active",
+            'title' => "Activation des articles",
             'users' => $users,
             "articles" => $pagin
         ]);

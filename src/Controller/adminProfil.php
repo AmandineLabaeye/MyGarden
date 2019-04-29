@@ -6,7 +6,6 @@ namespace App\Controller;
 
 use App\Entity\CommentsPublication;
 use App\Entity\PublicationsProfil;
-use App\Entity\Users;
 use App\Repository\CommentsPublicationRepository;
 use App\Repository\PublicationsProfilRepository;
 use App\Repository\UsersRepository;
@@ -21,7 +20,6 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Core\Encoder\PasswordEncoderInterface;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 /**
@@ -60,7 +58,7 @@ class adminProfil extends AbstractController
             ]);
         }
         return $this->render('member/profile.html.twig', [
-            'title' => "Profile",
+            'title' => "Profil",
             "users" => $users,
             "user" => $usersRepository->findBy(['id' => $id]),
             'form' => $form->createView(),
@@ -90,7 +88,7 @@ class adminProfil extends AbstractController
             ->add('confirm_password', PasswordType::class, [
                 'required' => false
             ])
-            ->add('Update', SubmitType::class)
+            ->add('Modifier', SubmitType::class)
             ->getForm();
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -103,7 +101,7 @@ class adminProfil extends AbstractController
             ]);
         }
         return $this->render('member/parametre.html.twig', [
-            'title' => "Parametre Users",
+            'title' => "Paramètre Utilisateurs",
             "users" => $user,
             "user" => $usersRepository->findBy(['id' => $id]),
             'form' => $form->createView()
@@ -162,7 +160,7 @@ class adminProfil extends AbstractController
         }
 
         return $this->render("member/publication.html.twig", [
-            'title' => "publication",
+            'title' => "Une publication",
             "users" => $users,
             "publications" => $profilRepository->findBy(["id" => $id]),
             'form' => $form->createView(),

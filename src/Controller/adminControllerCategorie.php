@@ -26,7 +26,7 @@ class adminControllerCategorie extends AbstractController
         $category = new Category();
         $form = $this->createFormBuilder($category)
             ->add('name', TextType::class)
-            ->add('Send', SubmitType::class)
+            ->add('Créer', SubmitType::class)
             ->getForm();
 
         $form->handleRequest($request);
@@ -42,7 +42,7 @@ class adminControllerCategorie extends AbstractController
         $users = $this->getUser();
 
         return $this->render('admin/Categories/new.html.twig', [
-            'title' => "New Category",
+            'title' => "Nouvelle catégorie",
             "users" => $users,
             "form" => $form->createView()
         ]);
@@ -73,7 +73,7 @@ class adminControllerCategorie extends AbstractController
     {
         $users = $this->getUser();
         return $this->render('admin/Categories/show.html.twig', [
-            'title' => "Show Categorie",
+            'title' => "Voir les Catégories",
             'users' => $users,
             "categories" => $categoryRepository->findBy(['id' => $id])
         ]);
@@ -87,7 +87,7 @@ class adminControllerCategorie extends AbstractController
         $form = $this->createFormBuilder($category)
             ->add('name', TextType::class)
             ->add('active', NumberType::class)
-            ->add('Update', SubmitType::class)
+            ->add('Modifier', SubmitType::class)
             ->getForm();
 
         $form->handleRequest($request);
@@ -103,7 +103,7 @@ class adminControllerCategorie extends AbstractController
         $users = $this->getUser();
 
         return $this->render('admin/Categories/edit.html.twig', [
-            'title' => "Edit Categories",
+            'title' => "Modifier les Categories",
             "users" => $users,
             "categorie" => $category,
             'form' => $form->createView()
@@ -135,7 +135,7 @@ class adminControllerCategorie extends AbstractController
         );
         $users = $this->getUser();
         return $this->render('admin/Categories/active.html.twig', [
-            'title' => "Active Category",
+            'title' => "Activation des catégories",
             "users" => $users,
             "categories" => $pagin
         ]);

@@ -4,14 +4,14 @@
     {% for comment in comments %}
         <div class="CarteComment">
             <p><span class="Categorie">Contenu</span> {{ comment.content }}</p>
-            <p><span class="Categorie">Activé</span> {{ comment.active ? 'Yes' : 'No' }}</p>
+            <p><span class="Categorie">Activé</span> {{ comment.active ? 'Oui' : 'Non' }}</p>
             <p><span class="Categorie">Actions</span>
-                <a href="{{ path('comments_show', {'id': comment.id}) }}">Show</a>
-                <a href="{{ path('comments_edit', {'id': comment.id}) }}">Edit</a>
+                <a href="{{ path('comments_show', {'id': comment.id}) }}">Voir</a>
+                <a href="{{ path('comments_edit', {'id': comment.id}) }}">Modifier</a>
             </p>
         </div>
     {% else %}
-        <p>No records found</p>
+        <p>Aucun résultat trouvé</p>
     {% endfor %}
-    <a href="{{ path('comments') }}">Back to list</a>
+    <a href="{{ path('comments') }}">Retourner sur la liste</a>
 {% endblock %}

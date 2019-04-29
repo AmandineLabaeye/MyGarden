@@ -14,16 +14,16 @@
             <p><span class="Categorie">Métier</span> {{ user.work }}</p>
             <p><span class="Categorie">Mot de passe</span> {{ user.password }}</p>
             <p><span class="Categorie">Niveau d'utilisateur</span> {{ user.rank }}</p>
-            <p><span class="Categorie">Activé</span> {{ user.active ? 'Yes' : 'No' }}</p>
+            <p><span class="Categorie">Activé</span> {{ user.active ? 'Oui' : 'Non' }}</p>
             <p><span class="Categorie">Actions</span>
-                <a href="{{ path('users_show', {'id': user.id}) }}">Show</a>
-                <a href="{{ path('users_edit', {'id': user.id}) }}">Edit</a>
+                <a href="{{ path('users_show', {'id': user.id}) }}">Voir</a>
+                <a href="{{ path('users_edit', {'id': user.id}) }}">Modifier</a>
             </p>
         </div>
     {% else %}
-        <p>No records found</p>
+        <p>Aucun résultat trouvé</p>
     {% endfor %}
 
     <a href="{{ path('registration') }}">Création d'un nouveau</a>
-    <a href="{{ path('users') }}">Back to list</a>
+    <a href="{{ path('users') }}">Retourner sur la liste</a>
 {% endblock %}

@@ -9,8 +9,13 @@
             {% if is_granted('ROLE_ADMIN') %}
                 <a href="{{ path('profile_users_admin', {"id": publication.users.id}) }}"><span>{{ publication.users.username }}</span></a>
             {% endif %}
-            <span> | {{ publication.users.work }}</span>
+            {% if publication.users.work != NULL %}
+                <span> | {{ publication.users.work }}</span>
+            {% endif %}
             <p>{{ publication.publication }}</p>
+            {% if publication.picture != NULL %}
+                <img class="PhotoA" src="{{ publication.picture }}" alt="Photo publication">
+            {% endif %}
             <p>{{ publication.date }}</p>
         </div>
     {% endfor %}
@@ -20,7 +25,7 @@
         {{ form_row(form.content, {
             'label': " ",
             "attr": {
-                "placeholder": "Contenu de votre commentaire sur la publication"
+                "placeholder": "Contenu de votre commentaire pour la publication"
             }
         }) }}
         {{ form_end(form) }}
@@ -33,18 +38,20 @@
             {% if is_granted('ROLE_ADMIN') %}
                 <a href="{{ path('profile_users_admin', {"id": comment.users.id}) }}"><span>{{ comment.users.username }}</span></a>
             {% endif %}
-            <span>| {{ comment.users.work }}</span>
+            {% if comment.users.work != NULL %}
+                <span> | {{ comment.users.work }}</span>
+            {% endif %}
             <p>{{ comment.content }}</p>
             <p>{{ comment.date }}</p>
             {% if app.user == comment.users %}
                 {% if is_granted('ROLE_ADMIN') %}
                     <p>
-                        <a href="{{ path('commentsP_edit', {'id': comment.id }) }}">Edit</a>
+                        <a href="{{ path('commentsP_edit', {'id': comment.id }) }}">Modifier</a>
                     </p>
                 {% endif %}
                 {% if is_granted('ROLE_USER') %}
                     <p>
-                        <a href="{{ path('commentsP_edit_member', {"id": comment.id}) }}">Edit</a>
+                        <a href="{{ path('commentsP_edit_member', {"id": comment.id}) }}">Modifier</a>
                     </p>
                 {% endif %}
             {% endif %}

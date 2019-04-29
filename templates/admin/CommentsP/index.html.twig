@@ -6,12 +6,12 @@
             <p><span class="Categorie">Publication</span> {{ comments.content }}</p>
             <p><span class="Categorie">Date</span> {{ comments.date }}</p>
             <p><span class="Categorie">Actions</span>
-                <a href="{{ path('commentsP_show', {'id': comments.id}) }}">Show</a>
-                <a href="{{ path('commentsP_edit', {'id': comments.id}) }}">Edit</a>
+                <a href="{{ path('commentsP_show', {'id': comments.id}) }}">Voir</a>
+                <a href="{{ path('commentsP_edit', {'id': comments.id}) }}">Modifier</a>
             </p>
         </div>
     {% else %}
-        <p>No records found</p>
+        <p>Aucun résultat trouvé</p>
     {% endfor %}
     <div class="navigation">
         {{ knp_pagination_render(commentsP) }}

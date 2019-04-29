@@ -5,13 +5,23 @@
     {% for article in articles %}
         <div class="BlockA">
             <p class="NameA">{{ article.name }}</p>
-            <img class="PhotoA" src="{{ article.picture }}" alt="Photo">
+            {% if article.picture != NULL %}
+                <img class="PhotoA" src="{{ article.picture }}" alt="Photo">
+            {% endif %}
             <p class="DesA">Description</p>
             <p class="DescriptionA">{{ article.description }}</p>
-            <p class="LatinA">{{ article.namelatin }}</p>
-            <p class="ToxiciteA">{{ article.toxicite }}</p>
-            <p class="EnvironnementA">{{ article.environnement }}</p>
-            <p class="AchatA">{{ article.urlBuy }}</p>
+            {% if article.namelatin != NULL %}
+                <p class="LatinA">{{ article.namelatin }}</p>
+            {% endif %}
+            {% if article.toxicite != NULL %}
+                <p class="ToxiciteA">{{ article.toxicite }}</p>
+            {% endif %}
+            {% if article.environnement != NULL %}
+                <p class="EnvironnementA">{{ article.environnement }}</p>
+            {% endif %}
+            {% if article.urlBuy != NULL %}
+                <p class="AchatA">{{ article.urlBuy }}</p>
+            {% endif %}
             <p class="DateA">{{ article.date }}</p>
         </div>
     {% endfor %}
@@ -19,10 +29,10 @@
     {{ form_row(form.content, {
         'label': " ",
         'attr': {
-            'placeholder': "Commentaires de l'articles"
+            'placeholder': "Commentaires de l'article"
         }
     }) }}
-    {{ form_row(form.Send) }}
+    {{ form_row(form.Poster) }}
     {{ form_end(form) }}
     {% for comment in comments %}
         {% if is_granted('ROLE_USER') %}
@@ -37,10 +47,10 @@
         <p class="DateC">{{ comment.date }}</p>
         {% if app.user == comment.users %}
             {% if is_granted('ROLE_USER') %}
-                <a href="{{ path('comments_edit_member', {"id": comment.id }) }}">Edit</a>
+                <a href="{{ path('comments_edit_member', {"id": comment.id }) }}">Modifier</a>
             {% endif %}
             {% if is_granted('ROLE_ADMIN') %}
-                <a href="{{ path('comments_edit', {"id": comment.id }) }}">Edit</a>
+                <a href="{{ path('comments_edit', {"id": comment.id }) }}">Modifier</a>
             {% endif %}
         {% endif %}
     {% endfor %}

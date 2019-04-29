@@ -4,14 +4,14 @@
     {% for categorie in categories %}
         <div class="CarteCategorie">
             <p><span class="Categorie">Nom</span> {{ categorie.name }}</p>
-            <p><span class="Categorie">Activé</span> {{ categorie.active ? 'Yes' : 'No' }}</p>
+            <p><span class="Categorie">Activé</span> {{ categorie.active ? 'Oui' : 'Non' }}</p>
             <p><span class="Categorie">Actions</span>
-                <a href="{{ path('categories_show', {'id': categorie.id}) }}">Show</a>
-                <a href="{{ path('categories_edit', {'id': categorie.id}) }}">Edit</a>
+                <a href="{{ path('categories_show', {'id': categorie.id}) }}">Voir</a>
+                <a href="{{ path('categories_edit', {'id': categorie.id}) }}">Modifier</a>
             </p>
         </div>
     {% else %}
-        <p>No records found</p>
+        <p>Aucun résultat trouvé</p>
     {% endfor %}
-    <a href="{{ path('categories') }}">Back to list</a>
+    <a href="{{ path('categories') }}">Retourner sur la liste</a>
 {% endblock %}

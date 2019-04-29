@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Articles;
 use App\Entity\PublicationsProfil;
 use App\Repository\PublicationsProfilRepository;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -44,7 +43,7 @@ class adminPublications extends AbstractController
     {
         $users = $this->getUser();
         return $this->render('admin/Publications/show.html.twig', [
-            'title' => "Show Publication",
+            'title' => "Voir la Publication",
             "users" => $users,
             "publications" => $profilRepository->findBy(['id' => $id])
         ]);
@@ -60,7 +59,7 @@ class adminPublications extends AbstractController
             ->add('picture', TextType::class, [
                 'required' => false
             ])
-            ->add('Update', SubmitType::class)
+            ->add('Modifier', SubmitType::class)
             ->getForm();
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -71,7 +70,7 @@ class adminPublications extends AbstractController
         }
         $users = $this->getUser();
         return $this->render('admin/Publications/edit.html.twig', [
-            "title" => "Edit Publication",
+            "title" => "Modifier la Publication",
             "users" => $users,
             "publication" => $profil,
             'form' => $form->createView()

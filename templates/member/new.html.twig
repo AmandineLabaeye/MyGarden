@@ -8,7 +8,7 @@
     {{ form_row(form.name, {
         'label': " ",
         'attr': {
-            'placeholder': "Nom Français"
+            'placeholder': "Nom Français *"
         }
     }) }}
     {{ form_row(form.picture, {
@@ -20,7 +20,7 @@
     {{ form_row(form.description, {
         'label': " ",
         'attr': {
-            'placeholder': "Description"
+            'placeholder': "Description *"
         }
     }) }}
     {{ form_row(form.namelatin, {
@@ -51,5 +51,5 @@
         'label': "Choisi la catégorie correspand à l'article"
     }) }}
     {{ form_end(form) }}
-
+    <h4>Les champs contenant une étoile "*" doivent être rempli obligatoirement</h4>
 {% endblock %}

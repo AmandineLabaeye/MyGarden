@@ -12,7 +12,6 @@ use App\Repository\UsersRepository;
 use Doctrine\Common\Persistence\ObjectManager;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Form\Extension\Core\Type\ButtonType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -65,7 +64,7 @@ class memberProfile extends AbstractController
 
 
         return $this->render('member/profile.html.twig', [
-            'title' => "Profile",
+            'title' => "Profil",
             "users" => $users,
             "user" => $usersRepository->findBy(['id' => $id]),
             "publications" => $pagin,
@@ -109,7 +108,7 @@ class memberProfile extends AbstractController
             ]);
         }
         return $this->render('member/parametre.html.twig', [
-            'title' => "parametre",
+            'title' => "Paramètre Utilisateurs",
             "users" => $user,
             "user" => $usersRepository->findBy(['id' => $id]),
             'form' => $form->createView()
@@ -152,7 +151,7 @@ class memberProfile extends AbstractController
         $comments_publication = new CommentsPublication();
         $form = $this->createFormBuilder($comments_publication)
             ->add('content', TextareaType::class)
-            ->add('Send', SubmitType::class)
+            ->add('Poster', SubmitType::class)
             ->getForm();
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -168,7 +167,7 @@ class memberProfile extends AbstractController
         }
 
         return $this->render("member/publication.html.twig", [
-            'title' => "publication",
+            'title' => "La publication",
             "users" => $users,
             "publications" => $profilRepository->findBy(["id" => $id]),
             'form' => $form->createView(),

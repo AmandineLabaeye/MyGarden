@@ -79,7 +79,7 @@
                     "placeholder": "Confirmation du nouveau mot de passe"
                 }
             }) }}
-            {{ form_row(form.Update) }}
+            {{ form_row(form.Modifier) }}
             {{ form_end(form) }}
             {% if is_granted('ROLE_ADMIN') %}
                 {{ include('member/deleteA.html.twig') }}
