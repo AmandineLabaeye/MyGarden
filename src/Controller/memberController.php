@@ -46,6 +46,48 @@ class memberController extends AbstractController
     }
 
     /**
+     * @Route("/membreinscris", name="users_register_member")
+     */
+    public function filterU(UsersRepository $usersRepository, PaginatorInterface $paginator, Request $request)
+    {
+        $surnameUser = null;
+
+        $pagin = $paginator->paginate(
+            $usersRepository->findBy(['active' => 1]),
+            $request->query->getInt('page', 1),
+            10
+        );
+
+        $user = $usersRepository->findBy(['active' => 1]);
+
+        $form = $this->createFormBuilder($user)
+            ->add('surname', TextType::class, [
+                'required' => false,
+                'label' => " ",
+                'attr' => [
+                    'placeholder' => "Prenom Utilisateur"
+                ]
+            ])
+            ->add('Search', SubmitType::class)
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $surnameUser = $form['surname']->getData();
+        }
+
+        $users = $this->getUser();
+        return $this->render('member/listeUsers.html.twig', [
+            "title" => "Users Liste",
+            "surnameUser" => $surnameUser,
+            "users" => $users,
+            "user" => $pagin,
+            "form" => $form->createView()
+        ]);
+    }
+
+    /**
      * @Route("/", name="homepage_member")
      */
     public function index(ArticlesRepository $articlesRepository, CategoryRepository $categoryRepository, Request $request, PaginatorInterface $paginator)
@@ -340,7 +382,7 @@ class memberController extends AbstractController
     /**
      * @Route("/", name="homepage_member")
      */
-    public function filter(ArticlesRepository $articlesRepository, CategoryRepository $categoryRepository, PaginatorInterface $paginator, Request $request)
+    public function filterA(ArticlesRepository $articlesRepository, CategoryRepository $categoryRepository, PaginatorInterface $paginator, Request $request)
     {
         $nameArticle = null;
 
