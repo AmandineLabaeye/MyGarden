@@ -14,11 +14,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
+ * Ce controller permet la gestion des catégories côté Admin
  * @Route("/admin/categories")
  */
 class adminControllerCategorie extends AbstractController
 {
     /**
+     * Cette function de crée une nouvelle catégorie
      * @Route("/new", name="categories_new")
      */
     public function new(Request $request, ObjectManager $manager)
@@ -49,6 +51,7 @@ class adminControllerCategorie extends AbstractController
     }
 
     /**
+     * Cette function permet d'afficher toutes les catégories avec un système de pagination
      * @Route("/categories", name="categories")
      */
     public function index(CategoryRepository $categoryRepository, PaginatorInterface $paginator, Request $request)
@@ -67,6 +70,7 @@ class adminControllerCategorie extends AbstractController
     }
 
     /**
+     * Cette function permet de montrer une catégorie selon l'ID reçu uniquement
      * @Route("/{id}", name="categories_show")
      */
     public function show(CategoryRepository $categoryRepository, $id)
@@ -80,6 +84,7 @@ class adminControllerCategorie extends AbstractController
     }
 
     /**
+     * Cette function permet d'édit une catégorie
      * @Route("/{id}/edit", name="categories_edit")
      */
     public function edit(Category $category, Request $request, ObjectManager $manager, $id)
@@ -111,6 +116,7 @@ class adminControllerCategorie extends AbstractController
     }
 
     /**
+     * Cette function permet de supprimer une catégorie
      * @Route("/delete/{id}", name="categories_delete")
      */
     public function delete(Category $category, Request $request)
@@ -124,6 +130,7 @@ class adminControllerCategorie extends AbstractController
     }
 
     /**
+     * Cette function permet d'afficher toutes les catégories à activé avec un système de pagination
      * @Route("/categories/active", name="categories_active")
      */
     public function index_active(CategoryRepository $categoryRepository, PaginatorInterface $paginator, Request $request)

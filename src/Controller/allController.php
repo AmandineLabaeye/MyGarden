@@ -20,9 +20,15 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
+/**
+ * Ce controller permet la gestion des pages visiteurs
+ * Class allController
+ * @package App\Controller
+ */
 class allController extends AbstractController
 {
     /**
+     * Cette function permet d'afficher la page d'accueil
      * @Route("/", name="homepage")
      */
     public function index(ArticlesRepository $articlesRepository, CategoryRepository $categoryRepository, Request $request, PaginatorInterface $paginator)
@@ -42,6 +48,7 @@ class allController extends AbstractController
     }
 
     /**
+     * Cette function permet d'afficher les articles en fonction de l'id de catégories
      * @Route("/petf/{id}", name="categories_pf")
      */
     public function plantesfleurs(ArticlesRepository $articlesRepository, Request $request, PaginatorInterface $paginator, $id)
@@ -60,6 +67,7 @@ class allController extends AbstractController
     }
 
     /**
+     * Cette function permet de s'inscrire au site
      * @Route("/registration", name="registration")
      */
     public function registration(Request $request, ObjectManager $manager, UserPasswordEncoderInterface $encoder)
@@ -115,6 +123,7 @@ class allController extends AbstractController
     }
 
     /**
+     * Cette function permet de se connecter
      * @Route("/login", name="login", methods={"POST", "GET"})
      */
     public function login()
@@ -127,6 +136,7 @@ class allController extends AbstractController
     }
 
     /**
+     * Cette function permet de se déconnecter
      * @Route("/logout", name="logout")
      */
     public function logout()
@@ -134,6 +144,7 @@ class allController extends AbstractController
     }
 
     /**
+     * Cette function permet de nous contacter
      * @Route("/contact", name="contact_form")
      */
     public function contact()
@@ -147,6 +158,7 @@ class allController extends AbstractController
     }
 
     /**
+     * Cette function permet d'envoyer le mail
      * @Route("/sendmail" , name="send_mail" , methods="POST")
      */
     public function send_mail(Request $request, \Swift_Mailer $mailer, \Twig_Environment $templating)
@@ -161,6 +173,7 @@ class allController extends AbstractController
     }
 
     /**
+     * Cette function permet d'afficher la page d'accueil avec un système de filtre
      * @Route("/", name="homepage")
      */
     public function filter(ArticlesRepository $articlesRepository, CategoryRepository $categoryRepository, PaginatorInterface $paginator, Request $request)

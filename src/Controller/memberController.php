@@ -23,11 +23,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
+ * Ce controller permet la gestion des pages côté membre
  * @Route("/member")
  */
 class memberController extends AbstractController
 {
     /**
+     * Cette function permet d'afficher avec un système de pagination la liste des utilisateurs inscris
      * @Route("/membreinscris", name="users_register_member")
      */
     public function usersRegister(UsersRepository $usersRepository, PaginatorInterface $paginator, Request $request)
@@ -46,6 +48,8 @@ class memberController extends AbstractController
     }
 
     /**
+     * Cette function permet d'afficher avec un système de pagination la liste des utilisateurs inscris, ou il y a un
+     * système de filtre
      * @Route("/membreinscris", name="users_register_member")
      */
     public function filterU(UsersRepository $usersRepository, PaginatorInterface $paginator, Request $request)
@@ -88,6 +92,7 @@ class memberController extends AbstractController
     }
 
     /**
+     * Cette function permet d'afficher la page d'accueil
      * @Route("/", name="homepage_member")
      */
     public function index(ArticlesRepository $articlesRepository, CategoryRepository $categoryRepository, Request $request, PaginatorInterface $paginator)
@@ -107,6 +112,7 @@ class memberController extends AbstractController
     }
 
     /**
+     * Cette function permet au utilisateurs d'éditer uniquement leur articles
      * @Route("/{id}/edit", name="articles_edit_member")
      */
     public function edit(Articles $articles, Request $request, ObjectManager $manager, $id)
@@ -150,6 +156,7 @@ class memberController extends AbstractController
     }
 
     /**
+     * Cette function leur permet de supprimer uniquement leur articles
      * @Route("/delete/{id}", name="articles_delete_member", methods={"DELETE"})
      */
     public function delete(Request $request, Articles $articles)
@@ -163,6 +170,7 @@ class memberController extends AbstractController
     }
 
     /**
+     * Cette function permets d'afficher un article avec ses infos uniquement
      * @Route("/{id}", name="one_member")
      */
     public function one(ArticlesRepository $articlesRepository, CommentsRepository $commentsRepository, Request $request, ObjectManager $manager, PaginatorInterface $paginator, $id)
@@ -208,6 +216,7 @@ class memberController extends AbstractController
     }
 
     /**
+     * Cette function permet au utilisateurs d'éditer uniquement leur commentaires
      * @Route("/comments/{id}/edit", name="comments_edit_member")
      */
     public function editC(Request $request, Comments $comments, ObjectManager $manager, $id)
@@ -237,6 +246,7 @@ class memberController extends AbstractController
     }
 
     /**
+     * Cette function permet au utilisateur de supprimer uniquement leur commentaires
      * @Route("/comments/delete/{id}", name="comments_delete_member", methods={"DELETE"})
      */
     public function deleteC(Comments $comments, Request $request)
@@ -250,6 +260,7 @@ class memberController extends AbstractController
     }
 
     /**
+     * Cette function permet de créer un nouveau article
      * @Route("/member/newArticle", name="create_article_member")
      */
     public function new(ObjectManager $manager, Request $request)
@@ -304,6 +315,7 @@ class memberController extends AbstractController
     }
 
     /**
+     * Cette function permet au utilisateurs d'éditer uniquement leur commentaires de Publications
      * @Route("/commentsP/{id}/edit", name="commentsP_edit_member")
      */
     public function editCP(CommentsPublication $commentsPublication, Request $request, ObjectManager $manager, $id)
@@ -328,6 +340,7 @@ class memberController extends AbstractController
     }
 
     /**
+     * Cette function permet au utilisateur de supprimer uniquement leur commentaires de Publication
      * @Route("/commentsP/delete/{id}", name="commentsP_delete_member", methods={"DELETE"})
      */
     public function deleteCP(Request $request, CommentsPublication $commentsPublication)
@@ -341,6 +354,7 @@ class memberController extends AbstractController
     }
 
     /**
+     * Cette function permet au utilisateurs d'éditer uniquement leur publications
      * @Route("/publications/{id}/edit", name="publications_edit_member")
      */
     public function editP(PublicationsProfil $profil, Request $request, ObjectManager $manager, $id)
@@ -367,6 +381,7 @@ class memberController extends AbstractController
     }
 
     /**
+     * Cette function permet au utilisateur de supprimer uniquement leur publication
      * @Route("/publications/delete/{id}", name="publications_delete_member", methods={"DELETE"})
      */
     public function deleteP(Request $request, PublicationsProfil $profil)
@@ -380,6 +395,7 @@ class memberController extends AbstractController
     }
 
     /**
+     * Cette function est la page d'accueil où il y a un système de filtre
      * @Route("/", name="homepage_member")
      */
     public function filterA(ArticlesRepository $articlesRepository, CategoryRepository $categoryRepository, PaginatorInterface $paginator, Request $request)

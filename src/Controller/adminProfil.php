@@ -23,11 +23,13 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 /**
+ * Ce controller permet la gestion des pages de profil côté Admin
  * @Route("/admin/profile")
  */
 class adminProfil extends AbstractController
 {
     /**
+     * Cette function affiche la page de profil et ses élements
      * @Route("/{id}", name="profile_users_admin")
      */
     public function profile(UsersRepository $usersRepository, PublicationsProfilRepository $profilRepository, Request $request, ObjectManager $manager, PaginatorInterface $paginator, $id)
@@ -67,6 +69,7 @@ class adminProfil extends AbstractController
     }
 
     /**
+     * Cette function permet au utilisateurs de modifier leur informations de compte
      * @Route("/{id}/parameter", name="parametre_users_admin")
      */
     public function parametre(Request $request, ObjectManager $manager, UserPasswordEncoderInterface $encoder, UsersRepository $usersRepository, $id)
@@ -109,6 +112,7 @@ class adminProfil extends AbstractController
     }
 
     /**
+     * Cette function permet au utilisateur de supprimer leur compte
      * @Route("/delete/{id}", name="users_delete_admin")
      */
     public function delete(ObjectManager $manager, UsersRepository $usersRepository, $id)
@@ -129,6 +133,7 @@ class adminProfil extends AbstractController
     }
 
     /**
+     * Cette function permet d'afficher une publication seul de la page de profil
      * @Route("/publications/{id}", name="comments_publication_admin")
      */
     public function onePublication(PublicationsProfilRepository $profilRepository, CommentsPublicationRepository $commentsPublicationRepository, ObjectManager $manager, Request $request, PaginatorInterface $paginator, $id)

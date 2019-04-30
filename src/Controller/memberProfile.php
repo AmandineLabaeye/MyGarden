@@ -24,11 +24,13 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 /**
+ * Ce controller permet la gestion des pages de profil côté Membre
  * @Route("/member/profile")
  */
 class memberProfile extends AbstractController
 {
     /**
+     * Cette function affiche la page de profil et ses éléments
      * @Route("/{id}", name="profile_users")
      */
     public function profile(UsersRepository $usersRepository, PublicationsProfilRepository $profilRepository, Request $request, ObjectManager $manager, PaginatorInterface $paginator, $id)
@@ -74,6 +76,7 @@ class memberProfile extends AbstractController
     }
 
     /**
+     * Cette function permet au utilisateurs de modifier leur informations de compte
      * @Route("/parameter/{id}", name="parametre_users_member")
      */
     public function parametre(Request $request, UsersRepository $usersRepository, ObjectManager $manager, UserPasswordEncoderInterface $encoder, $id)
@@ -116,6 +119,7 @@ class memberProfile extends AbstractController
     }
 
     /**
+     * Cette function permet au utilisateur de supprimer leur compte
      * @Route("/delete/{id}", name="users_delete_member")
      */
     public function delete(ObjectManager $manager, UsersRepository $usersRepository, $id)
@@ -135,10 +139,10 @@ class memberProfile extends AbstractController
     }
 
     /**
+     * Cette function permet d'afficher une publication seul de la page de profil
      * @Route("/publications/{id}", name="comments_publication")
      */
-    public
-    function onePublication(PublicationsProfilRepository $profilRepository, CommentsPublicationRepository $commentsPublicationRepository, ObjectManager $manager, Request $request, PaginatorInterface $paginator, $id)
+    public function onePublication(PublicationsProfilRepository $profilRepository, CommentsPublicationRepository $commentsPublicationRepository, ObjectManager $manager, Request $request, PaginatorInterface $paginator, $id)
     {
         $pagin = $paginator->paginate(
             $commentsPublicationRepository->findBy(['publication' => $id]),

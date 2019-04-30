@@ -14,11 +14,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
+ * Ce controller permet la gestion des commentaires d'articles côte Admin
  * @Route("/admin/comments")
  */
 class adminControllerComments extends AbstractController
 {
     /**
+     * Cette function permet d'afficher tous les commentaires avec un système de pagination
      * @Route("/comments", name="comments")
      */
     public function index(CommentsRepository $commentsRepository, PaginatorInterface $paginator, Request $request)
@@ -37,6 +39,7 @@ class adminControllerComments extends AbstractController
     }
 
     /**
+     * Cette function permet de montrer un commentaire selon l'ID reçu uniqument
      * @Route("/{id}", name="comments_show")
      */
     public function show(CommentsRepository $commentsRepository, $id)
@@ -50,6 +53,7 @@ class adminControllerComments extends AbstractController
     }
 
     /**
+     * Cette function permet d'éditer un commentaire
      * @Route("/{id}/edit", name="comments_edit")
      */
     public function edit(Request $request, Comments $comments, ObjectManager $manager, $id)
@@ -81,6 +85,7 @@ class adminControllerComments extends AbstractController
     }
 
     /**
+     * Cette function permet de supprimer un commentaire
      * @Route("/delete/{id}", name="comments_delete", methods={"DELETE"})
      */
     public function delete(Comments $comments, Request $request)

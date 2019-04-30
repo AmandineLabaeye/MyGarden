@@ -15,11 +15,13 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
+ * Ce controller permet la gestion des Utilisateurs côté Admin
  * @Route("/admin/users")
  */
 class adminControllerUsers extends AbstractController
 {
     /**
+     * Cette function permet d'afficher tous les utilisateurs avec un système de pagination
      * @Route("/users", name="users")
      */
     public function index(UsersRepository $usersRepository, Request $request, PaginatorInterface $paginator)
@@ -38,6 +40,7 @@ class adminControllerUsers extends AbstractController
     }
 
     /**
+     * Cette fonction permet de montrer un utilisateur selon l'ID reçu uniquement
      * @Route("/{id}", name="users_show")
      */
     public function show(UsersRepository $usersRepository, $id)
@@ -51,6 +54,7 @@ class adminControllerUsers extends AbstractController
     }
 
     /**
+     * Cette function permet d'éditer un utilisateur
      * @Route("/{id}/edit", name="users_edit")
      */
     public function edit(Users $users, Request $request, ObjectManager $manager, $id)
@@ -98,6 +102,7 @@ class adminControllerUsers extends AbstractController
     }
 
     /**
+     * Cette function permet de supprimer un utilisateur
      * @Route("/delete/{id}", name="users_delete", methods={"DELETE"})
      */
     public function delete(Request $request, Users $users)
@@ -111,6 +116,7 @@ class adminControllerUsers extends AbstractController
     }
 
     /**
+     * Cette function permet d'afficher tous les utilisateurs à activé avec un système de pagination
      * @Route("/users/active", name="users_active")
      */
     public function index_active(UsersRepository $usersRepository, PaginatorInterface $paginator, Request $request)

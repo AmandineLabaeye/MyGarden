@@ -20,16 +20,20 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
+ * Ce controller permet la gestion des pages côté admin
  * @Route("/admin")
  */
 class adminController extends AbstractController
 {
     /**
+     * Cette function permet d'afficher le panel Admin avec tout ces liens dans le templates Twig
      * @Route("/index", name="panel_admin")
      */
     public function panel()
     {
+        // Permet de récuperer l'utilisateur en cours
         $users = $this->getUser();
+        // Permet de faire le rendu donc de dire à quelle vue cette fonction appartient avec ses paramètres
         return $this->render('admin/index.html.twig', [
             "title" => "Page d'accueil administrateur",
             "users" => $users
@@ -37,16 +41,21 @@ class adminController extends AbstractController
     }
 
     /**
+     * Cette function permet d'afficher avec un système de pagination la liste des utilisateurs inscris
      * @Route("/membreinscris", name="users_register_admin")
      */
     public function usersRegister(UsersRepository $usersRepository, PaginatorInterface $paginator, Request $request)
     {
+        // Fonction de pagination, 1er ce qu'il faut paginer, 2eme recupération de la page par défaut, 3eme combien
+        // d'élement par page voulu
         $pagin = $paginator->paginate(
             $usersRepository->findBy(['active' => 1]),
             $request->query->getInt('page', 1),
             10
         );
+        // Permet de récuperer l'utilisateur en cours
         $users = $this->getUser();
+        // Permet de faire le rendu donc de dire à quelle vue cette fonction appartient avec ses paramètres
         return $this->render('member/listeUsers.html.twig', [
             "title" => "Liste Utilisateurs",
             "users" => $users,
@@ -55,20 +64,27 @@ class adminController extends AbstractController
     }
 
     /**
+     * Cette function permet d'afficher avec un système de pagination la liste des utilisateurs inscris, ou il y a un
+     * système de filtre
      * @Route("/membreinscris", name="users_register_admin")
      */
     public function filterU(UsersRepository $usersRepository, PaginatorInterface $paginator, Request $request)
     {
+        // Défini la variable à NULL
         $surnameUser = null;
 
+        // Fonction de pagination, 1er ce qu'il faut paginer, 2eme recupération de la page par défaut, 3eme combien
+        // d'élement par page voulu
         $pagin = $paginator->paginate(
             $usersRepository->findBy(['active' => 1]),
             $request->query->getInt('page', 1),
             10
         );
 
+        // Ligne qui permet de récuperer dans la base tout les données voulu
         $user = $usersRepository->findBy(['active' => 1]);
 
+        // Formulaire avec les différents champs et ce qu'ils doivent recevoir et les paramètres
         $form = $this->createFormBuilder($user)
             ->add('surname', TextType::class, [
                 'required' => false,
@@ -80,13 +96,17 @@ class adminController extends AbstractController
             ->add('Rechercher', SubmitType::class)
             ->getForm();
 
+        // Recupération et stockage des données reçu
         $form->handleRequest($request);
-
+        // Conditions vérifiant si le formulaire à bien était envoyé et qu'il est valide
         if ($form->isSubmitted() && $form->isValid()) {
+            // Si c'est le cas ont stock la données du formulaire dans une variable
             $surnameUser = $form['surname']->getData();
         }
 
+        // Permet de récuperer l'utilisateur en cours
         $users = $this->getUser();
+        // Permet de faire le rendu donc de dire à quelle vue cette fonction appartient avec ses paramètres
         return $this->render('member/listeUsers.html.twig', [
             "title" => "Liste Utilisateurs",
             "surnameUser" => $surnameUser,
@@ -97,14 +117,18 @@ class adminController extends AbstractController
     }
 
     /**
+     * Cette function permet de crée un nouvelle article
      * @Route("/newArticle", name="create_article_admin")
      */
     public function new(ObjectManager $manager, Request $request)
     {
+        // On instancie la class voulu
         $articles = new Articles();
 
+        // Permet de récuperer l'utilisateur en cours
         $users = $this->getUser();
 
+        // On défini une variable comprenant la date en PHP
         $date = date("d-m-Y H:i:s");
 
         $form = $this->createFormBuilder($articles)
@@ -134,11 +158,14 @@ class adminController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            // On défini les valeurs par défaut qui ne bougerons pas
             $articles->setActive(0);
             $articles->setDate($date);
             $articles->setUsers($users);
 
+            // On fait persister dans la base
             $manager->persist($articles);
+            // Puis on envoie dans la bdd
             $manager->flush();
 
             return $this->redirectToRoute('homepage');
@@ -151,6 +178,7 @@ class adminController extends AbstractController
     }
 
     /**
+     * Cette function permet d'afficher la page d'accueil (Qui est exactement la même pour les membres)
      * @Route("/", name="homepage_admin")
      */
     public function index(ArticlesRepository $articlesRepository, CategoryRepository $categoryRepository, PaginatorInterface $paginator, Request $request)
@@ -170,6 +198,7 @@ class adminController extends AbstractController
     }
 
     /**
+     * Cette function permets d'afficher un article avec ses infos uniquement
      * @Route("/{id}", name="one_admin")
      */
     public function one(ArticlesRepository $articlesRepository, CommentsRepository $commentsRepository, Request $request, ObjectManager $manager, PaginatorInterface $paginator, $id)
@@ -179,6 +208,7 @@ class adminController extends AbstractController
 
         $users = $this->getUser();
 
+        // Permet de récuperer les données en fonction de l'id récuperer dans l'URL
         $idA = $articlesRepository->find($id);
 
         $date = date("d-m-Y H:i:s");
@@ -215,6 +245,8 @@ class adminController extends AbstractController
     }
 
     /**
+     * Cette function est la page d'accueil côté Admin (Qui est exactement la même pour les membres), où il y a un
+     * système de filtre
      * @Route("/", name="homepage_admin")
      */
     public function filter(ArticlesRepository $articlesRepository, CategoryRepository $categoryRepository, PaginatorInterface $paginator, Request $request)

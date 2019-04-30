@@ -15,11 +15,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
+ * Ce controller permet la gestion des articles côté Admin
  * @Route("/admin/articles")
  */
 class adminControllerArticles extends AbstractController
 {
     /**
+     * Cette function permet d'afficher tous les articles avec un système de pagination
      * @Route("/articles", name="articles")
      */
     public function index(ArticlesRepository $articlesRepository, Request $request, PaginatorInterface $paginator)
@@ -38,6 +40,7 @@ class adminControllerArticles extends AbstractController
     }
 
     /**
+     * Cette function permet de montrer un article selon l'ID reçu uniquement
      * @Route("/{id}", name="articles_show")
      */
     public function show(ArticlesRepository $articlesRepository, $id)
@@ -51,6 +54,7 @@ class adminControllerArticles extends AbstractController
     }
 
     /**
+     * Cette function permet d'éditer un article
      * @Route("/{id}/edit", name="articles_edit")
      */
     public function edit(Articles $articles, Request $request, ObjectManager $manager, $id)
@@ -96,6 +100,7 @@ class adminControllerArticles extends AbstractController
     }
 
     /**
+     * Cette function permet de supprimer un article
      * @Route("/delete/{id}", name="articles_delete", methods={"DELETE"})
      */
     public function delete(Request $request, Articles $articles)
@@ -109,6 +114,7 @@ class adminControllerArticles extends AbstractController
     }
 
     /**
+     * Cette function permet d'afficher tous les articles à activé avec un système de pagination
      * @Route("/articles/active", name="articles_active")
      */
     public function index_active(ArticlesRepository $articlesRepository, Request $request, PaginatorInterface $paginator)
