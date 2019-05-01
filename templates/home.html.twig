@@ -120,7 +120,7 @@
                                 <a href="{{ path('articles_edit', {'id': article.id}) }}"> Modifier </a>
                             {% endif %}
                         </p>
-                        <a href="{{ path('article_like', {"id": article.id}) }}" class="js-like-link">
+                        <a href="{{ path('article_like_admin', {"id": article.id}) }}" class="js-like-link">
                             {% if app.user and article.isLikeByUser(app.user) %}
                                 <i class="fas fa-thumbs-up"></i>
                             {% else %}
@@ -149,7 +149,7 @@
                                 <a href="{{ path('articles_edit', {'id': article.id}) }}"> Modifier </a>
                             {% endif %}
                         </p>
-                        <a href="{{ path('article_like', {"id": article.id}) }}" class="js-like-link">
+                        <a href="{{ path('article_like_admin', {"id": article.id}) }}" class="js-like-link">
                             {% if app.user and article.isLikeByUser(app.user) %}
                                 <i class="fas fa-thumbs-up"></i>
                             {% else %}
