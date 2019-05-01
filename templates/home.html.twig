@@ -1,4 +1,5 @@
 {% extends "base.html.twig" %}
+
 {% block body %}
     {{ form_start(form) }}
     {{ form_widget(form) }}
@@ -58,6 +59,15 @@
                                 <a href="{{ path('articles_edit_member', {'id': article.id}) }}"> Modifier </a>
                             {% endif %}
                         </p>
+                        <a href="{{ path('article_like', {"id": article.id}) }}" class="js-like-link">
+                            {% if app.user and article.isLikeByUser(app.user) %}
+                                <i class="fas fa-thumbs-up"></i>
+                            {% else %}
+                                <i class="far fa-thumbs-up"></i>
+                            {% endif %}
+                            <span class="js-likes">{{ article.likeArticles | length }}</span>
+                            <span class="js-label">J'aime</span>
+                        </a>
                     </div>
                 {% endfor %}
             {% elseif nameArticle is not empty %}
@@ -78,6 +88,15 @@
                                 <a href="{{ path('articles_edit_member', {'id': article.id}) }}"> Modifier </a>
                             {% endif %}
                         </p>
+                        <a href="{{ path('article_like', {"id": article.id}) }}" class="js-like-link">
+                            {% if app.user and article.isLikeByUser(app.user) %}
+                                <i class="fas fa-thumbs-up"></i>
+                            {% else %}
+                                <i class="far fa-thumbs-up"></i>
+                            {% endif %}
+                            <span class="js-likes">{{ article.likeArticles | length }}</span>
+                            <span class="js-label">J'aime</span>
+                        </a>
                     </div>
                 {% endfor %}
             {% endif %}
@@ -101,6 +120,15 @@
                                 <a href="{{ path('articles_edit', {'id': article.id}) }}"> Modifier </a>
                             {% endif %}
                         </p>
+                        <a href="{{ path('article_like', {"id": article.id}) }}" class="js-like-link">
+                            {% if app.user and article.isLikeByUser(app.user) %}
+                                <i class="fas fa-thumbs-up"></i>
+                            {% else %}
+                                <i class="far fa-thumbs-up"></i>
+                            {% endif %}
+                            <span class="js-likes">{{ article.likeArticles | length }}</span>
+                            <span class="js-label">J'aime</span>
+                        </a>
                     </div>
                 {% endfor %}
             {% elseif nameArticle is not empty %}
@@ -121,6 +149,15 @@
                                 <a href="{{ path('articles_edit', {'id': article.id}) }}"> Modifier </a>
                             {% endif %}
                         </p>
+                        <a href="{{ path('article_like', {"id": article.id}) }}" class="js-like-link">
+                            {% if app.user and article.isLikeByUser(app.user) %}
+                                <i class="fas fa-thumbs-up"></i>
+                            {% else %}
+                                <i class="far fa-thumbs-up"></i>
+                            {% endif %}
+                            <span class="js-likes">{{ article.likeArticles | length }}</span>
+                            <span class="js-label">J'aime</span>
+                        </a>
                     </div>
                 {% endfor %}
             {% endif %}

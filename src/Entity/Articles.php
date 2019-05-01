@@ -80,9 +80,15 @@ class Articles
      */
     private $date;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\LikeArticle", mappedBy="article", orphanRemoval=true)
+     */
+    private $likeArticles;
+
     public function __construct()
     {
         $this->comments = new ArrayCollection();
+        $this->likeArticles = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -251,5 +257,53 @@ class Articles
         $this->date = $date;
 
         return $this;
+    }
+
+    /**
+     * @return Collection|LikeArticle[]
+     */
+    public function getLikeArticles(): Collection
+    {
+        return $this->likeArticles;
+    }
+
+    public function addLikeArticle(LikeArticle $likeArticle): self
+    {
+        if (!$this->likeArticles->contains($likeArticle)) {
+            $this->likeArticles[] = $likeArticle;
+            $likeArticle->setArticle($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLikeArticle(LikeArticle $likeArticle): self
+    {
+        if ($this->likeArticles->contains($likeArticle)) {
+            $this->likeArticles->removeElement($likeArticle);
+            // set the owning side to null (unless already changed)
+            if ($likeArticle->getArticle() === $this) {
+                $likeArticle->setArticle(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Permet de savoir si  cet article est "like" par un utilisateur
+     *
+     * @param Users $users
+     * @return bool
+     */
+    public function isLikeByUser(Users $users): bool
+    {
+        foreach ($this->likeArticles as $likeArticle) {
+            if ($likeArticle->getUsers() === $users) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

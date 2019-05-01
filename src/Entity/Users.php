@@ -117,12 +117,18 @@ class Users implements UserInterface
      */
     private $commentsPublications;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\LikeArticle", mappedBy="users", orphanRemoval=true)
+     */
+    private $likeArticles;
+
     public function __construct()
     {
         $this->articles = new ArrayCollection();
         $this->comments = new ArrayCollection();
         $this->publicationsProfils = new ArrayCollection();
         $this->commentsPublications = new ArrayCollection();
+        $this->likeArticles = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -423,6 +429,37 @@ class Users implements UserInterface
             // set the owning side to null (unless already changed)
             if ($commentsPublication->getUsers() === $this) {
                 $commentsPublication->setUsers(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|LikeArticle[]
+     */
+    public function getLikeArticles(): Collection
+    {
+        return $this->likeArticles;
+    }
+
+    public function addLikeArticle(LikeArticle $likeArticle): self
+    {
+        if (!$this->likeArticles->contains($likeArticle)) {
+            $this->likeArticles[] = $likeArticle;
+            $likeArticle->setUsers($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLikeArticle(LikeArticle $likeArticle): self
+    {
+        if ($this->likeArticles->contains($likeArticle)) {
+            $this->likeArticles->removeElement($likeArticle);
+            // set the owning side to null (unless already changed)
+            if ($likeArticle->getUsers() === $this) {
+                $likeArticle->setUsers(null);
             }
         }
 

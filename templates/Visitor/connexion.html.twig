@@ -13,11 +13,11 @@
             <div>
                 <input type="password" name="_password" required placeholder="Password">
             </div>
+            {#<a href="">Mot de passe oublié</a>#}
             <div>
                 <button type="submit"> Connexion</button>
             </div>
         </form>
-
     {% else %}
         <h2>
             <a href="{{ path('logout') }}">Pour vous connectez vous devez être déconnecter</a>

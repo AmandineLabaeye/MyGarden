@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}{{ title }}{% endblock %}</title>
-    {% block stylesheets %}
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-        <script src="{{ asset('lib/jquery.js') }}"></script>
-    {% endblock %}
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="{{ asset('lib/jquery.js') }}"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    {% block stylesheets %}{% endblock %}
 </head>
 <body id="main">
 <header>
@@ -51,8 +52,7 @@
 <footer>
     <p> Site réalisé par Amandine Labaeye </p>
 </footer>
-{% block javascripts %}
-    <script src="{{ asset('js/javascript.js') }}"></script>
-{% endblock %}
+<script src="{{ asset('js/javascript.js') }}"></script>
+{% block javascripts %}{% endblock %}
 </body>
 </html>
