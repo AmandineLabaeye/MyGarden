@@ -8,9 +8,12 @@ use App\Actions\email;
 use App\Entity\Users;
 use App\Repository\ArticlesRepository;
 use App\Repository\CategoryRepository;
+use App\Repository\UsersRepository;
 use Doctrine\Common\Persistence\ObjectManager;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\ExpressionLanguage\Tests\Node\Obj;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -216,4 +219,110 @@ class allController extends AbstractController
         ]);
     }
 
+    /**
+     * Function qui gère la page du mot de passe oublié
+     *
+     * @Route("/password", name="forgot_password")
+     */
+    public function ForgotPassword(Request $request, \Swift_Mailer $mailer, UsersRepository $usersRepository)
+    {
+        $users = new Users();
+        $form = $this->createFormBuilder($users)
+            ->add('email', TextType::class, [
+                'label' => " ",
+                "attr" => [
+                    "placeholder" => 'Adresse Email'
+                ]
+            ])
+            ->add('Envoyer', SubmitType::class)
+            ->getForm();
+        $form->handleRequest($request);
+
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $email = $form['email']->getData();
+            if ($email == $usersRepository->findBy(['email' => $email])) {
+                $name = $users->getUsername();
+                $id = $users->getId();
+                $Objet = 'Réinitialisation de votre mot de passe';
+                $Nom = $name;
+                $Email = $email;
+                $Message = "Bonjour $Nom, <br>
+                            Nous avons reçu une demande de réinitialisation de votre mot de passe <br> 
+                            Cliquez simplement sur le lien ci-dessous pour créer un nouveau mot de passe <br>
+                            <a href='/reinitialisation/$id/password'> Modifier votre mot de passe </a> <br> 
+                            Si finalement vous ne voulais pas modifier votre mot de passe pas de panique votre ancien 
+                            mot de passe et toujours valable! <br>
+                            Très bonne journée, à bientôt";
+
+
+                $message = (new \Swift_Message($Objet))
+                    ->setFrom([$Email => $Nom])
+                    ->setTo(['noreply@mygarden.fr' => 'Gérant'])
+                    ->setBody(
+                        $this->renderView(
+                        // templates/emails/registration.html.twig
+                            'email/email.html.twig',
+                            ['message' => nl2br($Message)]
+                        ),
+                        'text/html'
+                    )
+                    ->addPart(
+                        $this->renderView(
+                            'email/email.txt.twig',
+                            ['message' => $Message]
+                        ),
+                        'text/plain'
+                    );
+
+                $mailer->send($Message);
+
+                return $this->redirectToRoute('homepage');
+            }
+        }
+
+        return $this->render('Visitor/password.html.twig', [
+            'title' => "Mot de passe oublié",
+            'form' => $form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/reinitialisation/{id}/password", name="reinitialisation_password")
+     */
+    public function ReinitialisationMdp(Request $request, ObjectManager $manager, Users $users, UserPasswordEncoderInterface $encoder)
+    {
+        $form = $this->createFormBuilder($users)
+            ->add('password', PasswordType::class, [
+                'label' => " ",
+                "attr" => [
+                    'placeholder' => "Nouveau mot de passe"
+                ]
+            ])
+            ->add('confirm_password', PasswordType::class, [
+                'label' => " ",
+                "attr" => [
+                    'placeholder' => "Confirmation du nouveau mot de passe"
+                ]
+            ])
+            ->add('Valider', SubmitType::class)
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $hash = $encoder->encodePassword($users, $users->getPassword());
+            $users->setPassword($hash);
+            $manager->flush();
+
+            return $this->redirectToRoute('login');
+        }
+
+        $user = $this->getUser();
+        return $this->render('Visitor/password.html.twig', [
+            'title' => "Modifier password",
+            'form' => $form->createView(),
+            "users" => $user
+        ]);
+    }
 }

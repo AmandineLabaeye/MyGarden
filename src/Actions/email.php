@@ -61,7 +61,7 @@ class email
         $Message = $request->request->get('Message');
 
         $message = (new \Swift_Message($Objet))
-            ->setFrom(['noreply@uptofourmies.fr' => 'Simon'])
+            ->setFrom(['noreply@mygarden.fr' => 'Amandine'])
             ->setTo([$Email => $Nom])
             ->setBody(
                 $this->renderView(

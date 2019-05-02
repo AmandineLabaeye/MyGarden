@@ -120,7 +120,6 @@ function onClickBtnLike(event) {
             // s'est produite et qu'il faut réessayer ultérieurement (Problème de connexion ou autres, 404)
             window.alert("Une erreur s'est produite, réessayer plus tard")
         }
-
     });
 }
 
