@@ -224,9 +224,10 @@ class allController extends AbstractController
      *
      * @Route("/password", name="forgot_password")
      */
-    public function ForgotPassword(Request $request, \Swift_Mailer $mailer, UsersRepository $usersRepository)
+    public function ForgotPassword(Request $request, \Swift_Mailer $mailer, UsersRepository $usersRepository, ObjectManager $manager)
     {
         $users = new Users();
+        $date= rand(0, 50);
         $form = $this->createFormBuilder($users)
             ->add('email', TextType::class, [
                 'label' => " ",
@@ -237,8 +238,6 @@ class allController extends AbstractController
             ->add('Envoyer', SubmitType::class)
             ->getForm();
         $form->handleRequest($request);
-
-
         if ($form->isSubmitted() && $form->isValid()) {
             $email = $form['email']->getData();
             if ($email == $usersRepository->findBy(['email' => $email])) {
@@ -250,11 +249,10 @@ class allController extends AbstractController
                 $Message = "Bonjour $Nom, <br>
                             Nous avons reçu une demande de réinitialisation de votre mot de passe <br> 
                             Cliquez simplement sur le lien ci-dessous pour créer un nouveau mot de passe <br>
-                            <a href='/reinitialisation/$id/password'> Modifier votre mot de passe </a> <br> 
+                            <a href='/reinitialisation/$id/$date/password'> Modifier votre mot de passe </a> <br> 
                             Si finalement vous ne voulais pas modifier votre mot de passe pas de panique votre ancien 
                             mot de passe et toujours valable! <br>
                             Très bonne journée, à bientôt";
-
 
                 $message = (new \Swift_Message($Objet))
                     ->setFrom([$Email => $Nom])
@@ -277,6 +275,10 @@ class allController extends AbstractController
 
                 $mailer->send($Message);
 
+                $users->setVerif($date);
+                $manager->persist($users);
+                $manager->flush();
+
                 return $this->redirectToRoute('homepage');
             }
         }
@@ -288,9 +290,9 @@ class allController extends AbstractController
     }
 
     /**
-     * @Route("/reinitialisation/{id}/password", name="reinitialisation_password")
+     * @Route("/reinitialisation/{id}/{date}/password", name="reinitialisation_password")
      */
-    public function ReinitialisationMdp(Request $request, ObjectManager $manager, Users $users, UserPasswordEncoderInterface $encoder)
+    public function ReinitialisationMdp(Request $request, ObjectManager $manager, Users $users, UserPasswordEncoderInterface $encoder,UsersRepository $usersRepository, $date)
     {
         $form = $this->createFormBuilder($users)
             ->add('password', PasswordType::class, [
@@ -319,10 +321,12 @@ class allController extends AbstractController
         }
 
         $user = $this->getUser();
-        return $this->render('Visitor/password.html.twig', [
+        return $this->render('Visitor/editpassword.html.twig', [
             'title' => "Modifier password",
             'form' => $form->createView(),
-            "users" => $user
+            "users" => $user,
+            'date' => $date,
+            'user' => $usersRepository->findBy(['active' => 1])
         ]);
     }
 }
