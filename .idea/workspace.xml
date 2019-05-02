@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="478f7838-3daa-4edf-941f-6621d0b23ee6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/javascript.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/javascript.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,10 +16,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/memberController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1100">
+            <state relative-caret-position="12630">
               <caret line="442" selection-start-line="442" selection-end-line="442" />
             </state>
           </provider>
@@ -27,15 +28,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/home.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
+            <state relative-caret-position="5040">
               <caret line="168" column="14" selection-start-line="168" selection-start-column="14" selection-end-line="168" selection-end-column="14" />
-              <folding>
-                <element signature="e#12#26#0#Twig" expanded="true" />
-                <element signature="e#6062#6071#0#Twig" expanded="true" />
-                <element signature="e#6284#6297#0#Twig" expanded="true" />
-                <element signature="e#6450#6468#0#Twig" expanded="true" />
-                <element signature="e#8138#8156#0#Twig" expanded="true" />
-              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/js/javascript.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="129" column="103" selection-start-line="129" selection-start-column="103" selection-end-line="129" selection-end-column="103" />
             </state>
           </provider>
         </entry>
@@ -108,11 +111,11 @@
         <option value="$PROJECT_DIR$/src/Entity/Articles.php" />
         <option value="$PROJECT_DIR$/src/Controller/memberController.php" />
         <option value="$PROJECT_DIR$/templates/Visitor/connexion.html.twig" />
-        <option value="$PROJECT_DIR$/public/js/javascript.js" />
         <option value="$PROJECT_DIR$/src/Controller/allController.php" />
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/adminController.php" />
         <option value="$PROJECT_DIR$/templates/home.html.twig" />
+        <option value="$PROJECT_DIR$/public/js/javascript.js" />
       </list>
     </option>
   </component>
@@ -238,13 +241,18 @@
             <path>
               <item name="MyGarden" type="b2602c69:ProjectViewProjectNode" />
               <item name="MyGarden" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyGarden" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyGarden" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MyGarden" type="b2602c69:ProjectViewProjectNode" />
               <item name="MyGarden" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MyGarden" type="b2602c69:ProjectViewProjectNode" />
@@ -323,7 +331,8 @@
       <workItem from="1556613350135" duration="4579000" />
       <workItem from="1556628091404" duration="6878000" />
       <workItem from="1556707655918" duration="594000" />
-      <workItem from="1556729010863" duration="7619000" />
+      <workItem from="1556729010863" duration="8172000" />
+      <workItem from="1556783035172" duration="871000" />
     </task>
     <task id="LOCAL-00001" summary="Premier Commit, installation du website-skeleton, de la barre profiler et du packages security-bundles.">
       <created>1554886583853</created>
@@ -556,17 +565,24 @@
       <option name="project" value="LOCAL" />
       <updated>1556735539292</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Réglages bug (Afficher du nombre de likes)&#10;&#10;Prochain commit: &#10;Prioritaire:&#10;Système de mot de passe oublié à la connexion,&#10;Faire tout le CSS et les translations en même temps,&#10;Ajax pour les images du carroussel,&#10;Test Unitaire (JS et PHP)&#10;Formulaire de contact (Fini à tester lors de la mise en prod),&#10;&#10;Secondaire:&#10;Afficher leur propres publications / articles publié par eux sur leur profiles,&#10;Système de Liste d'amis,&#10;Notification a la personne qui recoit un commentaire">
+      <created>1556736921048</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1556736921048</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="195035000" />
+    <option name="totallyTimeSpent" value="196459000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17246597" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17473525" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -592,7 +608,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Gestion des catégories côté admin et côté membres et visiteurs (fini et css aussi).&#10;Prochain commit: Permettre au utilisateurs de modifier c'est propre articles et commentaires, faire la pagination de toutes les pages (Commentaire, Article [Côté visiteurs et membre], Commentaire, Article, Utilisateurs, Categories [Panel Admin] avec Knp-Paginator." />
     <MESSAGE value="Faire la pagination de toutes les pages (Commentaire, Article [Côté visiteurs et membre], Commentaire, Article, Utilisateurs, Categories [Panel Admin] avec Knp-Paginator. (FINI + CSS)&#10;Prochain commit: Permettre au utilisateurs de modifier c'est propre articles et commentaires, systrème de rechercher (Sur les articles)" />
     <MESSAGE value="Caroussel des plantes (Fini)&#10;Prochain commit: Permettre au utilisateurs de modifier c'est propre articles et commentaires, système de recherche (Sur les articles et Utilisateurs), système de mot de passe oublié à la connexion, faire pages de profil pour chaque utilisateurs quand il clique sur son nom dans la barre de navigation avec un système de gestion de ses paramètres et uniquement des siens" />
     <MESSAGE value="Permettre au utilisateurs de modifier c'est propre articles et commentaires et pas ceux des autres (FINI), fonction &quot;To String&quot; enlever&#10;Prochain commit: Système de recherche (Sur les articles et Utilisateurs), système de mot de passe oublié à la connexion, faire pages de profil pour chaque utilisateurs quand il clique sur son nom dans la barre de navigation avec un système de gestion de ses paramètres et uniquement des siens" />
@@ -617,7 +632,8 @@
     <MESSAGE value="Ajouter de l'ajax système de like sur article {Fait avec du JSON},&#10;&#10;Prochain commit: &#10;Prioritaire:&#10;Système de mot de passe oublié à la connexion,&#10;Faire tout le CSS et les translations en même temps,&#10;Ajax pour les images du carroussel,&#10;Test Unitaire (JS et PHP)&#10;Formulaire de contact (Fini à tester lors de la mise en prod),&#10;&#10;Secondaire:&#10;Afficher leur propres publications / articles publié par eux sur leur profiles,&#10;Système de Liste d'amis,&#10;Notification a la personne qui recoit un commentaire" />
     <MESSAGE value="Entity LikeArticle et son repository et versions de migrations&#10;&#10;Prochain commit: &#10;Prioritaire:&#10;Système de mot de passe oublié à la connexion,&#10;Faire tout le CSS et les translations en même temps,&#10;Ajax pour les images du carroussel,&#10;Test Unitaire (JS et PHP)&#10;Formulaire de contact (Fini à tester lors de la mise en prod),&#10;&#10;Secondaire:&#10;Afficher leur propres publications / articles publié par eux sur leur profiles,&#10;Système de Liste d'amis,&#10;Notification a la personne qui recoit un commentaire" />
     <MESSAGE value="Ajax système de like côté Admin {Fait}&#10;&#10;Prochain commit: &#10;Prioritaire:&#10;Système de mot de passe oublié à la connexion,&#10;Faire tout le CSS et les translations en même temps,&#10;Ajax pour les images du carroussel,&#10;Test Unitaire (JS et PHP)&#10;Formulaire de contact (Fini à tester lors de la mise en prod),&#10;&#10;Secondaire:&#10;Afficher leur propres publications / articles publié par eux sur leur profiles,&#10;Système de Liste d'amis,&#10;Notification a la personne qui recoit un commentaire" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajax système de like côté Admin {Fait}&#10;&#10;Prochain commit: &#10;Prioritaire:&#10;Système de mot de passe oublié à la connexion,&#10;Faire tout le CSS et les translations en même temps,&#10;Ajax pour les images du carroussel,&#10;Test Unitaire (JS et PHP)&#10;Formulaire de contact (Fini à tester lors de la mise en prod),&#10;&#10;Secondaire:&#10;Afficher leur propres publications / articles publié par eux sur leur profiles,&#10;Système de Liste d'amis,&#10;Notification a la personne qui recoit un commentaire" />
+    <MESSAGE value="Réglages bug (Afficher du nombre de likes)&#10;&#10;Prochain commit: &#10;Prioritaire:&#10;Système de mot de passe oublié à la connexion,&#10;Faire tout le CSS et les translations en même temps,&#10;Ajax pour les images du carroussel,&#10;Test Unitaire (JS et PHP)&#10;Formulaire de contact (Fini à tester lors de la mise en prod),&#10;&#10;Secondaire:&#10;Afficher leur propres publications / articles publié par eux sur leur profiles,&#10;Système de Liste d'amis,&#10;Notification a la personne qui recoit un commentaire" />
+    <option name="LAST_COMMIT_MESSAGE" value="Réglages bug (Afficher du nombre de likes)&#10;&#10;Prochain commit: &#10;Prioritaire:&#10;Système de mot de passe oublié à la connexion,&#10;Faire tout le CSS et les translations en même temps,&#10;Ajax pour les images du carroussel,&#10;Test Unitaire (JS et PHP)&#10;Formulaire de contact (Fini à tester lors de la mise en prod),&#10;&#10;Secondaire:&#10;Afficher leur propres publications / articles publié par eux sur leur profiles,&#10;Système de Liste d'amis,&#10;Notification a la personne qui recoit un commentaire" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/templates/admin/CommentsP/deleteM.html.twig">
@@ -1028,27 +1044,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/javascript.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1104">
-          <caret line="102" column="23" lean-forward="true" selection-start-line="102" selection-start-column="23" selection-end-line="102" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/home.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="168" column="14" selection-start-line="168" selection-start-column="14" selection-end-line="168" selection-end-column="14" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-            <element signature="e#6062#6071#0#Twig" expanded="true" />
-            <element signature="e#6284#6297#0#Twig" expanded="true" />
-            <element signature="e#6450#6468#0#Twig" expanded="true" />
-            <element signature="e#8138#8156#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/adminController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-980">
@@ -1058,8 +1053,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/memberController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1100">
+        <state relative-caret-position="12630">
           <caret line="442" selection-start-line="442" selection-end-line="442" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5040">
+          <caret line="168" column="14" selection-start-line="168" selection-start-column="14" selection-end-line="168" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/javascript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="129" column="103" selection-start-line="129" selection-start-column="103" selection-end-line="129" selection-end-column="103" />
         </state>
       </provider>
     </entry>
