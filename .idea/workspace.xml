@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="478f7838-3daa-4edf-941f-6621d0b23ee6" name="Default Changelist" comment="Système de mot de passe oublié à la connexion (Fini à tester, Régler la faille de sécurité d'envoyer un token dans le mail et verifier que c'est bien le même token qu'envoyer précédemment sinon il ne peux pas modifier son mot de passe) [All Controller {function ForgotPassword}, {ReinitialisationMdp}], [Templates\Visitor, {connexion 1lignes}, {password}]&#10;&#10;Prochain commit: &#10;Prioritaire:&#10;Système de mot de passe oublié à la connexion (Fini à tester),&#10;Faire tout le CSS et les translations en même temps,&#10;Ajax pour les images du carroussel,&#10;Test Unitaire (JS et PHP)&#10;Formulaire de contact (Fini à tester lors de la mise en prod),&#10;&#10;Secondaire:&#10;Afficher leur propres publications / articles publié par eux sur leur profiles,&#10;Système de Liste d'amis,&#10;Notification a la personne qui recoit un commentaire">
-      <change afterPath="$PROJECT_DIR$/templates/Visitor/editpassword.html.twig" afterDir="false" />
+    <list default="true" id="478f7838-3daa-4edf-941f-6621d0b23ee6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/allController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/allController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Users.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Visitor/connexion.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Visitor/connexion.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Visitor/inscription.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Visitor/inscription.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/allMember/contact.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/allMember/contact.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/allMember/petf.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/allMember/petf.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/member/one.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/member/one.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,31 +24,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Controller/allController.php">
+        <entry file="file://$PROJECT_DIR$/templates/home.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="229" column="21" selection-start-line="229" selection-start-column="21" selection-end-line="229" selection-end-column="21" />
-              <folding>
-                <element signature="e#11222#11254#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="-2130">
+              <caret line="46" selection-start-line="46" selection-end-line="46" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/Visitor/editpassword.html.twig">
+        <entry file="file://$PROJECT_DIR$/public/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity/Users.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-8946">
-              <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+            <state relative-caret-position="177">
+              <caret line="83" column="89" selection-start-line="83" selection-start-column="89" selection-end-line="83" selection-end-column="89" />
             </state>
           </provider>
         </entry>
@@ -62,6 +55,12 @@
     <findStrings>
       <find>Edit</find>
       <find>²</find>
+      <find>a</find>
+      <find>#hamburger</find>
+      <find>Description</find>
+      <find>form_rech</find>
+      <find>form_rechd</find>
+      <find>footer</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -70,11 +69,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/admin/Users/active.html.twig" />
-        <option value="$PROJECT_DIR$/templates/admin/Users/index.html.twig" />
-        <option value="$PROJECT_DIR$/templates/admin/Users/show.html.twig" />
-        <option value="$PROJECT_DIR$/templates/admin/Publications/show.html.twig" />
-        <option value="$PROJECT_DIR$/templates/admin/Publications/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/Publications/edit.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/Publications/delete.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/Publications/deleteM.html.twig" />
@@ -114,13 +108,18 @@
         <option value="$PROJECT_DIR$/src/Controller/memberController.php" />
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/adminController.php" />
-        <option value="$PROJECT_DIR$/templates/home.html.twig" />
-        <option value="$PROJECT_DIR$/public/js/javascript.js" />
         <option value="$PROJECT_DIR$/src/Actions/email.php" />
-        <option value="$PROJECT_DIR$/templates/Visitor/connexion.html.twig" />
         <option value="$PROJECT_DIR$/templates/Visitor/password.html.twig" />
         <option value="$PROJECT_DIR$/templates/Visitor/editpassword.html.twig" />
+        <option value="$PROJECT_DIR$/templates/member/one.html.twig" />
+        <option value="$PROJECT_DIR$/templates/allMember/petf.html.twig" />
+        <option value="$PROJECT_DIR$/templates/allMember/contact.html.twig" />
+        <option value="$PROJECT_DIR$/templates/Visitor/connexion.html.twig" />
+        <option value="$PROJECT_DIR$/templates/Visitor/inscription.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/allController.php" />
+        <option value="$PROJECT_DIR$/public/css/style.css" />
+        <option value="$PROJECT_DIR$/public/js/javascript.js" />
+        <option value="$PROJECT_DIR$/templates/home.html.twig" />
       </list>
     </option>
   </component>
@@ -225,9 +224,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="width" value="697" />
-    <option name="height" value="775" />
+    <option name="x" value="6" />
+    <option name="y" value="-24" />
+    <option name="width" value="1386" />
+    <option name="height" value="788" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -251,30 +251,24 @@
             <path>
               <item name="MyGarden" type="b2602c69:ProjectViewProjectNode" />
               <item name="MyGarden" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MyGarden" type="b2602c69:ProjectViewProjectNode" />
               <item name="MyGarden" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Actions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MyGarden" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MyGarden" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MyGarden" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MyGarden" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Entity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MyGarden" type="b2602c69:ProjectViewProjectNode" />
               <item name="MyGarden" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyGarden" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyGarden" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="allMember" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MyGarden" type="b2602c69:ProjectViewProjectNode" />
@@ -298,19 +292,19 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Sakur\OneDrive\Documents\GitHub\MyGarden\templates\Visitor" />
-      <recent name="C:\Users\Sakur\OneDrive\Documents\GitHub\MyGarden\templates" />
-      <recent name="C:\Users\Sakur\OneDrive\Documents\GitHub\MyGarden\templates\member" />
-      <recent name="C:\Users\Sakur\OneDrive\Documents\GitHub\MyGarden\public" />
-      <recent name="C:\Users\Sakur\OneDrive\Documents\GitHub\MyGarden\templates\admin\Publications" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Sakur\OneDrive\Documents\GitHub\MyGarden\public\Bouton" />
       <recent name="C:\Users\Sakur\OneDrive\Documents\GitHub\MyGarden\public\photo" />
       <recent name="C:\Users\Sakur\OneDrive\Documents\GitHub\MyGarden\templates\admin\Articles" />
       <recent name="C:\Users\Sakur\OneDrive\Documents\GitHub\MyGarden\templates\admin\Users" />
       <recent name="C:\Users\Sakur\OneDrive\Documents\GitHub\MyGarden\templates\allMember" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Sakur\OneDrive\Documents\GitHub\MyGarden\templates\Visitor" />
+      <recent name="C:\Users\Sakur\OneDrive\Documents\GitHub\MyGarden\templates" />
+      <recent name="C:\Users\Sakur\OneDrive\Documents\GitHub\MyGarden\templates\member" />
+      <recent name="C:\Users\Sakur\OneDrive\Documents\GitHub\MyGarden\public" />
+      <recent name="C:\Users\Sakur\OneDrive\Documents\GitHub\MyGarden\templates\admin\Publications" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -355,7 +349,9 @@
       <workItem from="1556628091404" duration="6878000" />
       <workItem from="1556707655918" duration="594000" />
       <workItem from="1556729010863" duration="8172000" />
-      <workItem from="1556783035172" duration="10570000" />
+      <workItem from="1556783035172" duration="11429000" />
+      <workItem from="1556882687945" duration="2269000" />
+      <workItem from="1556996881104" duration="8124000" />
     </task>
     <task id="LOCAL-00001" summary="Premier Commit, installation du website-skeleton, de la barre profiler et du packages security-bundles.">
       <created>1554886583853</created>
@@ -609,17 +605,24 @@
       <option name="project" value="LOCAL" />
       <updated>1556789996834</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Système de mot de passe oublié à la connexion (Fini à tester) [All Controller {function ForgotPassword}, {ReinitialisationMdp}], [Templates\Visitor, {connexion 1lignes}, {password}]&#10;&#10;Prochain commit: &#10;Prioritaire:&#10;Système de mot de passe oublié à la connexion (Fini à tester),&#10;Faire tout le CSS et les translations en même temps,&#10;Ajax pour les images du carroussel,&#10;Test Unitaire (JS et PHP)&#10;Formulaire de contact (Fini à tester lors de la mise en prod),&#10;&#10;Secondaire:&#10;Afficher leur propres publications / articles publié par eux sur leur profiles,&#10;Système de Liste d'amis,&#10;Notification a la personne qui recoit un commentaire">
+      <created>1556807378432</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1556807378432</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="206158000" />
+    <option name="totallyTimeSpent" value="217410000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17473525" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17927383" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -645,7 +648,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Permettre au utilisateurs de modifier c'est propre articles et commentaires et pas ceux des autres (FINI), fonction &quot;To String&quot; enlever&#10;Prochain commit: Système de recherche (Sur les articles et Utilisateurs), système de mot de passe oublié à la connexion, faire pages de profil pour chaque utilisateurs quand il clique sur son nom dans la barre de navigation avec un système de gestion de ses paramètres et uniquement des siens" />
     <MESSAGE value="Création des 2 entités publications et ses commentaires. Pour faire la page de profil&#10;Prochain commit: Système de recherche (Sur les articles et Utilisateurs), système de mot de passe oublié à la connexion, faire pages de profil pour chaque utilisateurs quand il clique sur son nom dans la barre de navigation avec un système de gestion de ses paramètres et uniquement des siens" />
     <MESSAGE value="faire pages de profil pour chaque utilisateurs quand il clique sur son nom dans la barre de navigation avec système de publications et commentaires sur les publications (FINI)&#10;Prochain commit: Système de recherche (Sur les articles et Utilisateurs), système de mot de passe oublié à la connexion, faire pages de profil pour chaque utilisateurs avec un système de gestion de ses paramètres et uniquement des siens et faire une page avec tout les utilisateurs inscrit pour permettre au autre utilisateurs de consulter les pages" />
     <MESSAGE value="Faire une page avec tout les utilisateurs inscrit pour permettre au autre utilisateurs de consulter les pages (FINI)&#10;Prochain commit: Système de recherche (Sur les articles et Utilisateurs), système de mot de passe oublié à la connexion, faire pages de profil pour chaque utilisateurs avec un système de gestion de ses paramètres et uniquement des siens, gérer ses propres articles des pages de profils, et gérer et faire le panel admin des publications et et commentaires page de profil. Ajax pour les images du carroussel, Ajax sur les publications et commentaires page de profil. Liste d'amis. Formulaire de contact. Notification a la personne qui recoit un commentaire" />
@@ -670,7 +672,8 @@
     <MESSAGE value="Réglages bug (Afficher du nombre de likes)&#10;&#10;Prochain commit: &#10;Prioritaire:&#10;Système de mot de passe oublié à la connexion,&#10;Faire tout le CSS et les translations en même temps,&#10;Ajax pour les images du carroussel,&#10;Test Unitaire (JS et PHP)&#10;Formulaire de contact (Fini à tester lors de la mise en prod),&#10;&#10;Secondaire:&#10;Afficher leur propres publications / articles publié par eux sur leur profiles,&#10;Système de Liste d'amis,&#10;Notification a la personne qui recoit un commentaire" />
     <MESSAGE value="Commenté le code javascript&#10;&#10;Prochain commit: &#10;Prioritaire:&#10;Système de mot de passe oublié à la connexion,&#10;Faire tout le CSS et les translations en même temps,&#10;Ajax pour les images du carroussel,&#10;Test Unitaire (JS et PHP)&#10;Formulaire de contact (Fini à tester lors de la mise en prod),&#10;&#10;Secondaire:&#10;Afficher leur propres publications / articles publié par eux sur leur profiles,&#10;Système de Liste d'amis,&#10;Notification a la personne qui recoit un commentaire" />
     <MESSAGE value="Système de mot de passe oublié à la connexion (Fini à tester, Régler la faille de sécurité d'envoyer un token dans le mail et verifier que c'est bien le même token qu'envoyer précédemment sinon il ne peux pas modifier son mot de passe) [All Controller {function ForgotPassword}, {ReinitialisationMdp}], [Templates\Visitor, {connexion 1lignes}, {password}]&#10;&#10;Prochain commit: &#10;Prioritaire:&#10;Système de mot de passe oublié à la connexion (Fini à tester),&#10;Faire tout le CSS et les translations en même temps,&#10;Ajax pour les images du carroussel,&#10;Test Unitaire (JS et PHP)&#10;Formulaire de contact (Fini à tester lors de la mise en prod),&#10;&#10;Secondaire:&#10;Afficher leur propres publications / articles publié par eux sur leur profiles,&#10;Système de Liste d'amis,&#10;Notification a la personne qui recoit un commentaire" />
-    <option name="LAST_COMMIT_MESSAGE" value="Système de mot de passe oublié à la connexion (Fini à tester, Régler la faille de sécurité d'envoyer un token dans le mail et verifier que c'est bien le même token qu'envoyer précédemment sinon il ne peux pas modifier son mot de passe) [All Controller {function ForgotPassword}, {ReinitialisationMdp}], [Templates\Visitor, {connexion 1lignes}, {password}]&#10;&#10;Prochain commit: &#10;Prioritaire:&#10;Système de mot de passe oublié à la connexion (Fini à tester),&#10;Faire tout le CSS et les translations en même temps,&#10;Ajax pour les images du carroussel,&#10;Test Unitaire (JS et PHP)&#10;Formulaire de contact (Fini à tester lors de la mise en prod),&#10;&#10;Secondaire:&#10;Afficher leur propres publications / articles publié par eux sur leur profiles,&#10;Système de Liste d'amis,&#10;Notification a la personne qui recoit un commentaire" />
+    <MESSAGE value="Système de mot de passe oublié à la connexion (Fini à tester) [All Controller {function ForgotPassword}, {ReinitialisationMdp}], [Templates\Visitor, {connexion 1lignes}, {password}]&#10;&#10;Prochain commit: &#10;Prioritaire:&#10;Système de mot de passe oublié à la connexion (Fini à tester),&#10;Faire tout le CSS et les translations en même temps,&#10;Ajax pour les images du carroussel,&#10;Test Unitaire (JS et PHP)&#10;Formulaire de contact (Fini à tester lors de la mise en prod),&#10;&#10;Secondaire:&#10;Afficher leur propres publications / articles publié par eux sur leur profiles,&#10;Système de Liste d'amis,&#10;Notification a la personne qui recoit un commentaire" />
+    <option name="LAST_COMMIT_MESSAGE" value="Système de mot de passe oublié à la connexion (Fini à tester) [All Controller {function ForgotPassword}, {ReinitialisationMdp}], [Templates\Visitor, {connexion 1lignes}, {password}]&#10;&#10;Prochain commit: &#10;Prioritaire:&#10;Système de mot de passe oublié à la connexion (Fini à tester),&#10;Faire tout le CSS et les translations en même temps,&#10;Ajax pour les images du carroussel,&#10;Test Unitaire (JS et PHP)&#10;Formulaire de contact (Fini à tester lors de la mise en prod),&#10;&#10;Secondaire:&#10;Afficher leur propres publications / articles publié par eux sur leur profiles,&#10;Système de Liste d'amis,&#10;Notification a la personne qui recoit un commentaire" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/templates/admin/Comments/deleteM.html.twig">
@@ -883,15 +886,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/ajaxController.php" />
-    <entry file="file://$PROJECT_DIR$/templates/Visitor/inscription.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2226">
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/member/profile.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2850">
@@ -956,36 +950,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/member/one.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1386">
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/allMember/contact.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-306">
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/allMember/petf.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1026">
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/style.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/LikeArticle.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -1007,20 +971,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/javascript.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="120" column="62" lean-forward="true" selection-start-line="120" selection-start-column="62" selection-end-line="120" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/home.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="168" column="14" selection-start-line="168" selection-start-column="14" selection-end-line="168" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/email/msg_mail_site.html.twig">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1031,24 +981,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="8" column="69" selection-start-line="8" selection-start-column="69" selection-end-line="8" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Visitor/connexion.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="45" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-            <element signature="e#446#461#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/adminCommentsP.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
@@ -1056,20 +988,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Visitor/password.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Entity/Users.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+        <state relative-caret-position="-8946">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/member/one.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
           <folding>
             <element signature="e#12#26#0#Twig" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Users.php">
+    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8946">
-          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+        <state relative-caret-position="393">
+          <caret line="52" column="6" lean-forward="true" selection-start-line="52" selection-start-column="6" selection-end-line="52" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/allMember/petf.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/allMember/contact.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="14" column="84" selection-start-line="14" selection-start-column="84" selection-end-line="14" selection-end-column="84" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Visitor/connexion.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="83" selection-start-line="10" selection-start-column="83" selection-end-line="10" selection-end-column="83" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Visitor/inscription.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="59" column="35" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Visitor/password.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1082,18 +1071,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/Visitor/editpassword.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+        <state relative-caret-position="-6">
+          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/allController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="229" column="21" selection-start-line="229" selection-start-column="21" selection-end-line="229" selection-end-column="21" />
-          <folding>
-            <element signature="e#11222#11254#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="617">
+          <caret line="323" column="33" selection-start-line="323" selection-start-column="33" selection-end-line="323" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="83" column="89" selection-start-line="83" selection-start-column="89" selection-end-line="83" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/javascript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="107" column="50" lean-forward="true" selection-start-line="107" selection-start-column="50" selection-end-line="107" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2130">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
         </state>
       </provider>
     </entry>

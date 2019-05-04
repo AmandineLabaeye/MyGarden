@@ -1,14 +1,17 @@
 {% extends "base.html.twig" %}
 {% block body %}
+    <div class="Lien BlockCategorie">
+        {% for categorie in categories %}
+            <a class="Sous-Lien" href="{{ path('categories_pf', {'id': categorie.id}) }}">{{ categorie.name }}</a>
+        {% endfor %}
+    </div>
     {% if not app.user %}
-        <h1> Page d'accueil </h1>
         {% for article in articles %}
             <div class="BlockA">
                 <p class="NameA">{{ article.name }}</p>
                 {% if article.picture != NULL %}
                     <img class="PhotoA" src="{{ article.picture }}" alt="{{ article.name }}">
                 {% endif %}
-                <p class="DesA">Description</p>
                 <p class="DescriptionA"> {{ article.description }}</p>
                 <p class="DateA">{{ article.date }}</p>
                 <a href="{{ path('login') }}">Pour voir plus d'informations veuillez vous connectez</a>
@@ -16,14 +19,12 @@
         {% endfor %}
     {% else %}
         {% if is_granted('ROLE_USER') %}
-            <h1> Page d'accueil </h1>
             {% for article in articles %}
                 <div class="BlockA">
                     <p class="NameA">{{ article.name }}</p>
                     {% if article.picture != NULL %}
                         <img class="PhotoA" src="{{ article.picture }}" alt="{{ article.name }}">
                     {% endif %}
-                    <p class="DesA">Description</p>
                     <p class="DescriptionA">{{ article.description }}</p>
                     <p class="DateA">{{ article.date }}</p>
                     <a href="{{ path('one_member', {'id': article.id}) }}"> Voir plus </a>
@@ -37,7 +38,6 @@
                     {% if article.picture != NULL %}
                         <img class="PhotoA" src="{{ article.picture }}" alt="{{ article.name }}">
                     {% endif %}
-                    <p class="DesA">Description</p>
                     <p class="DescriptionA">{{ article.description }}</p>
                     <p class="DateA">{{ article.date }}</p>
                     <a href="{{ path('one_admin', {'id': article.id}) }}"> Voir plus </a>

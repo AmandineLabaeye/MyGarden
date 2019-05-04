@@ -4,18 +4,18 @@
 
     {% if not app.user %}
 
-        <h1>Connexion</h1>
+        <h2 class="Title">Connexion</h2>
 
         <form action="{{ path('login') }}" method="post">
             <div>
-                <input type="text" name="_username" required placeholder="Adresse email">
+                <input type="text" name="_username" required placeholder="Adresse Mail">
             </div>
             <div>
-                <input type="password" name="_password" required placeholder="Password">
+                <input type="password" name="_password" required placeholder="Mot de passe">
             </div>
-            <a href="{{ path('forgot_password') }}">Mot de passe oublié</a>
+            <a href="{{ path('forgot_password') }}">Mot de passe oublié ?</a>
             <div>
-                <button type="submit"> Connexion</button>
+                <button type="submit" id="form_Connexion"> Connexion</button>
             </div>
         </form>
     {% else %}

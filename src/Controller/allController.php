@@ -54,7 +54,7 @@ class allController extends AbstractController
      * Cette function permet d'afficher les articles en fonction de l'id de catégories
      * @Route("/petf/{id}", name="categories_pf")
      */
-    public function plantesfleurs(ArticlesRepository $articlesRepository, Request $request, PaginatorInterface $paginator, $id)
+    public function plantesfleurs(ArticlesRepository $articlesRepository, Request $request, PaginatorInterface $paginator, CategoryRepository $categoryRepository, $id)
     {
         $pagin = $paginator->paginate(
             $articlesRepository->findBy(['categories' => $id, "active" => 1]),
@@ -65,7 +65,8 @@ class allController extends AbstractController
         return $this->render('allMember/petf.html.twig', [
             'title' => "Plantes Ou Fleurs",
             "users" => $users,
-            "articles" => $pagin
+            "articles" => $pagin,
+            "categories" => $categoryRepository->findBy(["active" => 1])
         ]);
     }
 
@@ -227,12 +228,12 @@ class allController extends AbstractController
     public function ForgotPassword(Request $request, \Swift_Mailer $mailer, UsersRepository $usersRepository, ObjectManager $manager)
     {
         $users = new Users();
-        $date= rand(0, 50);
+        $date = rand(0, 50);
         $form = $this->createFormBuilder($users)
             ->add('email', TextType::class, [
                 'label' => " ",
                 "attr" => [
-                    "placeholder" => 'Adresse Email'
+                    "placeholder" => 'Adresse Mail'
                 ]
             ])
             ->add('Envoyer', SubmitType::class)
@@ -292,7 +293,7 @@ class allController extends AbstractController
     /**
      * @Route("/reinitialisation/{id}/{date}/password", name="reinitialisation_password")
      */
-    public function ReinitialisationMdp(Request $request, ObjectManager $manager, Users $users, UserPasswordEncoderInterface $encoder,UsersRepository $usersRepository, $date)
+    public function ReinitialisationMdp(Request $request, ObjectManager $manager, Users $users, UserPasswordEncoderInterface $encoder, UsersRepository $usersRepository, $date)
     {
         $form = $this->createFormBuilder($users)
             ->add('password', PasswordType::class, [

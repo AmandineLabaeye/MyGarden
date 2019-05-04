@@ -6,31 +6,29 @@ body {
 
 #main {
     margin: auto;
-    width: 80%;
+    width: 100%;
+    background-color: #469fa7c2;
+}
+
+header > nav {
     padding: 10px;
-    background-color: green;
 }
 
 header {
     width: 100%;
+    text-align: center;
 }
 
-#menu-gauche {
-    width: 20%;
-    float: left;
-    background: rgba(0, 0, 0, 0.5);
-}
 
 #hamburger-menu > a {
     display: inline-block;
-    background: #313131;
+    background-color: #9dbee4a3;
     width: auto;
     padding: 10px;
     border-radius: 25px;
     margin-right: 15px;
-    color: white;
+    color: #286348;
     font-weight: bold;
-    border: 2px solid black;
     cursor: pointer;
     text-decoration: none;
 }
@@ -49,20 +47,26 @@ header {
     padding-bottom: 20px;
 }
 
+h3 {
+    text-align: center;
+}
+
 footer {
     width: 100%;
     clear: both;
     text-align: center;
+    margin-top: 30px;
+}
+
+footer > p {
+    padding: 10px;
+    margin: 0;
+    color: blue;
 }
 
 h1 {
     text-align: center;
     text-decoration: underline;
-}
-
-a {
-    color: white;
-    text-decoration: none;
 }
 
 input[type=text], input[type=password] {
@@ -72,20 +76,29 @@ input[type=text], input[type=password] {
     display: inline-block;
     border: 1px solid gray;
     border-radius: 4px;
+    text-align: center;
     box-sizing: border-box;
+    background-color: lightgrey;
 }
 
-button:hover {
-    background-color: black;
+#form_Rechercher, #form_Inscription, #form_Connexion, #Send, #form_Envoyer, #form_Valider {
+    width: 15%;
+    padding: 1%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#form_Connexion {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 button {
-    background-color: darkgreen;
+    background-color: #41bffbcc;
     border: none;
-    color: white;
-    padding: 16px 32px;
     text-decoration: none;
     cursor: pointer;
+    color: #c70c0c;
     border-radius: 20px;
     text-align: center;
 }
@@ -94,10 +107,22 @@ Form {
     text-align: center;
 }
 
+.Title {
+    color: darkmagenta;
+    text-decoration: underline;
+}
+
 textarea {
     width: 40vw;
     height: 10vw;
     text-align: center;
+    background-color: lightgrey;
+    border: 1px solid gray;
+}
+
+.Oblig {
+    text-align: center;
+    color: wheat;
 }
 
 h2 {
@@ -116,22 +141,21 @@ img {
 .NameA {
     font-size: 25px;
     font-weight: bolder;
-    color: darkred;
+    color: #9118c1;
     text-decoration: underline;
 }
 
-.DesA {
-    text-decoration: underline;
-    color: darkblue;
-    font-size: 20px;
+a {
+    text-decoration: none;
 }
 
 .DescriptionA {
-    color: darkseagreen;
+    color: #054805;
 }
 
 .DateA, .DateC {
     font-weight: bolder;
+    color: navajowhite;
 }
 
 .UserC {
@@ -165,10 +189,17 @@ img {
 }
 
 .Sous-Lien {
-    background-color: #a71511;
-    padding: 10px;
-    border: #871511 solid;
+    background-color: #7ec2fda8;
+    padding-top: 10px;
+    padding-bottom: 10px;
     border-radius: 20px;
+    padding-left: 40px;
+    text-align: center;
+    padding-right: 40px;
+    text-decoration: none;
+    box-shadow: 10px 5px 5px #56888a;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .CarteUser, .CarteArticle, .CarteComment, .CarteCategorie, .CartePublication {
@@ -185,8 +216,8 @@ img {
 }
 
 .BlockCategorie {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .navigation {
@@ -209,6 +240,7 @@ img {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    margin-top: 20px;
 }
 
 

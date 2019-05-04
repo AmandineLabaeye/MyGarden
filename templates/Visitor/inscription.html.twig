@@ -3,7 +3,7 @@
 {% block body %}
 
     {% if not app.user %}
-        <h1> Inscription </h1>
+        <h2 class="Title"> Inscription </h2>
 
         {{ form_start(form) }}
         {{ form_row(form.avatar, {
@@ -21,31 +21,31 @@
         {{ form_row(form.surname, {
             'label': " ",
             'attr': {
-                'placeholder': 'Prenom *'
+                'placeholder': 'Prénom *'
             }
         }) }}
         {{ form_row(form.email, {
             'label': " ",
             'attr': {
-                'placeholder': 'Adresse Email *'
+                'placeholder': 'Adresse Mail *'
             }
         }) }}
         {{ form_row(form.age, {
             'label': " ",
             'attr': {
-                'placeholder': "L'age"
+                'placeholder': "Age"
             }
         }) }}
         {{ form_row(form.region, {
             'label': " ",
             'attr': {
-                'placeholder': 'Ta région'
+                'placeholder': 'Région'
             }
         }) }}
         {{ form_row(form.ville, {
             'label': " ",
             'attr': {
-                'placeholder': 'Ta ville'
+                'placeholder': 'Ville'
             }
         }) }}
         {{ form_row(form.username, {
@@ -57,7 +57,7 @@
         {{ form_row(form.work, {
             'label': " ",
             'attr': {
-                'placeholder': "Ton métier"
+                'placeholder': "Profession"
             }
         }) }}
         {{ form_row(form.password, {
@@ -79,7 +79,7 @@
             }
         }) }}
         {{ form_end(form) }}
-        <h4>Les champs comportant une étoile sont des champs obligatoire à l'inscription</h4>
+        <h4 class="Oblig">Les champs comportant une étoile "*" sont des champs obligatoire à l'inscription</h4>
     {% else %}
         <h2>
             <a href="{{ path('logout') }}"> Pour vous réinscrire vous devez vous déconnecter </a>
