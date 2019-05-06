@@ -21,7 +21,6 @@
                 </p>
                 <h4 style="text-decoration: underline"> A propos : </h4>
                 <p><span style="font-weight: bold;">Pseudo:</span> {{ user.username }}</p>
-                <p><span style="font-weight: bold;">Adresse Email:</span> {{ user.email }}</p>
                 {% if user.region != NULL %}
                     <p><span style="font-weight: bold;">Region:</span> {{ user.region }}</p>
                 {% endif %}
@@ -35,6 +34,7 @@
             </div>
             {% if app.user == user %}
                 <div class="AjoutPublication">
+                    <h4 style="text-align: center">Ajouter une publication</h4>
                     {{ form_start(form) }}
                     {{ form_row(form.publication, {
                         'label': " ",

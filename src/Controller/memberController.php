@@ -308,7 +308,10 @@ class memberController extends AbstractController
             $manager->persist($articles);
             $manager->flush();
 
-            return $this->redirectToRoute('homepage');
+            return $this->render('articleV.html.twig',[
+                'users' => $users,
+                "title" => "Validation"
+            ]);
         }
         return $this->render('member/new.html.twig', [
             "title" => "Création d'un article",
