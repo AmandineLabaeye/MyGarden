@@ -5,13 +5,18 @@
         {% if is_granted('ROLE_USER') %}
             {{ form(form) }}
             {{ include('admin/Articles/deleteM.html.twig') }}
-            <a href="{{ path('homepage_member') }}">Retourner sur la liste</a>
+            <div class="Center">
+                <a href="{{ path('homepage_member') }}" class="ReturnList">Retourner sur la liste</a>
+            </div>
         {% endif %}
-    {% elseif is_granted('ROLE_ADMIN') %}
+    {% endif %}
+    {% if is_granted('ROLE_ADMIN') %}
         {{ form(form) }}
         {{ include('admin/Articles/delete.html.twig') }}
-        <a href="{{ path('articles') }}">Retourner sur la liste</a>
+        <div class="Center">
+            <a href="{{ path('articles') }}" class="ReturnList">Retourner sur la liste</a>
+        </div>
     {% else %}
-        <h1> Tu n'as pas accès à cette page </h1>
+        <h2 class="Error"> Tu n'as pas accès à cette page </h2>
     {% endif %}
 {% endblock %}

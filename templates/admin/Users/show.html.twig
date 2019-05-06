@@ -3,27 +3,27 @@
 {% block body %}
     {% for user in user %}
         <div class="CarteUser">
-            <p><span class="Categorie">Nom</span> {{ user.name }}</p>
-            <p><span class="Categorie">Prenom</span> {{ user.surname }}</p>
-            <p><span class="Categorie">Adresse Email</span> {{ user.email }}</p>
-            <p><span class="Categorie">Age</span> {{ user.age }}</p>
-            <p><span class="Categorie">Region</span> {{ user.region }}</p>
-            <p><span class="Categorie">Ville</span> {{ user.ville }}</p>
-            <p><span class="Categorie">Pseudo</span> {{ user.username }}</p>
-            <p><span class="Categorie">A propos</span> {{ user.apropos }}</p>
-            <p><span class="Categorie">Métier</span> {{ user.work }}</p>
-            <p><span class="Categorie">Mot de passe</span> {{ user.password }}</p>
-            <p><span class="Categorie">Niveau d'utilisateur</span> {{ user.rank }}</p>
-            <p><span class="Categorie">Activé</span> {{ user.active ? 'Oui' : 'Non' }}</p>
+            <p class="NameU"><span class="Categorie">Nom</span> {{ user.name }}</p>
+            <p class="NameU"><span class="Categorie">Prenom</span> {{ user.surname }}</p>
+            <p class="UsernameU"><span class="Categorie">Adresse Email</span> {{ user.email }}</p>
+            <p class="NameU"><span class="Categorie">Age</span> {{ user.age }}</p>
+            <p class="RegionU"><span class="Categorie">Region</span> {{ user.region }}</p>
+            <p class="VilleU"><span class="Categorie">Ville</span> {{ user.ville }}</p>
+            <p class="UsernameU"><span class="Categorie">Pseudo</span> {{ user.username }}</p>
+            <p class="DescriptionU"><span class="Categorie">A propos</span> {{ user.apropos }}</p>
+            <p class="WorkU"><span class="Categorie">Métier</span> {{ user.work }}</p>
+            <p class="RegionU"><span class="Categorie">Mot de passe</span> {{ user.password }}</p>
+            <p class="ReturnList"><span class="Categorie">Niveau d'utilisateur</span> {{ user.rank }}</p>
+            <p class="DescriptionU"><span class="Categorie">Activé</span> {{ user.active ? 'Oui' : 'Non' }}</p>
             <p><span class="Categorie">Actions</span>
-                <a href="{{ path('users_show', {'id': user.id}) }}">Voir</a>
-                <a href="{{ path('users_edit', {'id': user.id}) }}">Modifier</a>
+                <a href="{{ path('users_edit', {'id': user.id}) }}" class="ReturnList">Modifier</a>
             </p>
         </div>
     {% else %}
         <p>Aucun résultat trouvé</p>
     {% endfor %}
 
-    <a href="{{ path('registration') }}">Création d'un nouveau</a>
-    <a href="{{ path('users') }}">Retourner sur la liste</a>
+    <div class="Center">
+        <a href="{{ path('users') }}" class="ReturnList">Retourner sur la liste</a>
+    </div>
 {% endblock %}

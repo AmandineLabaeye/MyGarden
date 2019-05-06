@@ -155,7 +155,7 @@ class adminController extends AbstractController
             ->add('categories', EntityType::class, [
                 'class' => Category::class,
                 'choice_label' => 'name'])
-            ->add('Créer', SubmitType::class)
+            ->add('Creer', SubmitType::class)
             ->getForm();
 
         $form->handleRequest($request);
@@ -230,6 +230,10 @@ class adminController extends AbstractController
             $comments->setDate($date);
             $manager->persist($comments);
             $manager->flush();
+
+            return $this->redirectToRoute('one_admin', [
+                'id' => $id
+            ]);
         }
 
         $pagin = $paginator->paginate(

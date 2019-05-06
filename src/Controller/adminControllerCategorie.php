@@ -28,7 +28,7 @@ class adminControllerCategorie extends AbstractController
         $category = new Category();
         $form = $this->createFormBuilder($category)
             ->add('name', TextType::class)
-            ->add('Créer', SubmitType::class)
+            ->add('Creer', SubmitType::class)
             ->getForm();
 
         $form->handleRequest($request);

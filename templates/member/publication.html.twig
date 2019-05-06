@@ -2,21 +2,23 @@
 
 {% block body %}
     {% for publication in publications %}
-        <div class="Publication">
+        <div class="Publication Center">
             {% if is_granted('ROLE_USER') %}
-                <a href="{{ path('profile_users', {"id": publication.users.id}) }}"><span>{{ publication.users.username }}</span></a>
+                <a href="{{ path('profile_users', {"id": publication.users.id}) }}"><span
+                            class="UsernameU">{{ publication.users.username }}</span></a>
             {% endif %}
             {% if is_granted('ROLE_ADMIN') %}
-                <a href="{{ path('profile_users_admin', {"id": publication.users.id}) }}"><span>{{ publication.users.username }}</span></a>
+                <a href="{{ path('profile_users_admin', {"id": publication.users.id}) }}"><span
+                            class="UsernameU">{{ publication.users.username }}</span></a>
             {% endif %}
             {% if publication.users.work != NULL %}
-                <span> | {{ publication.users.work }}</span>
+                <span class="WorkU"> | {{ publication.users.work }}</span>
             {% endif %}
-            <p>{{ publication.publication }}</p>
+            <p class="PublicationP">{{ publication.publication }}</p>
             {% if publication.picture != NULL %}
                 <img class="PhotoA" src="{{ publication.picture }}" alt="Photo publication">
             {% endif %}
-            <p>{{ publication.date }}</p>
+            <p class="DateCP">{{ publication.date }}</p>
         </div>
     {% endfor %}
 
@@ -31,27 +33,30 @@
         {{ form_end(form) }}
     </div>
     {% for comment in comments %}
-        <div class="CommentsPu">
+        <div class="CommentsPu Center">
             {% if is_granted('ROLE_USER') %}
-                <a href="{{ path('profile_users', {"id": comment.users.id}) }}"><span>{{ comment.users.username }}</span></a>
+                <a href="{{ path('profile_users', {"id": comment.users.id}) }}"><span
+                            class="UsernameU">{{ comment.users.username }}</span></a>
             {% endif %}
             {% if is_granted('ROLE_ADMIN') %}
-                <a href="{{ path('profile_users_admin', {"id": comment.users.id}) }}"><span>{{ comment.users.username }}</span></a>
+                <a href="{{ path('profile_users_admin', {"id": comment.users.id}) }}"><span
+                            class="UsernameU">{{ comment.users.username }}</span></a>
             {% endif %}
             {% if comment.users.work != NULL %}
-                <span> | {{ comment.users.work }}</span>
+                <span class="WorkU"> | {{ comment.users.work }}</span>
             {% endif %}
-            <p>{{ comment.content }}</p>
-            <p>{{ comment.date }}</p>
+            <p class="PublicationP">{{ comment.content }}</p>
+            <p class="DateCP">{{ comment.date }}</p>
             {% if app.user == comment.users %}
                 {% if is_granted('ROLE_ADMIN') %}
                     <p>
-                        <a href="{{ path('commentsP_edit', {'id': comment.id }) }}">Modifier</a>
+                        <a href="{{ path('commentsP_edit', {'id': comment.id }) }}" class="ReturnList">Modifier</a>
                     </p>
                 {% endif %}
                 {% if is_granted('ROLE_USER') %}
                     <p>
-                        <a href="{{ path('commentsP_edit_member', {"id": comment.id}) }}">Modifier</a>
+                        <a href="{{ path('commentsP_edit_member', {"id": comment.id}) }}"
+                           class="ReturnList">Modifier</a>
                     </p>
                 {% endif %}
             {% endif %}

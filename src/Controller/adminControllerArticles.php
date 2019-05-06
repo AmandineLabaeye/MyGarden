@@ -60,24 +60,35 @@ class adminControllerArticles extends AbstractController
     public function edit(Articles $articles, Request $request, ObjectManager $manager, $id)
     {
         $form = $this->createFormBuilder($articles)
-            ->add('name', TextType::class)
-            ->add('picture', TextType::class, [
-                'required' => false
+            ->add('name', TextType::class, [
+                'label' => "Nom "
             ])
-            ->add('description', TextareaType::class)
+            ->add('picture', TextType::class, [
+                'required' => false,
+                'label' => "Photo "
+            ])
+            ->add('description', TextareaType::class,[
+                'label' => "Description "
+            ])
             ->add('namelatin', TextType::class, [
-                'required' => false
+                'required' => false,
+                'label' => "Nom latin "
             ])
             ->add('toxicite', TextType::class, [
-                'required' => false
+                'required' => false,
+                'label' => "Toxicité "
             ])
             ->add('environnement', TextType::class, [
-                'required' => false
+                'required' => false,
+                'label'=> "Environnement "
             ])
             ->add('urlBuy', TextType::class, [
-                'required' => false
+                'required' => false,
+                'label' => "Endroit pour l'acheter "
             ])
-            ->add('active', NumberType::class)
+            ->add('active', NumberType::class, [
+                'label' => "Active "
+            ])
             ->add('Modifier', SubmitType::class)
             ->getForm();
 

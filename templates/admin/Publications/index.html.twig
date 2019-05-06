@@ -3,12 +3,12 @@
 {% block body %}
     {% for publication in publications %}
         <div class="CartePublication">
-            <p><span class="Categorie">Publication</span> {{ publication.publication }}</p>
-            <p><span class="Categorie">Photo</span> {{ publication.picture }}</p>
-            <p><span class="Categorie">Date</span> {{ publication.date }}</p>
+            <p class="PublicationP"><span class="Categorie">Publication</span> {{ publication.publication }}</p>
+            <p class="NameU"><span class="Categorie">Photo</span> {{ publication.picture }}</p>
+            <p class="UsernameU"><span class="Categorie">Date</span> {{ publication.date }}</p>
             <p><span class="Categorie">Actions</span>
-                <a href="{{ path('publications_show', {'id': publication.id}) }}">Voir</a>
-                <a href="{{ path('publications_edit', {'id': publication.id}) }}">Modifier</a>
+                <a href="{{ path('publications_show', {'id': publication.id}) }}" class="ReturnList">Voir</a>
+                <a href="{{ path('publications_edit', {'id': publication.id}) }}" class="ReturnList">Modifier</a>
             </p>
         </div>
     {% else %}

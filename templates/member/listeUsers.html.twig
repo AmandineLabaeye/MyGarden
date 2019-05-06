@@ -1,35 +1,39 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-    <h2> Liste des utilisateurs, clique pour visiter leur page de profil</h2>
+    <h2 class="Title"> Liste des utilisateurs, clique pour visiter leur page de profil</h2>
     {{ form_start(form) }}
     {{ form_widget(form) }}
     {{ form_end(form) }}
     {% if surnameUser is empty %}
         {% for user in user %}
-            <p>{{ user.name }} || {{ user.surname }}</p>
-            {% if user.work != NULL %}
-                <p>{{ user.work }}</p>
-            {% endif %}
-            {% if is_granted('ROLE_USER') %}
-                <a href="{{ path('profile_users', {'id': user.id}) }}"><p>{{ user.username }}</p></a>
-            {% endif %}
-            {% if is_granted('ROLE_ADMIN') %}
-                <a href="{{ path('profile_users_admin', {'id': user.id}) }}"><p>{{ user.username }}</p></a>
-            {% endif %}
+            <div class="BlockU">
+                <p class="NameU">{{ user.name }} || {{ user.surname }}</p>
+                {% if user.work != NULL %}
+                    <p class="WorkU">{{ user.work }}</p>
+                {% endif %}
+                {% if is_granted('ROLE_USER') %}
+                    <a href="{{ path('profile_users', {'id': user.id}) }}"><p class="UsernameU">{{ user.username }}</p></a>
+                {% endif %}
+                {% if is_granted('ROLE_ADMIN') %}
+                    <a href="{{ path('profile_users_admin', {'id': user.id}) }}"><p class="UsernameU">{{ user.username }}</p></a>
+                {% endif %}
+            </div>
         {% endfor %}
     {% elseif surnameUser is not empty %}
         {% for user in user if surnameUser == user.surname %}
-            <p>{{ user.name }} || {{ user.surname }}</p>
-            {% if user.work != NULL %}
-                <p>{{ user.work }}</p>
-            {% endif %}
-            {% if is_granted('ROLE_USER') %}
-                <a href="{{ path('profile_users', {'id': user.id}) }}"><p>{{ user.username }}</p></a>
-            {% endif %}
-            {% if is_granted('ROLE_ADMIN') %}
-                <a href="{{ path('profile_users_admin', {'id': user.id}) }}"><p>{{ user.username }}</p></a>
-            {% endif %}
+            <div class="BlockU">
+                <p class="NameU">{{ user.name }} || {{ user.surname }}</p>
+                {% if user.work != NULL %}
+                    <p class="WorkU">{{ user.work }}</p>
+                {% endif %}
+                {% if is_granted('ROLE_USER') %}
+                    <a href="{{ path('profile_users', {'id': user.id}) }}"><p class="UsernameU">{{ user.username }}</p></a>
+                {% endif %}
+                {% if is_granted('ROLE_ADMIN') %}
+                    <a href="{{ path('profile_users_admin', {'id': user.id}) }}"><p class="UsernameU">{{ user.username }}</p></a>
+                {% endif %}
+            </div>
         {% endfor %}
     {% endif %}
     <div class="navigation">

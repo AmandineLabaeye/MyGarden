@@ -67,7 +67,9 @@ class adminCommentsP extends AbstractController
     {
         // Formulaire avec les différents champs et ce qu'ils doivent recevoir
         $form = $this->createFormBuilder($commentsPublication)
-            ->add('content', TextareaType::class)
+            ->add('content', TextareaType::class, [
+                'label' => "Contenu "
+            ])
             ->add('Modifier', SubmitType::class)
             ->getForm();
         // Recupération et stockage des données reçu

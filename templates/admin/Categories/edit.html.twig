@@ -4,6 +4,7 @@
     {{ form(form) }}
 
     {{ include('admin/Categories/delete.html.twig') }}
-
-    <a href="{{ path('categories') }}">Retourner sur la liste</a>
+    <div class="Center">
+        <a href="{{ path('categories') }}" class="ReturnList">Retourner sur la liste</a>
+    </div>
 {% endblock %}

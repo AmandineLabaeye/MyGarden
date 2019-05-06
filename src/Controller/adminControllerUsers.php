@@ -32,7 +32,7 @@ class adminControllerUsers extends AbstractController
             5
         );
         $users = $this->getUser();
-        return $this->render('admin/Users/active.html.twig', [
+        return $this->render('admin/Users/index.html.twig', [
             'title' => 'Tout les utilisateurs',
             'users' => $users,
             "user" => $pagin
@@ -60,25 +60,43 @@ class adminControllerUsers extends AbstractController
     public function edit(Users $users, Request $request, ObjectManager $manager, $id)
     {
         $form = $this->createFormBuilder($users)
-            ->add("name", TextType::class)
-            ->add("surname", TextType::class)
-            ->add("email", TextType::class)
+            ->add("name", TextType::class, [
+                'label' => "Nom "
+            ])
+            ->add("surname", TextType::class, [
+                'label' => "Prénom "
+            ])
+            ->add("email", TextType::class, [
+                'label' => "Adresse Mail "
+            ])
             ->add("age", NumberType::class, [
-                'required' => false
+                'required' => false,
+                'label' => "Age "
             ])
             ->add("region", TextType::class, [
-                'required' => false
+                'required' => false,
+                "label"=> "Region "
             ])
             ->add("ville", TextType::class, [
-                'required' => false
+                'required' => false,
+                'label' => "Ville "
             ])
-            ->add("username", TextType::class)
-            ->add("apropos", TextareaType::class)
+            ->add("username", TextType::class, [
+                'label' => "Nom d'utilisateur "
+            ])
+            ->add("apropos", TextareaType::class, [
+                'label' => "Description "
+            ])
             ->add("work", TextType::class, [
-                'required' => false
+                'required' => false,
+                'label' => "Profession "
             ])
-            ->add("rank", TextType::class)
-            ->add("active", NumberType::class)
+            ->add("rank", TextType::class, [
+                'label' => "Rôle "
+            ])
+            ->add("active", NumberType::class, [
+                'label' => "Active "
+            ])
             ->add("Modifier", SubmitType::class)
             ->getForm();
 

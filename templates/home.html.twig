@@ -1,7 +1,9 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-    <h2 class="Title">My Garden</h2>
+    <div class="container_bigTitle">
+    <h2 class="BigTitle">MY GARDEN</h2>
+    </div>
     <div class="Lien BlockCategorie">
         {% for categorie in categories %}
             <a class="Sous-Lien" href="{{ path('categories_pf', {'id': categorie.id}) }}">{{ categorie.name }}</a>

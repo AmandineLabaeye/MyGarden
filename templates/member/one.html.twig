@@ -1,7 +1,7 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-    <h1>L'article</h1>
+    <h2 class="Title">L'article</h2>
     {% for article in articles %}
         <div class="BlockA">
             <p class="NameA">{{ article.name }}</p>
@@ -32,24 +32,31 @@
         }
     }) }}
     {{ form_row(form.Poster) }}
+    <div class="Center">
+        <span class="ReturnList">Votre commentaire devra être validé afin d'être affiché</span>
+    </div>
     {{ form_end(form) }}
     {% for comment in comments %}
         {% if is_granted('ROLE_USER') %}
-            <a href="{{ path('profile_users', {"id": comment.users.id }) }}"><p class="NameC"><span class="UserC">Username</span> {{ comment.users.username }}
+            <a href="{{ path('profile_users', {"id": comment.users.id }) }}"><p class="NameC"> {{ comment.users.username }}
                 </p></a>
         {% endif %}
         {% if is_granted('ROLE_ADMIN') %}
-            <a href="{{ path('profile_users_admin', {"id": comment.users.id }) }}"><p class="NameC"><span class="UserC">Username</span> {{ comment.users.username }}
+            <a href="{{ path('profile_users_admin', {"id": comment.users.id }) }}"><p class="NameC"> {{ comment.users.username }}
                 </p></a>
         {% endif %}
-        <p class="DescriptionC"><span class="DesC">Description</span> {{ comment.content }}</p>
+        <p class="DescriptionC">{{ comment.content }}</p>
         <p class="DateC">{{ comment.date }}</p>
         {% if app.user == comment.users %}
             {% if is_granted('ROLE_USER') %}
-                <a href="{{ path('comments_edit_member', {"id": comment.id }) }}">Modifier</a>
+                <div class="Center">
+                    <a href="{{ path('comments_edit_member', {"id": comment.id }) }}" class="ReturnList">Modifier</a>
+                </div>
             {% endif %}
             {% if is_granted('ROLE_ADMIN') %}
-                <a href="{{ path('comments_edit', {"id": comment.id }) }}">Modifier</a>
+                <div class="Center">
+                    <a href="{{ path('comments_edit', {"id": comment.id }) }}" class="ReturnList">Modifier</a>
+                </div>
             {% endif %}
         {% endif %}
     {% endfor %}

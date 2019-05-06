@@ -121,24 +121,32 @@ class memberController extends AbstractController
     public function edit(Articles $articles, Request $request, ObjectManager $manager, $id)
     {
         $form = $this->createFormBuilder($articles)
-            ->add('name', TextType::class)
+            ->add('name', TextType::class, [
+                'label' => "Nom "
+            ])
             ->add('picture', TextType::class, [
+                "label" => "Photo ",
                 'required' => false
             ])
-            ->add('description', TextareaType::class)
+            ->add('description', TextareaType::class, [
+                'label' => "Description "
+            ])
             ->add('namelatin', TextType::class, [
-                'required' => false
+                'required' => false,
+                "label" => "Nom latin "
             ])
             ->add('toxicite', TextType::class, [
-                'required' => false
+                'required' => false,
+                'label' => "Toxicité "
             ])
             ->add('environnement', TextType::class, [
-                'required' => false
+                'required' => false,
+                "label" => "Environnement "
             ])
             ->add('urlBuy', TextType::class, [
-                'required' => false
+                'required' => false,
+                'label' => "Endroit pour l'acheter "
             ])
-            ->add('active', NumberType::class)
             ->add('Modifier', SubmitType::class)
             ->getForm();
 
@@ -201,6 +209,10 @@ class memberController extends AbstractController
             $comments->setDate($date);
             $manager->persist($comments);
             $manager->flush();
+
+            return $this->redirectToRoute('one_member', [
+                'id' => $id
+            ]);
         }
 
         $pagin = $paginator->paginate(
@@ -225,8 +237,9 @@ class memberController extends AbstractController
     public function editC(Request $request, Comments $comments, ObjectManager $manager, $id)
     {
         $form = $this->createFormBuilder($comments)
-            ->add('content', TextareaType::class)
-            ->add('active', NumberType::class)
+            ->add('content', TextareaType::class, [
+                'label' => "Commentaire "
+            ])
             ->add('Modifier', SubmitType::class)
             ->getForm();
 
@@ -295,7 +308,7 @@ class memberController extends AbstractController
             ->add('categories', EntityType::class, [
                 'class' => Category::class,
                 'choice_label' => 'name'])
-            ->add('Créer', SubmitType::class)
+            ->add('Creer', SubmitType::class)
             ->getForm();
 
         $form->handleRequest($request);
@@ -308,7 +321,7 @@ class memberController extends AbstractController
             $manager->persist($articles);
             $manager->flush();
 
-            return $this->render('articleV.html.twig',[
+            return $this->render('articleV.html.twig', [
                 'users' => $users,
                 "title" => "Validation"
             ]);
@@ -327,7 +340,9 @@ class memberController extends AbstractController
     public function editCP(CommentsPublication $commentsPublication, Request $request, ObjectManager $manager, $id)
     {
         $form = $this->createFormBuilder($commentsPublication)
-            ->add('content', TextareaType::class)
+            ->add('content', TextareaType::class, [
+                'label' => "Contenu "
+            ])
             ->add('Modifier', SubmitType::class)
             ->getForm();
         $form->handleRequest($request);
@@ -366,9 +381,12 @@ class memberController extends AbstractController
     public function editP(PublicationsProfil $profil, Request $request, ObjectManager $manager, $id)
     {
         $form = $this->createFormBuilder($profil)
-            ->add('publication', TextareaType::class)
+            ->add('publication', TextareaType::class, [
+                'label' => "Publication "
+            ])
             ->add('picture', TextType::class, [
-                'required' => false
+                'required' => false,
+                'label' => "Photo "
             ])
             ->add('Modifier', SubmitType::class)
             ->getForm();

@@ -59,7 +59,9 @@ class adminControllerComments extends AbstractController
     public function edit(Request $request, Comments $comments, ObjectManager $manager, $id)
     {
         $form = $this->createFormBuilder($comments)
-            ->add('content', TextareaType::class)
+            ->add('content', TextareaType::class, [
+                'label'=> "Commentaire "
+            ])
             ->add('active', NumberType::class)
             ->add('Modifier', SubmitType::class)
             ->getForm();

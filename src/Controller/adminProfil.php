@@ -85,12 +85,8 @@ class adminProfil extends AbstractController
             ->add('username', TextType::class)
             ->add('apropos', TextType::class)
             ->add('work', TextType::class)
-            ->add('password', PasswordType::class, [
-                'required' => false
-            ])
-            ->add('confirm_password', PasswordType::class, [
-                'required' => false
-            ])
+            ->add('password', PasswordType::class)
+            ->add('confirm_password', PasswordType::class)
             ->add('Modifier', SubmitType::class)
             ->getForm();
         $form->handleRequest($request);

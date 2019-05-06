@@ -3,11 +3,11 @@
 {% block body %}
     {% for comments in commentsP %}
         <div class="CartePublication">
-            <p><span class="Categorie">Publication</span> {{ comments.content }}</p>
-            <p><span class="Categorie">Date</span> {{ comments.date }}</p>
+            <p class="PublicationP"><span class="Categorie">Publication</span> {{ comments.content }}</p>
+            <p class="UsernameU"><span class="Categorie">Date</span> {{ comments.date }}</p>
             <p><span class="Categorie">Actions</span>
-                <a href="{{ path('commentsP_show', {'id': comments.id}) }}">Voir</a>
-                <a href="{{ path('commentsP_edit', {'id': comments.id}) }}">Modifier</a>
+                <a href="{{ path('commentsP_show', {'id': comments.id}) }}" class="ReturnList">Voir</a>
+                <a href="{{ path('commentsP_edit', {'id': comments.id}) }}" class="ReturnList">Modifier</a>
             </p>
         </div>
     {% else %}

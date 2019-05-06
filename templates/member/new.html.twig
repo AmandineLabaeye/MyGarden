@@ -2,7 +2,7 @@
 
 {% block body %}
 
-    <h1> Crée une nouvelle plante ou fleur </h1>
+    <h2 class="Title"> Créer une nouvelle plante ou fleur </h2>
 
     {{ form_start(form) }}
     {{ form_row(form.name, {
@@ -44,12 +44,12 @@
     {{ form_row(form.urlBuy, {
         'label': " ",
         'attr': {
-            'placeholder': "Endroit ou l'on peut l'acheter (Magasin ou Adresse)"
+            'placeholder': "Endroit où l'on peut l'acheter (Magasin ou Adresse)"
         }
     }) }}
     {{ form_row(form.categories, {
-        'label': "Choisi la catégorie correspand à l'article"
+        'label': "Choisis la catégorie qui correspond à l'article "
     }) }}
     {{ form_end(form) }}
-    <h4>Les champs contenant une étoile "*" doivent être rempli obligatoirement</h4>
+    <h4 class="Oblig">Les champs contenant une étoile "*" doivent être rempli obligatoirement</h4>
 {% endblock %}

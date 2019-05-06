@@ -3,12 +3,12 @@
 {% block body %}
     <div>
         {% for user in user %}
-            <div class="InfoPerso">
-                <p style="text-align: center">
-                    <span>{{ user.name }}</span>
-                    <span>{{ user.surname }}</span>
+            <div class="InfoPerso Center">
+                <p>
+                    <span class="NameU">{{ user.name }}</span>
+                    <span class="NameU">{{ user.surname }}</span>
                     {% if user.age != NULL %}
-                        <span>{{ user.age }} ans</span>
+                        <span class="NameU">{{ user.age }} ans</span>
                     {% endif %}
                     {% if app.user == user %}
                         {% if is_granted('ROLE_ADMIN') %}
@@ -19,22 +19,22 @@
                         {% endif %}
                     {% endif %}
                 </p>
-                <h4 style="text-decoration: underline"> A propos : </h4>
-                <p><span style="font-weight: bold;">Pseudo:</span> {{ user.username }}</p>
+                <h4 class="Oblig"> A propos : </h4>
+                <p class="UsernameU"> {{ user.username }}</p>
                 {% if user.region != NULL %}
-                    <p><span style="font-weight: bold;">Region:</span> {{ user.region }}</p>
+                    <p class="RegionU"> {{ user.region }}</p>
                 {% endif %}
                 {% if user.ville != NULL %}
-                    <p><span style="font-weight: bold;">Ville:</span> {{ user.ville }}</p>
+                    <p class="VilleU"> {{ user.ville }}</p>
                 {% endif %}
                 {% if user.work != NULL %}
-                    <p><span style="font-weight: bold;">Travail:</span> {{ user.work }}</p>
+                    <p class="WorkU"> {{ user.work }}</p>
                 {% endif %}
-                <p><span style="font-weight: bold;">Description:</span> {{ user.apropos }}</p>
+                <p class="DescriptionU"> {{ user.apropos }}</p>
             </div>
             {% if app.user == user %}
                 <div class="AjoutPublication">
-                    <h4 style="text-align: center">Ajouter une publication</h4>
+                    <h4 class="Title Center">Ajouter une publication</h4>
                     {{ form_start(form) }}
                     {{ form_row(form.publication, {
                         'label': " ",
@@ -52,38 +52,42 @@
                         Poster
                     </button>
                     {{ form_end(form) }}
-                    <h4>Les champs contenant une étoile "*" sont les champs obligatoire à remplir</h4>
+                    <h4 class="Oblig Center">Les champs contenant une étoile "*" sont les champs obligatoire à remplir</h4>
                 </div>
             {% endif %}
             {% for publication in publications %}
-                <div class="Publication">
+                <div class="Publication Center">
                     {% if is_granted('ROLE_USER') %}
-                        <a href="{{ path('profile_users', {"id": publication.users.id}) }}"><span>{{ publication.users.username }}</span></a>
+                        <a href="{{ path('profile_users', {"id": publication.users.id}) }}"><span
+                                    class="UsernameU">{{ publication.users.username }}</span></a>
                     {% endif %}
                     {% if is_granted('ROLE_ADMIN') %}
-                        <a href="{{ path('profile_users_admin', {"id": publication.users.id}) }}"><span>{{ publication.users.username }}</span></a>
+                        <a href="{{ path('profile_users_admin', {"id": publication.users.id}) }}"><span
+                                    class="UsernameU">{{ publication.users.username }}</span></a>
                     {% endif %}
                     {% if publication.users.work != NULL %}
-                    <span> | {{ publication.users.work }}</span>
+                        || <span class="WorkU"> {{ publication.users.work }}</span>
                     {% endif %}
-                    <p class="Publication">{{ publication.publication }}</p>
-                    <p class="Date">{{ publication.date }}</p>
+                    <p class="PublicationP">{{ publication.publication }}</p>
+                    <p class="DateCP">{{ publication.date }}</p>
                     {% if is_granted('ROLE_USER') %}
-                        <a href="{{ path('comments_publication', {"id": publication.id}) }}">Clique pour commenter</a>
+                        <a href="{{ path('comments_publication', {"id": publication.id}) }}" class="ReturnList">Clique
+                            pour commenter</a>
                     {% endif %}
                     {% if is_granted('ROLE_ADMIN') %}
-                        <a href="{{ path('comments_publication_admin', {"id": publication.id}) }}">Clique pour
+                        <a href="{{ path('comments_publication_admin', {"id": publication.id}) }}" class="ReturnList">Clique
+                            pour
                             commenter</a>
                     {% endif %}
                     {% if app.user == publication.users %}
                         {% if is_granted('ROLE_USER') %}
                             <p>
-                                <a href="{{ path('publications_edit_member', {"id": publication.id}) }}">Modifier</a>
+                                <a href="{{ path('publications_edit_member', {"id": publication.id}) }}" class="ReturnList">Modifier</a>
                             </p>
                         {% endif %}
                         {% if is_granted('ROLE_ADMIN') %}
                             <p>
-                                <a href="{{ path('publications_edit', {"id": publication.id}) }}">Modifier</a>
+                                <a href="{{ path('publications_edit', {"id": publication.id}) }}" class="ReturnList">Modifier</a>
                             </p>
                         {% endif %}
                     {% endif %}

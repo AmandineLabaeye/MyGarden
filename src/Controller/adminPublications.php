@@ -59,9 +59,12 @@ class adminPublications extends AbstractController
     public function edit(PublicationsProfil $profil, Request $request, ObjectManager $manager, $id)
     {
         $form = $this->createFormBuilder($profil)
-            ->add('publication', TextareaType::class)
+            ->add('publication', TextareaType::class, [
+                'label' => "Publication "
+            ])
             ->add('picture', TextType::class, [
-                'required' => false
+                'required' => false,
+                'label' => "Photo "
             ])
             ->add('Modifier', SubmitType::class)
             ->getForm();
