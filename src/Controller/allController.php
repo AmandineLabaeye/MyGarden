@@ -228,7 +228,7 @@ class allController extends AbstractController
     public function ForgotPassword(Request $request, \Swift_Mailer $mailer, UsersRepository $usersRepository, ObjectManager $manager)
     {
         $users = new Users();
-        $date = rand(0, 50);
+        $date = date("H:i:s");
         $form = $this->createFormBuilder($users)
             ->add('email', TextType::class, [
                 'label' => " ",
