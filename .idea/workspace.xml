@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="478f7838-3daa-4edf-941f-6621d0b23ee6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/UsersTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/Articles/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/Articles/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/Comments/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/Comments/edit.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,17 +14,7 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tests/UsersTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -60,7 +47,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/admin/Articles/deleteM.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/adminController.php" />
         <option value="$PROJECT_DIR$/templates/member/one.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/Articles/delete.html.twig" />
@@ -104,13 +90,14 @@
         <option value="$PROJECT_DIR$/templates/admin/Publications/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/CommentsP/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/CommentsP/show.html.twig" />
-        <option value="$PROJECT_DIR$/templates/admin/CommentsP/edit.html.twig" />
-        <option value="$PROJECT_DIR$/templates/admin/Publications/edit.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/Articles/edit.html.twig" />
         <option value="$PROJECT_DIR$/public/css/style.css" />
         <option value="$PROJECT_DIR$/templates/admin/Comments/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/adminCommentsP.php" />
+        <option value="$PROJECT_DIR$/templates/admin/CommentsP/edit.html.twig" />
+        <option value="$PROJECT_DIR$/templates/admin/Publications/edit.html.twig" />
         <option value="$PROJECT_DIR$/tests/UsersTest.php" />
+        <option value="$PROJECT_DIR$/tests/CommentsTest.php" />
       </list>
     </option>
   </component>
@@ -259,12 +246,6 @@
             <path>
               <item name="MyGarden" type="b2602c69:ProjectViewProjectNode" />
               <item name="MyGarden" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MyGarden" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MyGarden" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -345,7 +326,8 @@
       <workItem from="1556996881104" duration="8879000" />
       <workItem from="1557127978713" duration="8957000" />
       <workItem from="1557162806857" duration="10539000" />
-      <workItem from="1557213987444" duration="7604000" />
+      <workItem from="1557213987444" duration="7959000" />
+      <workItem from="1557237529964" duration="1638000" />
     </task>
     <task id="LOCAL-00001" summary="Premier Commit, installation du website-skeleton, de la barre profiler et du packages security-bundles.">
       <created>1554886583853</created>
@@ -648,16 +630,23 @@
       <option name="project" value="LOCAL" />
       <updated>1557173030676</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Modif des Edit&#10;&#10;Prochain commit: &#10;Prioritaire:&#10;Test Unitaire (JS et PHP)&#10;Système de mot de passe oublié à la connexion (Fini à tester),&#10;Formulaire de contact (Fini à tester lors de la mise en prod),&#10;&#10;Secondaire: (pas le temps)&#10;Afficher leur propres publications / articles publié par eux sur leur profiles,&#10;Système de Liste d'amis,&#10;Notification a la personne qui recoit un commentaire">
+      <created>1557236746425</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1557236746425</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="245265000" />
+    <option name="totallyTimeSpent" value="247258000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18683812" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18986385" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -670,7 +659,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49924356" visible="true" weight="0.2976" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49924356" visible="true" weight="0.24" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50075644" side_tool="true" weight="0.328" />
       <window_info anchor="bottom" id="PHP-CGI Server" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -705,7 +694,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value=" Gérer ses propres articles des pages de profils, et gérer ses commentaires (modifier supprimer) 'Fini (Modif des redirect route)'.&#10;Prochain commit: Système de recherche (Sur les articles et Utilisateurs), système de mot de passe oublié à la connexion, sur chaque pages de profil pour chaque utilisateurs un système de gestion de ses paramètres et uniquement des siens. Ajax pour les images du carroussel, Ajax sur les publications et commentaires page de profil. Liste d'amis. Formulaire de contact. Notification a la personne qui recoit un commentaire" />
     <MESSAGE value="Sur chaque pages de profil pour chaque utilisateurs un système de gestion de ses paramètres et uniquement des siens.&#10;Permettre au utilisateur de supprimer leur compte.&#10;Fait la page contenant la liste  des utilisateurs pour visiter leur profils.&#10;&#10;Prochain commit: &#10;Prioritaire:&#10;Ajax pour les images du carroussel,&#10;Ajax sur les publications et commentaires page de profil,&#10;Système de recherche (Sur les articles),&#10;Système de filtre sur la page 'Consulter les profils pour trouver plus facilement un utilisateur',&#10;Formulaire de contact,&#10;Faire tout le CSS et les translations en même temps,&#10;&#10;Secondaire:&#10;Afficher leur propres publications / articles publié par eux sur leur profiles.&#10;Système de mot de passe oublié à la connexion,&#10;Système de Liste d'amis,&#10;Notification a la personne qui recoit un commentaire" />
     <MESSAGE value="Ajout de Jquery implémentation, refonte du code natif javascript en Jquery&#10;Ajout de possibilité de supprimer son propre compte côté admin &#10;&#10;Prochain commit: &#10;Prioritaire:&#10;Ajax pour les images du carroussel,&#10;Ajax sur les publications et commentaires page de profil,&#10;Système de recherche (Sur les articles),&#10;Système de filtre sur la page 'Consulter les profils pour trouver plus facilement un utilisateur',&#10;Formulaire de contact,&#10;Faire tout le CSS et les translations en même temps,&#10;&#10;Secondaire:&#10;Afficher leur propres publications / articles publié par eux sur leur profiles.&#10;Système de mot de passe oublié à la connexion,&#10;Système de Liste d'amis,&#10;Notification a la personne qui recoit un commentaire" />
     <MESSAGE value="Suppression ancien code javascript&#10;&#10;Prochain commit: &#10;Prioritaire:&#10;Ajax pour les images du carroussel,&#10;Ajax sur les publications et commentaires page de profil,&#10;Système de recherche (Sur les articles),&#10;Système de filtre sur la page 'Consulter les profils pour trouver plus facilement un utilisateur',&#10;Formulaire de contact,&#10;Faire tout le CSS et les translations en même temps,&#10;Ajouter des commentaires au code&#10;&#10;Secondaire:&#10;Afficher leur propres publications / articles publié par eux sur leur profiles.&#10;Système de mot de passe oublié à la connexion,&#10;Système de Liste d'amis,&#10;Notification a la personne qui recoit un commentaire" />
@@ -730,29 +718,10 @@
     <MESSAGE value="Reste CSS côté Membre et Admin&#10;Réparation de la page paramètre de profile&#10;&#10;Prochain commit: &#10;Prioritaire:&#10;Faire tout le CSS,&#10;Test Unitaire (JS et PHP)&#10;Système de mot de passe oublié à la connexion (Fini à tester),&#10;Formulaire de contact (Fini à tester lors de la mise en prod),&#10;&#10;Secondaire: (pas le temps)&#10;Afficher leur propres publications / articles publié par eux sur leur profiles,&#10;Système de Liste d'amis,&#10;Notification a la personne qui recoit un commentaire" />
     <MESSAGE value="Reste CSS côté Membre et Admin&#10;&#10;Ajout de la div &quot;J'aime&quot; sur la page des articles par catégories&#10;&#10;Prochain commit: &#10;Prioritaire:&#10;Faire tout le CSS,&#10;Test Unitaire (JS et PHP)&#10;Système de mot de passe oublié à la connexion (Fini à tester),&#10;Formulaire de contact (Fini à tester lors de la mise en prod),&#10;&#10;Secondaire: (pas le temps)&#10;Afficher leur propres publications / articles publié par eux sur leur profiles,&#10;Système de Liste d'amis,&#10;Notification a la personne qui recoit un commentaire" />
     <MESSAGE value="CSS Terminé ! Complétement avec résolutions de problème &#10;&#10;Prochain commit: &#10;Prioritaire:&#10;Test Unitaire (JS et PHP)&#10;Système de mot de passe oublié à la connexion (Fini à tester),&#10;Formulaire de contact (Fini à tester lors de la mise en prod),&#10;&#10;Secondaire: (pas le temps)&#10;Afficher leur propres publications / articles publié par eux sur leur profiles,&#10;Système de Liste d'amis,&#10;Notification a la personne qui recoit un commentaire" />
-    <option name="LAST_COMMIT_MESSAGE" value="CSS Terminé ! Complétement avec résolutions de problème &#10;&#10;Prochain commit: &#10;Prioritaire:&#10;Test Unitaire (JS et PHP)&#10;Système de mot de passe oublié à la connexion (Fini à tester),&#10;Formulaire de contact (Fini à tester lors de la mise en prod),&#10;&#10;Secondaire: (pas le temps)&#10;Afficher leur propres publications / articles publié par eux sur leur profiles,&#10;Système de Liste d'amis,&#10;Notification a la personne qui recoit un commentaire" />
+    <MESSAGE value="Modif des Edit&#10;&#10;Prochain commit: &#10;Prioritaire:&#10;Test Unitaire (JS et PHP)&#10;Système de mot de passe oublié à la connexion (Fini à tester),&#10;Formulaire de contact (Fini à tester lors de la mise en prod),&#10;&#10;Secondaire: (pas le temps)&#10;Afficher leur propres publications / articles publié par eux sur leur profiles,&#10;Système de Liste d'amis,&#10;Notification a la personne qui recoit un commentaire" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modif des Edit&#10;&#10;Prochain commit: &#10;Prioritaire:&#10;Test Unitaire (JS et PHP)&#10;Système de mot de passe oublié à la connexion (Fini à tester),&#10;Formulaire de contact (Fini à tester lors de la mise en prod),&#10;&#10;Secondaire: (pas le temps)&#10;Afficher leur propres publications / articles publié par eux sur leur profiles,&#10;Système de Liste d'amis,&#10;Notification a la personne qui recoit un commentaire" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/admin/Comments/delete.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
-          <folding>
-            <element signature="e#37#52#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/Comments/deleteM.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
-          <folding>
-            <element signature="e#37#59#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/adminControllerComments.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="137">
@@ -844,16 +813,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="10" column="83" selection-start-line="10" selection-start-column="83" selection-end-line="10" selection-end-column="83" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/Users/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
           <folding>
             <element signature="e#12#26#0#Twig" expanded="true" />
           </folding>
@@ -1066,16 +1025,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/Categories/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/admin/Categories/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -1133,16 +1082,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/Articles/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/phpunit">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -1157,16 +1096,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/Comments/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/admin/CommentsP/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -1174,20 +1103,6 @@
           <folding>
             <element signature="e#411#425#0#Twig" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/CommentsP/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="21" column="61" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/Publications/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="20" column="61" selection-start-line="20" selection-start-column="61" selection-end-line="20" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -1211,10 +1126,78 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tests/UsersTest.php" />
+    <entry file="file://$PROJECT_DIR$/templates/admin/Articles/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/Categories/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/Comments/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/CommentsP/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/Publications/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/Users/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/CommentsTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="24" column="55" lean-forward="true" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
+          <folding>
+            <element signature="e#29#53#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tests/UsersTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+        <state relative-caret-position="960">
+          <caret line="38" column="30" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
+          <folding>
+            <element signature="e#29#60#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
