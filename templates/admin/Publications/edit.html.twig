@@ -10,13 +10,13 @@
                     liste</a>
             </div>
         {% endif %}
-    {% endif %}
-    {% if is_granted('ROLE_ADMIN') %}
-        {{ form(form) }}
-        {{ include('admin/Publications/delete.html.twig') }}
-        <div class="Center">
-            <a href="{{ path('publications') }}" class="ReturnList">Retourner sur la liste</a>
-        </div>
+        {% if is_granted('ROLE_ADMIN') %}
+            {{ form(form) }}
+            {{ include('admin/Publications/delete.html.twig') }}
+            <div class="Center">
+                <a href="{{ path('publications') }}" class="ReturnList">Retourner sur la liste</a>
+            </div>
+        {% endif %}
     {% else %}
         <h2 class="Error">Tu n'as pas accès à cette page</h2>
     {% endif %}
