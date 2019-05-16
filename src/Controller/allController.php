@@ -4,7 +4,6 @@
 namespace App\Controller;
 
 
-use App\Actions\email;
 use App\Entity\Users;
 use App\Repository\ArticlesRepository;
 use App\Repository\CategoryRepository;
@@ -12,8 +11,7 @@ use App\Repository\UsersRepository;
 use Doctrine\Common\Persistence\ObjectManager;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\ExpressionLanguage\Tests\Node\Obj;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Swift_SmtpTransport;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -151,29 +149,72 @@ class allController extends AbstractController
      * Cette function permet de nous contacter
      * @Route("/contact", name="contact_form")
      */
-    public function contact()
+    public function contact(Request $request)
     {
         $users = $this->getUser();
 
+        $form = $this->createFormBuilder()
+            ->add('Nom', TextType::class, [
+                'label' => " ",
+                'attr' => [
+                    'placeholder' => "Nom"
+                ]
+            ])
+            ->add('Mail', TextType::class, [
+                'label' => " ",
+                'attr' => [
+                    'placeholder' => "Adresse Email"
+                ]
+            ])
+            ->add('Objet', TextType::class, [
+                'label' => " ",
+                'attr' => [
+                    'placeholder' => "Objet"
+                ]
+            ])
+            ->add('Message', TextareaType::class, [
+                'label' => " ",
+                'attr' => [
+                    'placeholder' => "Message"
+                ]
+            ])
+            ->add('Envoyer', SubmitType::class)
+            ->getForm();
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $Objet = $form['Objet']->getData();
+            $Nom = $form['Nom']->getData();
+            $Message = $form['Message']->getData();
+            $mail = $form['Mail']->getData();
+            $transport = (new Swift_SmtpTransport( 'smtp.gmail.com', 465, 'ssl'))
+                ->setUsername('mygardenbyamandine@gmail.com')
+                ->setPassword('mygarden2302');
+
+            $mailer = (new \Swift_Mailer($transport));
+
+            $message = (new \Swift_Message('My Garden'))
+                ->setSubject($Objet)
+                ->setFrom($mail)
+                ->setTo(['mygardenbyamandine@gmail.com' => 'TEST'])
+                ->setBody($this->renderView(
+                        'email/email.html.twig', [
+                            'message' => nl2br($Message),
+                            'user' => $mail,
+                            'nom' => $Nom,
+                            'date' => date("d-m-Y H:i:s")
+                        ]
+                    ),
+                    'text/html'
+                );
+            $mailer->send($message);
+        }
+
         return $this->render('allMember/contact.html.twig', [
             'title' => "Contactez-nous",
-            "users" => $users
+            "users" => $users,
+            'form' => $form->createView()
         ]);
-    }
-
-    /**
-     * Cette function permet d'envoyer le mail
-     * @Route("/sendmail" , name="send_mail" , methods="POST")
-     */
-    public function send_mail(Request $request, \Swift_Mailer $mailer, \Twig_Environment $templating)
-    {
-
-        //Methode alternative , récuperation du conteneur twig et injection
-        // $templating = $this->container->get('twig');
-
-        $mail = new email($templating);
-        $mail->sendMail($request, $mailer);
-
     }
 
     /**
@@ -229,8 +270,8 @@ class allController extends AbstractController
     {
         $users = new Users();
         $date = date("H:i:s");
-        $form = $this->createFormBuilder($users)
-            ->add('email', TextType::class, [
+        $form = $this->createFormBuilder()
+            ->add('Mail', TextType::class, [
                 'label' => " ",
                 "attr" => [
                     "placeholder" => 'Adresse Mail'
@@ -240,7 +281,7 @@ class allController extends AbstractController
             ->getForm();
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $email = $form['email']->getData();
+            $email = $form['Mail']->getData();
             if ($email == $usersRepository->findBy(['email' => $email])) {
                 $name = $users->getUsername();
                 $id = $users->getId();

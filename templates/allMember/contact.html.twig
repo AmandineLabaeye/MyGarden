@@ -1,22 +1,22 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
+{% if message is defined %} {{ message }} {% endif %}
+    <h2 class="Title">Vous voulez nous contacter</h2>
+    <div>
+        {{ form_start(form) }}
 
-    <h2 class="Title">Vous voulez nous contactez</h2>
+        {{ form_row(form.Nom) }}
 
-    <form class="formulaire Contact" action="{{ path('send_mail') }}" method="post">
-        <div>
-            <input type="text" id="Nom" name="Nom" placeholder="Nom et Prénom" required>
-            <br>
-            <input type="text" id="Email" name="Email" placeholder="Votre Adresse Mail" required>
-            <br>
-            <input type="text" id="Objet" name="Objet" placeholder="Objet de votre message" required>
-            <br>
-            <textarea name="Message" id="Message" cols="30" rows="10" placeholder="Votre message" required></textarea>
+        {{ form_row(form.Mail) }}
 
-            <div id="BoutonMail">
-                <button type="submit" id="Send" name="Send"> Envoyer </button>
-            </div>
-        </div>
-    </form>
+        {{ form_row(form.Objet) }}
+
+        {{ form_row(form.Message) }}
+
+        {{ form_row(form.Envoyer) }}
+
+        {{ form_end(form) }}
+
+    </div>
 {% endblock %}
