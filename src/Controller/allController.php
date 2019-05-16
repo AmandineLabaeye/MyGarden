@@ -187,7 +187,7 @@ class allController extends AbstractController
             $Nom = $form['Nom']->getData();
             $Message = $form['Message']->getData();
             $mail = $form['Mail']->getData();
-            $transport = (new Swift_SmtpTransport( 'smtp.gmail.com', 465, 'ssl'))
+            $transport = (new Swift_SmtpTransport('smtp.gmail.com', 465, 'ssl'))
                 ->setUsername('mygardenbyamandine@gmail.com')
                 ->setPassword('mygarden2302');
 
@@ -198,13 +198,13 @@ class allController extends AbstractController
                 ->setFrom($mail)
                 ->setTo(['mygardenbyamandine@gmail.com' => 'TEST'])
                 ->setBody($this->renderView(
-                        'email/email.html.twig', [
-                            'message' => nl2br($Message),
-                            'user' => $mail,
-                            'nom' => $Nom,
-                            'date' => date("d-m-Y H:i:s")
-                        ]
-                    ),
+                    'email/email.html.twig', [
+                        'message' => nl2br($Message),
+                        'user' => $mail,
+                        'nom' => $Nom,
+                        'date' => date("d-m-Y H:i:s")
+                    ]
+                ),
                     'text/html'
                 );
             $mailer->send($message);
@@ -273,8 +273,6 @@ class allController extends AbstractController
      */
     public function ForgotPassword(Request $request, \Swift_Mailer $mailer, UsersRepository $usersRepository, ObjectManager $manager)
     {
-        $users = new Users();
-        $date = date("H:i:s");
         $form = $this->createFormBuilder()
             ->add('Mail', TextType::class, [
                 'label' => " ",
@@ -287,46 +285,30 @@ class allController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $email = $form['Mail']->getData();
-            if ($email == $usersRepository->findBy(['email' => $email])) {
-                $name = $users->getUsername();
-                $id = $users->getId();
-                $Objet = 'Réinitialisation de votre mot de passe';
-                $Nom = $name;
-                $Email = $email;
-                $Message = "Bonjour $Nom, <br>
-                            Nous avons reçu une demande de réinitialisation de votre mot de passe <br> 
-                            Cliquez simplement sur le lien ci-dessous pour créer un nouveau mot de passe <br>
-                            <a href='/reinitialisation/$id/$date/password'> Modifier votre mot de passe </a> <br> 
-                            Si finalement vous ne voulais pas modifier votre mot de passe pas de panique votre ancien 
-                            mot de passe et toujours valable! <br>
-                            Très bonne journée, à bientôt";
+            $emailbdd = $usersRepository->findOneBy(['email' => $email]);
+            if ($emailbdd != null) {
+                $verif = rand(0, 50) . rand(0, 50) . rand(0, 50);
 
-                $message = (new \Swift_Message($Objet))
-                    ->setFrom([$Email => $Nom])
-                    ->setTo(['noreply@mygarden.fr' => 'Gérant'])
+                $message = (new \Swift_Message("L'équipe MyGarden : Réinitialisation de votre mot de passe"))
+                    ->setFrom('mygardenbyamandine@gmail.com')
+                    ->setTo($email)
                     ->setBody(
                         $this->renderView(
-                        // templates/emails/registration.html.twig
-                            'email/email.html.twig',
-                            ['message' => nl2br($Message)]
+                            'email/forgotpass.html.twig', [
+                                'verif' => $verif
+                            ]
                         ),
                         'text/html'
-                    )
-                    ->addPart(
-                        $this->renderView(
-                            'email/email.txt.twig',
-                            ['message' => $Message]
-                        ),
-                        'text/plain'
                     );
 
-                $mailer->send($Message);
-
-                $users->setVerif($date);
-                $manager->persist($users);
+                $emailbdd->setVerif($verif);
                 $manager->flush();
 
-                return $this->redirectToRoute('homepage');
+                $mailer->send($message);
+
+                return $this->render('Visitor/apresadressmail.html.twig', [
+                    'title' => "Forgot Password"
+                ]);
             }
         }
 
@@ -337,43 +319,48 @@ class allController extends AbstractController
     }
 
     /**
-     * @Route("/reinitialisation/{id}/{date}/password", name="reinitialisation_password")
+     * @Route("/reinitialisation/{verif}", name="reinitialisation_password")
      */
-    public function ReinitialisationMdp(Request $request, ObjectManager $manager, Users $users, UserPasswordEncoderInterface $encoder, UsersRepository $usersRepository, $date)
+    public function ReinitialisationMdp(Request $request, ObjectManager $manager, UserPasswordEncoderInterface $encoder, $verif)
     {
-        $form = $this->createFormBuilder($users)
-            ->add('password', PasswordType::class, [
-                'label' => " ",
-                "attr" => [
-                    'placeholder' => "Nouveau mot de passe"
-                ]
-            ])
-            ->add('confirm_password', PasswordType::class, [
-                'label' => " ",
-                "attr" => [
-                    'placeholder' => "Confirmation du nouveau mot de passe"
-                ]
-            ])
-            ->add('Valider', SubmitType::class)
-            ->getForm();
+        $entityManager = $this->getDoctrine()->getManager();
+        $user = $entityManager->getRepository(Users::class)->findOneBy(['verif' => $verif]);
 
-        $form->handleRequest($request);
+        if ($user != null) {
+            $user->setVerif(null);
+            $form = $this->createFormBuilder()
+                ->add('password', PasswordType::class, [
+                    'label' => " ",
+                    "attr" => [
+                        'placeholder' => "Nouveau mot de passe"
+                    ]
+                ])
+                ->add('confirm_password', PasswordType::class, [
+                    'label' => " ",
+                    "attr" => [
+                        'placeholder' => "Confirmation du nouveau mot de passe"
+                    ]
+                ])
+                ->add('Valider', SubmitType::class)
+                ->getForm();
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $hash = $encoder->encodePassword($users, $users->getPassword());
-            $users->setPassword($hash);
-            $manager->flush();
+            $form->handleRequest($request);
 
-            return $this->redirectToRoute('login');
+            if ($form->isSubmitted() && $form->isValid()) {
+                $hash = $encoder->encodePassword($user, $user->getPassword());
+                $user->setPassword($hash);
+                $manager->flush();
+
+                return $this->redirectToRoute('login');
+            }
+
+            return $this->render('Visitor/editpassword.html.twig', [
+                'title' => "Modifier password",
+                'form' => $form->createView(),
+                'date' => $verif,
+            ]);
         }
-
-        $user = $this->getUser();
-        return $this->render('Visitor/editpassword.html.twig', [
-            'title' => "Modifier password",
-            'form' => $form->createView(),
-            "users" => $user,
-            'date' => $date,
-            'user' => $usersRepository->findBy(['active' => 1])
-        ]);
+        return $this->redirectToRoute('homepage');
     }
+
 }
