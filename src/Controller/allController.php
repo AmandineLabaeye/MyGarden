@@ -208,6 +208,11 @@ class allController extends AbstractController
                     'text/html'
                 );
             $mailer->send($message);
+
+            return $this->render('Visitor/aprescontact.html.twig', [
+                "title" => "Après Contact",
+                'users' => $users
+            ]);
         }
 
         return $this->render('allMember/contact.html.twig', [
